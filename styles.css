@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gowun+Batang&display=swap');
+@font-face {
+    font-family: 'awb-icons';
+    src: url('./assets/icons.woff2') format('woff2'),
+         url('./assets/icons.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+:root {
+    --primary-color: #0470c0;
+    --primary-color-dark: #065088;
+}
+html {
+    align-items: center;
+    box-sizing: border-box;
+    display: flex;
+    height: 100dvh;
+    flex-direction: column;
+    width: 100dvw;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    max-width: 1200px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Gowun Batang', serif;
+}
+
+h1 {
+    font-size: 2.7rem;
+    font-weight: 600;
+    font-family: "Gowun Batang", Arial, Helvetica, sans-serif;
+    text-rendering: optimizeLegibility;
+}
+
+header {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    padding: 0 0 0 30px;
+
+    img.logo {
+        height: 61px;
+        object-fit: contain;
+    }
+
+    nav {
+        align-items: center;
+        height: 100%;
+        display: flex;
+
+        a, .link {
+            display: flex;
+            align-items: center;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-left: 30px;
+            height: 100%;
+            transition:all 0.3s;
+            text-decoration: none;
+            position: relative;
+
+            &::before {
+                background-color: var(--primary-color);
+                content: '';
+                display: block;
+                height: 2px;
+                margin-top: 5px;
+                width: 100%;
+                bottom: 50%;
+                position: absolute;
+                opacity: 0;
+                transition: all 0.3s;
+            }
+
+            &:hover {
+                color: var(--primary-color);
+                &::before, &:focus::before {
+                    opacity: 1;
+                    bottom: 0;
+                 }
+            }
+        }
+
+        .dropdown {
+            display: flex;
+            color: black;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-left: 30px;
+            gap: 10px;
+           
+           &::after { 
+            content: "\f107";
+            font-family: 'awb-icons';
+            line-height: 1;
+           }
+        }
+    }
+}
+
+main#content {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: calc(100dvh - 100px);
+    overflow-y: auto;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    h2 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1.2em;
+    }
+}
+
+aside {
+    /* background-color: #0470c0; */
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    height: calc(100dvh - 100px);
+    padding-inline: 30px;
+
+    .block {
+        display: flex;
+        flex-direction: column;
+        padding: 20px 10px;
+        border-bottom: 1px solid #ddd;
+        p {
+            font-size: 16px;
+            font-family: 'DM Sans', sans-serif;
+            margin-bottom: 20px;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 6px;
+            li {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                font-size: 16px;
+                font-family: 'DM Sans', sans-serif;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+.icon {
+    display: flex;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    &:after {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-family: 'awb-icons';
+        line-height: 1;
+    }
+}
+
+.flex-row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 10px;
+}
+
+.share-links {
+    a.icon {
+        font-family: 'awb-icons';
+        text-decoration: none;
+        color:black;
+    }
+}
+#shadow-host-companion{
+    display: none;
+}

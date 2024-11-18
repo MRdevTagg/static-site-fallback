@@ -1,0 +1,128 @@
+
+.icon.ico-search {
+    align-items: center;
+    justify-content: center;
+    margin-left: 22px;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\f002";
+      text-align: center;
+    } 
+  }
+
+.icon.ico-cite {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+    color: #fff;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\f10e";
+      text-align: center;
+    } 
+}
+
+.icon.ico-download {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+    color: #fff;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\f019";
+      text-align: center;
+    } 
+}
+.icon.ico-fb {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\eb04";
+      text-align: center;
+    } 
+}
+
+.icon.ico-x {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\e906";
+      text-align: center;
+    } 
+}
+
+.icon.ico-in {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\eb0f";
+      text-align: center;
+    } 
+}
+
+.icon.ico-wpp {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\f232";
+      text-align: center;
+    } 
+}
+
+.icon.ico-tgm {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\f1d8";
+      text-align: center;
+    } 
+}
+
+.icon.ico-mail {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 25px;
+
+    &::after {
+      font-size: 15px;
+      height: fit-content;
+      content: "\eb16";
+      text-align: center;
+    } 
+}
