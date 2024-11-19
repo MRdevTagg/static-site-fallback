@@ -190,7 +190,263 @@ review, which can be classified according to the course of proposed changes and 
 influence on the editorial workflow, incremental and radical. As a result, we can conclude that, at
 present, there are three major models of peer review and related editorial workflow:</p>
 ${generateUnorderedList(['Model 1: traditional model (pre-publication peer review),', 'Model 2: registered reports,', 'Model 3: “Publish-Review-Curate” (post-publication review).'])}
-    ` 
+<p>Table 2 presents comparative characteristics of these models.</p>
+<p>Table 2 – Comparative analysis of the three review models in terms of editorial workflow</p>
+${renderImage(9, 6)}
+<p>We can also compare the three models in terms of the main functions of science communication</p>
+<>(Table 3). The four main functions of scientific communication are registration, dissemination,
+certification and archiving (Roosendaal & Geurts, 1997; Taubert, 2017).</p>
+<p>Table 3 - Comparative analysis of the three models of review in terms of functions of scientific communication</p>
+${renderImage(9, 7)}
+${renderImage(9, 8, '* Preprint is optional for Models 1 and 2.')}
+<p>Thus, in Model 3, all functions of scientific communication are implemented most quickly and
+transparently. The additional costs arising from the independent assessment of information based
+on open reviews are more than compensated by the emerging opportunities for scientific
+pluralism. Model 3 corresponds to the vision of the International Science Council (ISC) on
+"more efficient and effective modes of peer review that are inspired by open norms"
+(International Science Council, 2023, p. 12).
+The traditional publication process model with a “black box” peer review inside is increasingly
+proving its inadequacy. Registered reports are promising but are exclusively focused on
+empirical research. The "Publish-Review-Curate" model is universal that we expect to be the
+future of scientific publishing. The transition will not happen today or tomorrow, but in the next
+5-10 years, the number of projects such as eLife, F1000Research, Peer Community in, or
+MetaROR will rapidly increase. We should also note that the constructive elements of Model 3
+can be transferred to Model 2 (in terms of openness of the review process, especially on the first
+stage).</p>
+<p>At the same time, we must recognize the complexity of institutional change. The possibilities for
+normative regulation here are quite limited - much depends on the traditions embedded in the
+academic community, and it will take a lot of time to change them. Openness is a complex
+process that requires three conditions:</p>
+${generateOrderedList(['Group of people willing to take responsibility for the quality of scientific communication in this academic community,', 'Authors and reviewers willing to accept this practice,', 'Appropriate infrastructure.' ])}
+<p>Avissar-Whiting et al. (2024) provided a useful toolbox of recommendations for all parties
+potentially involved in the preprint review process.
+A significant development was the announcement by the Bill & Melinda Gates Foundation of its
+new Open Access Policy (Brembs & Drury, 2024). The foundation has discontinued Article
+Processing Charges (APCs) and introduced a mandatory requirement for grantees to publish
+preprints. In addition, the foundation is supporting the development of an open infrastructure for
+preprinting. Later, it was announced that the foundation would be launching a new verified
+preprint platform in collaboration with F1000Research (“Gates Foundation Collaborates with
+F1000 to Launch Verified Preprint Platform,” 2024). This is another step towards normalizing
+post-publication reviews, while the publication of preprints is increasingly becoming the norm
+(Drury, 2022).
+Post-publication review is a return to the roots of scientific communication. This model will
+allow all actors involved to take greater responsibility for their work, authors for their articles,
+reviewers for their assessments, and editors for supporting the process of scientific
+communication. This is the atmosphere of scientific discussion that we need very much.
+However, it is important to acknowledge that current peer review practices vary significantly
+across fields. While pre-publication peer review is prevalent in almost all fields, there are
+numerous variations in terms of its openness or anonymity. Additionally, while some fields have
+successfully incorporated innovations, others continue to resist. E.g., preprint publishing has
+been an essential form of publication in physics since 1990s (Ginsparg, 2011), and open peer
+review was introduced in biomedical journals prior to other domains (e.g., BMJ and BMC). At
+the same time, the social sciences and humanities (SSH), in terms of their peer review and
+publication process, remain relatively closed (Ross-Hellauer & Horbach, 2024).
+We should also acknowledge that the list of innovations in peer review presented in this paper is
+not comprehensive. For instance, we could mention ranking papers instead of reviewing them or
+bidding for papers (Birukou et al., 2011). However, these initiatives are not yet widely adopted,
+so they do not significantly affect the publishing landscape</p>
+
+<h5>Acknowledgements</h5>
+<p>
+    The author gratefully acknowledges the peers’ contributions. Ludo Waltman and Wolfgang Kaltenbrunner reviewed draft versions of this paper and provided valuable suggestions for improvement.
+</p>
+
+<h5>Competing interests</h5>
+<p>
+    The author is affiliated with the Centre for Science and Technology Studies of Leiden University, which is involved in the development of the MetaROR project.
+</p>
+
+<h5>Contributions</h5>
+<p>
+    Visualization: DK<br>
+    Writing – original draft: DK
+</p>
+
+<h5>Data availability statement</h5>
+<p>
+    Data sharing is not applicable to this article as no new data were created in this study.
+</p>
+    `,
+    References: /*html*/ `
+<div class="references">
+<p>
+    A Reviewer’s Quick Guide to Assessing Open Datasets. (n.d.). PLOS. Retrieved January 23, 2024, from https://plos.org/resource/peer-reviewing-data/
+</p>
+<p>
+    Aczel, B., Szaszi, B. & Holcombe, A. O. (2021). A billion-dollar donation: estimating the cost of researchers’ time spent on peer review. Research Integrity and Peer Review, 6(1), 14. https://doi.org/10.1186/s41073-021-00118-2
+</p>
+<p>
+    Allen, K., Reardon, J., Lu, Y., Smith, D. V., Rainsford, E. & Walsh, L. (2022). Towards improving peer review: Crowd-sourced insights from Twitter. Journal of University Teaching & Learning Practice, 19(3). https://ro.uow.edu.au/jutlp/vol19/iss3/02
+</p>
+<p>
+    Avissar-Whiting, M., Belliard, F., Bertozzi, S. M., Brand, A., Brown, K., Clément-Stoneham, G., Dawson, S., Dey, G., Ecer, D., Edmunds, S. C., Farley, A., Fischer, T. D., Franko, M., Fraser, J. S., Funk, K., Ganier, C., Harrison, M., Hatch, A., Hazlett, H., … Williams, M. (2024). Recommendations for accelerating open preprint peer review to improve the culture of science. PLOS Biology, 22(2), e3002502. https://doi.org/10.1371/journal.pbio.3002502
+</p>
+<p>
+    Baker, M. (2015). Smart software spots statistical errors in psychology papers. Nature. https://doi.org/10.1038/nature.2015.18657
+</p>
+<p>
+    Birukou, A., Wakeling, J. R., Bartolini, C., Casati, F., Marchese, M., Mirylenka, K., Osman, N., Ragone, A., Sierra, C. & Wassef, A. (2011). Alternatives to Peer Review: Novel Approaches for Research Evaluation. Frontiers in Computational Neuroscience, 5. https://doi.org/10.3389/fncom.2011.00056
+</p>
+<p>
+    Bornmann, L. (2011). Scientific peer review. Annual Review of Information Science and Technology, 45(1), 197–245. https://doi.org/10.1002/aris.2011.1440450112
+</p>
+<p>
+    Braben, D. & Dowler, R. (2017, 17. September). Peer review processes risk stifling creativity and limiting opportunities for game-changing scientific discoveries. LSE Impact Blog. https://blogs.lse.ac.uk/impactofsocialsciences/2017/09/17/peer-review-processes-riskstifling-creativity-and-limiting-opportunities-for-scientific-discoveries/
+</p>
+<p>
+    Brembs, B. & Drury, L. (2024, 27. March). The Open Access rising tide: Gates Foundation ends support to Article Processing Charges. International Science Council. https://council.science/current/blog/the-open-access-rising-tide-gates-foundation-endssupport-to-article-processing-charges/
+</p>
+<p>
+    Chapelle, F. H. (2014). The History and Practice of Peer Review. Groundwater, 52(1), 1–1. https://doi.org/10.1111/gwat.12139
+</p>
+<p>
+    COPE. (2013). Ethical guidelines for peer reviewers (English). https://doi.org/10.24318/cope.2019.1.9
+</p>
+<p>
+    COPE. (2021). Diversity and inclusivity. https://doi.org/10.24318/RLqSoVsZ
+</p>
+<p>
+    Drury, L. (2022). The Normalization of Preprints. SRELS Journal of Information Management, 79–85. https://doi.org/10.17821/srels/2022/v59i2/169462
+</p>
+<p>
+    Fyfe, A. (2019, 15. September). Quality in peer review: a view through the lens of time. The Royal Society. https://royalsociety.org/blog/2019/09/quality-in-peer-review-a-view-throughthe-lens-of-time/
+</p>
+<p>
+    Gates Foundation Collaborates with F1000 to Launch Verified Preprint Platform. (2024, 4. April). Taylor & Francis News. https://newsroom.taylorandfrancisgroup.com/gatesfoundation-collaborates-with-f1000-to-launch-verified-preprint-platform/
+</p>
+<p>
+    Ginsparg, P. (2011). ArXiv at 20. Nature, 476(7359), 145–147. https://doi.org/10.1038/476145a
+</p>
+<p>
+    Heaven, D. (2018). AI peer reviewers unleashed to ease publishing grind. Nature, 563(7733), 609–610. https://doi.org/10.1038/d41586-018-07245-9
+</p>
+<p>
+    Hess, E. L. (1975). Effects of the review process. IEEE Transactions on Professional Communication, PC-18(3), 196–199. https://doi.org/10.1109/TPC.1975.6591188
+</p>
+<p>
+    Horbach, S. P. J. M. & Halffman, W. (2020). Journal Peer Review and Editorial Evaluation: Cautious Innovator or Sleepy Giant? Minerva, 58, 139–161. https://doi.org/10.1007/s11024-019-09388-z
+</p>
+<p>
+    International Science Council. (2023). The Case for Reform of Scientific Publishing. https://doi.org/10.24948/2023.14
+</p>
+<p>
+    Johnson, R. (2024, 28. June). Beyond the journal: The future of scientific publishing. FEBS. https://network.febs.org/posts/beyond-the-journal-the-future-of-scientificpublishing?channel_id=728-viewpoints
+</p>
+<p>
+    Kaltenbrunner, W., Pinfield, S., Waltman, L., Woods, H. B. & Brumberg, J. (2022). Innovating peer review, reconfiguring scholarly communication: An analytical overview of ongoing peer review innovation activities. SocArXiv. https://doi.org/10.31235/osf.io/8hdxu
+</p>
+<p>
+    Kaltenbrunner, Wolfgang, Waltman, L., Barnett, A., Byrne, J., Chin, J. M., Holcombe, A., Pinfield, S., Vazire, S. & Wilsdon, J. (2023). MetaRoR - a new form of scholarly publishing and peer review for STS. EASST Review, 421. https://easst.net/easst-review/easst-reviewvolume-421-july-2023/metaror-a-new-form-of-scholarly-publishing-and-peer-review-forsts/
+</p>
+<p>
+    Karhulahti, V.-M. & Backe, H.-J. (2021). Transparency of peer review: a semi-structured interview study with chief editors from social sciences and humanities. Research Integrity and Peer Review, 6(1), 13. https://doi.org/10.1186/s41073-021-00116-4
+</p>
+<p>
+    Keen, S. (2015). Post Keynesian Theories of Crisis. The American Journal of Economics and Sociology, 74(2), 298–324. https://doi.org/10.1111/ajes.12099
+</p>
+<p>
+    Kelly, J., Sadeghieh, T. & Adeli, K. (2014). Peer review in scientific publications:benefits, critiques, & a survival guide. The Journal of the International Federation for Clinical Chemistry and Laboratory Medicine, 25(3), 227–243.
+</p>
+<p>
+    Kronick, D. A. (1990). Peer review in 18th-century scientific journalism. JAMA, 263(10), 1321–1322. http://www.ncbi.nlm.nih.gov/pubmed/2406469
+</p>
+<p>
+    Lifecycle Journals. (n.d.). Center for Open Science. Retrieved April 19, 2024, from https://www.cos.io/lifecyclejournals
+</p>
+<p>
+    McCook, A. (2006. February). Is peer review broken? The Scientist. https://www.thescientist.com/uncategorized/is-peer-review-broken-47872
+</p>
+<p>
+    Neff, B. D. & Olden, J. D. (2006). Is Peer Review a Game of Chance? BioScience, 56(4), 333–340. https://doi.org/10.1641/0006-3568(2006)56[333:IPRAGO]2.0.CO;2
+</p>
+<p>
+    NISO RP-30-2023, Manuscript Exchange Common Approach (MECA) (Version 2.0.1). (2023). https://doi.org/10.3789/niso-rp-30-2023
+</p>
+<p>
+    Nosek, B. A., Spies, J. R. & Motyl, M. (2012). Scientific Utopia. Perspectives on Psychological Science, 7(6), 615–631. https://doi.org/10.1177/1745691612459058
+</p>
+<p>
+    Open Science Collaboration. (2015). Estimating the reproducibility of psychological science. Science, 349(6251). https://doi.org/10.1126/science.aac4716
+</p>
+<p>
+    Registered Reports: Peer review before results are known to align scientific values and practices. (n.d.). Center for Open Science. Retrieved January 22, 2024, from https://www.cos.io/initiatives/registered-reports
+</p>
+<p>
+    Rennie, D. (1999). Editorial peer review: Its development and rationale. In F. Godleeand & T. Jefferson (Eds.), Peer Review in Health Sciences (pp. 1–13). BMJ Books.
+</p>
+<p>
+    Roosendaal, H. E. & Geurts, P. A. T. M. (1997). Forces and functions in scientific communication: an analysis of their interplay. Co-Operative Research in Information Systems in Physics, 1–32.
+</p>
+<p>
+    Ross-Hellauer, T. & Horbach, S. P. J. M. (2024). Additional experiments required: A scoping review of recent evidence on key aspects of Open Peer Review. Research Evaluation. https://doi.org/10.1093/reseval/rvae004
+</p>
+<p>
+    Royal Society of Chemistry. (2020). Joint commitment for action on inclusion and diversity in publishing. https://www.rsc.org/policy-evidence-campaigns/inclusion-diversity/jointcommitment-for-action-inclusion-and-diversity-in-publishing/#:~:text=The Joint commitment for action,a workshop with other publishers
+</p>
+<p>
+    Rühli, F. J., Finnegan, M., Hershkovitz, I. & Henneberg, M. (2009). Peer‐review for the peer‐review system. Human_ontogenetics, 3(1), 3–6. https://doi.org/10.1002/huon.200900004
+</p>
+<p>
+    Saper, C. B., Maunsell, J. H. R. & Sagvolden, T. (2009). The Neuroscience Peer Review Consortium. Behavioral and Brain Functions, 5, 4. https://doi.org/10.1186/1744-9081-5-4
+</p>
+<p>
+    Smith, G. D. & Jackson, D. (2022). Integrity and trust in research and publication: The crucial role of peer review. Journal of Advanced Nursing, 78(11). https://doi.org/10.1111/jan.15438
+</p>
+<p>
+    Smith, O. M., Davis, K. L., Pizza, R. B., Waterman, R., Dobson, K. C., Foster, B., Jarvey, J. C., Jones, L. N., Leuenberger, W., Nourn, N., Conway, E. E., Fiser, C. M., Hansen, Z. A., Hristova, A., Mack, C., Saunders, A. N., Utley, O. J., Young, M. L. & Davis, C. L. (2023). Peer review perpetuates barriers for historically excluded groups. Nature Ecology & Evolution, 7(4), 512–523. https://doi.org/10.1038/s41559-023-01999-w
+</p>
+<p>
+    Smith, R. (2006). Peer Review: A Flawed Process at the Heart of Science and Journals. Journal of the Royal Society of Medicine, 99(4), 178–182. https://doi.org/10.1177/014107680609900414
+</p>
+<p>
+    Spezi, V., Wakeling, S., Pinfield, S., Creaser, C., Fry, J. & Willett, P. (2017). Open-access mega-journals. Journal of Documentation, 73(2), 263–283. https://doi.org/10.1108/JD-06-2016-0082
+</p>
+<p>
+    Squazzoni, F., Bravo, G., Farjam, M., Marusic, A., Mehmani, B., Willis, M., Birukou, A., Dondio, P. & Grimaldo, F. (2021). Peer review and gender bias: A study on 145 scholarly journals. Science Advances, 7(2). https://doi.org/10.1126/sciadv.abd0299
+</p>
+<p>
+    Steinhauser, G., Adlassnig, W., Risch, J. A., Anderlini, S., Arguriou, P., Armendariz, A. Z., Bains, W., Baker, C., Barnes, M., Barnett, J., Baumgartner, M., Baumgartner, T., Bendall, C. A., Bender, Y. S., Bichler, M., Biermann, T., Bini, R., Blanco, E., Bleau, J., … Zwiren, N. (2012). Peer review versus editorial review and their role in innovative science. Theoretical Medicine and Bioethics, 33(5), 359–376. https://doi.org/10.1007/s11017-012-9233-1
+</p>
+<p>
+    Stoddart, C. (2016). Is there a reproducibility crisis in science? Nature. https://doi.org/10.1038/d41586-019-00067-3
+</p>
+<p>
+    Sukharev, O. S. (2020). Topos of Russian peer review (on peer review as creativity, subject to amateurism). Investments in Russia, 10(309), 43–48.
+</p>
+<p>
+    Taubert, N. (2017). Formale wissenschaftliche Kommunikation. In Forschungsfeld Wissenschaftskommunikation (pp. 125–139). Springer Fachmedien Wiesbaden. https://doi.org/10.1007/978-3-658-12898-2_7
+</p>
+<p>
+    Tite, L. & Schroter, S. (2007). Why do peer reviewers decline to review? A survey. Journal of Epidemiology & Community Health, 61, 9–12.
+</p>
+<p>
+    Walker, R., Barros, B., Conejo, R., Neumann, K. & Telefont, M. (2015). Bias in peer review: a case study. F1000Research, 4, 21. https://doi.org/10.12688/f1000research.6012.1
+</p>
+<p>
+    Waltman, L., Kaltenbrunner, W., Pinfield, S. & Woods, H. B. (2023). How to improve scientific peer review: Four schools of thought. Learned Publishing, 36(3), 334–347. https://doi.org/10.1002/leap.1544
+</p>
+<p>
+    Waltman, L., Mulati, B., Ni, R., Wang, J., Lai, K. H. (Adrian), Luwel, M., Noyons, E., van Leeuwen, T. & Weimer, V. (2023). Preprinting and open peer review at the STI 2023 conference: Evaluation of an open science experiment. Leiden Madtrics. https://www.leidenmadtrics.nl/articles/preprinting-and-open-peer-review-at-the-sti-2023-conference-evaluation-of-an-open-science-experiment
+</p>
+<p>
+    Watling, C., Shaw, J., Field, E. & Ginsburg, S. (2023). ‘For the most part it works’: Exploring how authors navigate peer review feedback. Medical Education, 57(2), 151–160. https://doi.org/10.1111/medu.14932
+</p>
+<p>
+    Williams, J. B. & McNeill, J. M. (2005). The Current Crisis In Neoclassical Economics and the Case for an Economic Analysis Based on Sustainable Development. SSRN Electronic Journal. https://doi.org/10.2139/ssrn.1606342
+</p>
+<p>
+    Willis, M. (2016). Why do peer reviewers decline to review manuscripts? A study of reviewer invitation responses. Learned Publishing, 29(1), 5–7. https://doi.org/10.1002/leap.1006
+</p>
+<p>
+    Wolfram, D., Wang, P., Hembree, A. & Park, H. (2020). Open peer review: promoting transparency in open science. Scientometrics, 125(2), 1033–1051. https://doi.org/10.1007/s11192-020-03488-4
+</p>
+<p>
+    Woods, H. B., Brumberg, J., Kaltenbrunner, W., Pinfield, S. & Waltman, L. (2022). Innovations
+    in peer review in scholarly publishing: A meta-summary. SocArXiv.
+    https://doi.org/10.31235/osf.io/qaksd
+</p>
+</div>
+    `,
 };
  const manuscriptData = {
         9: {
@@ -268,7 +524,7 @@ ${generateUnorderedList(['Model 1: traditional model (pre-publication peer revie
             },
             peerReview: '',
         },
-    }
+};
 
 document.addEventListener('DOMContentLoaded', ()=> {
     const $content = document.querySelector('#content');
