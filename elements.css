@@ -38,7 +38,7 @@
 .tabs {
     gap: 0;
     justify-content: flex-start;
-    padding-left: 300px;
+    /* padding-left: 300px; */
     background-color: #fff;
     border-block: 1px solid #ddd;
     position: sticky;
