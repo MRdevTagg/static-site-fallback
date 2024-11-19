@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gowun+Batang&display=swap');
+
 @font-face {
     font-family: 'awb-icons';
     src: url('./assets/icons.woff2') format('woff2'),
@@ -23,6 +24,7 @@ html {
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 
     ::-webkit-scrollbar {
         width: 5px;
@@ -44,19 +46,12 @@ html {
 }
 
 body {
-    font-family: 'DM Sans', sans-serif;
     max-width: 1200px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Gowun Batang', serif;
-}
-
 h1 {
-    font-size: 42px;
-    font-weight: 700;
-    font-family: "Gowun Batang", Arial, Helvetica, sans-serif;
-    text-rendering: optimizeLegibility;
+    font-size: 35px;
+    font-weight: 500;
 }
 
 header {
@@ -122,7 +117,7 @@ header {
     }
 }
 
-main#content {
+main {
     display: flex;
     width: 100%;
     justify-content: center;
@@ -133,10 +128,13 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px;
+    padding: 20px 40px;
     width: 100%;
-        height: calc(100dvh - 100px);
+    height: calc(100dvh - 100px);
     overflow-y: auto;
+    scroll-behavior: smooth;
+    position: relative;
+
     h2 {
         font-size: 1.5em;
         margin:0;
@@ -145,7 +143,51 @@ section {
         font-size: 1.2em;
     }
 }
+#content-section {
+    display: flex;
+    width: 100%;
+    height: calc(100dvh - 100px);
+}
+#article-nav {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    min-width: 200px;
+    height: calc(100dvh - 100px);
+    border-right: 1px solid #eee;
+    
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        margin-top: 6px;
 
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            border-left: 3px solid #ddd;
+            padding: 10px 20px;
+            transition: all 0.3s;
+            cursor: pointer;
+
+            a {
+                color: black;
+                text-decoration: none;
+                font-weight: 400;
+                font-size: 14px;
+            }
+            &.active, &:hover {
+                border-color: var(--primary-color);
+
+                a {
+                    color: var(--primary-color);
+                }
+            }
+        }
+    }
+}
 aside {
     display: flex;
     flex-direction: column;
@@ -161,7 +203,6 @@ aside {
         border-bottom: 1px solid #ddd;
         p {
             font-size: 16px;
-            font-family: 'DM Sans', sans-serif;
             margin-bottom: 20px;
         }
         a {
@@ -181,7 +222,6 @@ aside {
                 align-items: center;
                 gap: 10px;
                 font-size: 16px;
-                font-family: 'DM Sans', sans-serif;
                 margin-bottom: 10px;
             }
         }

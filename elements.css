@@ -17,7 +17,7 @@
     }
 }
 
-.author-links {
+#author-links {
     justify-content: flex-start;
     gap: 10px;
     margin-bottom: 20px;
@@ -36,23 +36,27 @@
 
 .tabs {
     gap: 0;
+    justify-content: flex-start;
+    padding-left: 200px;
+    background-color: #fff;
+    border-block: 1px solid #ddd;
+    position: sticky;
+    top: -20px;
+    z-index: 3;
 
     .tab {
         border: none;
-        border-top: 3px solid #fff0;
-        background-color: #f0f5fb;
+        border-bottom: 3px solid #fff0;
+        background-color: #fff;
         display: flex;
-        font-weight: 700;
         align-items: center;
         justify-content: center;
-        padding: 11px 40px;
+        padding: 20px 40px;
         cursor: pointer;
         transition: all 0.3s;
-        font-family: "Gowun Batang", Arial, Helvetica, sans-serif;
-        font-size: 22px;
+        font-size: 18px;
 
         &.active {
-           background-color: #fff;
            border-color: var(--primary-color);
         }
 
@@ -63,7 +67,7 @@
 }
 
 .content-container {
-    .content {
+    #content {
         padding: 30px 30px;
 
         h2, h3 {
@@ -92,4 +96,15 @@
 
 .first-block{
     margin-bottom: 20px;
+}
+
+#doi {
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+#title {
+
 }
