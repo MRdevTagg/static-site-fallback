@@ -149,3 +149,21 @@
 #title {
     max-width: 90%;
 }
+
+#reviews-section {
+    flex-direction: column;
+    padding: 20px;
+    div {
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+        padding: 40px;
+        p {
+            font-size: 16px;
+            margin: 0;
+        }
+    }
+}

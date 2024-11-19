@@ -1,36 +1,44 @@
 const getArticleNumberFromURL = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get('manuscript');
+  const urlParams = new URLSearchParams(window.location.search)
+  return urlParams.get('manuscript')
+}
+
+function splitTextIntoParagraphs(text) {
+  const lines = text.split('\n').filter(Boolean)
+  const paragraphs = lines.map(line => `<p>${line.trim()}</p>`)
+  return paragraphs.join('\n')
 }
 
 const renderImage = (num, fig, alt = '') => {
-    return `<img src="./assets/article-${num}/fig${fig}.png" alt="${alt}" /><figcaption>${alt}</figcaption>`;
+  return `<img src="./assets/article-${num}/fig${fig}.png" alt="${alt}" /><figcaption>${alt}</figcaption>`
 }
-const generateOrderedList=(items) => {
-    let ol = '<ol>';
-    items.forEach(item => {
-        ol += `<li>${item}</li>`;
-    });
-    ol += '</ol>';
-    return ol;
+
+const generateOrderedList = items => {
+  let ol = '<ol>'
+  items.forEach(item => {
+    ol += `<li>${item}</li>`
+  })
+  ol += '</ol>'
+  return ol
 }
-const generateUnorderedList=(items) => {
-    let ul = '<ul>';
-    items.forEach(item => {
-        ul += `<li>${item}</li>`;
-    });
-    ul += '</ul>';
-    return ul;
+
+const generateUnorderedList = items => {
+  let ul = '<ul>'
+  items.forEach(item => {
+    ul += `<li>${item}</li>`
+  })
+  ul += '</ul>'
+  return ul
 }
 
 const article9Sections = {
-    Abstract: /* html */ `
+  Abstract: /* html */ `
     <p>It is traditionally believed that peer review is the backbone of anacademicjournal and scientific communication, ensuringhigh quality and trust in the published materials. However, peer review only became an institutionalized practice in the second half of the 20th century, although the first scientific journals appeared three centuries earlier. By the beginning of the 21st century, there emerged an opinion that the traditional model of peer review is in deep crisis. This study aims to synthesize thekeycharacteristics, practices, and outcomes of traditional and innovative peer review models in scholarly publishing.The article discusses the evolution of the institution of scientific peer review and the formation of the current crisis. Weanalyzethe modern landscape of innovations in peer review and scientific communication. Based on this analysis, three main peer review models in relation to editorial workfloware identified: pre-publication peer review (traditional model), registered reports,and post-publication (peer)review (including preprints(peer) review). Wearguethatthe third model offers the best way to implementthe main functions of scientific communication.Keywords:scientific communication, academicjournal, peer review, pre-publication peer review, prereview, post-publication review, preprints, registered reports</p>
     `,
-    Introduction: /* html */ `
+  Introduction: /* html */ `
     <p>International journals often require additional assessment of the level of English. However, this is not a comprehensive list, and the list of criteria to be evaluated may vary from journal to journal. Nevertheless, as early as the beginning of the 21st century, it was argued that the system of peer review is "broken" (McCook, 2006). The main problem noted by McCook is the increasing number of manuscripts and the burden on reviewers. However, this is just the tip of the iceberg. Allen et al. (2022) highlighted the issue of the "black box": the anonymity of traditional peer review should maintain honesty and ethical norms, but it also can stifle discussion, generate biases, and reduce the overall effectiveness of peer review. In fact, the function of being the "supreme judge" in deciding what is "good" and "bad" science is taken on by peer review, defending the dominant scientific paradigm and stifling the emergence of new ideas that always arise on the periphery. However, as academician L.I. Abalkin once remarked, "no one has the right to usurp the truth" (Sukharev, 2020, p. 44). If we do not change our approach, science will either stagnate or transition into other forms of communication. Moreover, the current system has become an "exploitation machine": publishers benefit in most cases, while reviewers work voluntarily. There is a point of view that peer review is included in the implicit contract of the researcher. Nevertheless, given that most of the research and, accordingly, research positions are funded from public funds, we nonetheless observe a tendency to "reap where they did not sow." R. Smith (2006) strongly criticized the review while at the same time comparing it to democracy: "a system full of problems but the least worst we have" (p. 178). Is this really the case? And can we talk about peer review as a uniform concept, given the variety of existing models? This study aims to synthesize the key characteristics, practices, and outcomes of traditional and innovative peer review models in scholarly publishing. In the following section, we will attempt to demonstrate how the traditional peer review model has developed and how it has come to the current crisis. Furthermore, we will discuss possible ways to overcome the crisis and how the institution of peer review is evolving in the context of global changes in scientific publishing. A separate section discusses modular publishing, which incorporates various innovations in the publishing process, and in particular, the review process. The scope of this piece is limited to peer review in the context of the publication of scientific articles, but its findings are quite applicable to the publication of books or conference proceedings. At the same time, review for other purposes, e.g., evaluation of grant applications, is a topic for a separate discussion</p>
     `,
-    'Evolution and crisis of peer review': /*html*/ `
+  'Evolution and crisis of peer review': /* html */ `
     <p>The practice of prepublication peer review as we understand it today emerged much later than the founding of first academic journals. E.g., Journal des Sçavans, which was published from 1665 and is considered the first academic journal, printed a warning on the first page “We aim to report the ideas of others without guaranteeing them” (Rennie, 1999, p. 2).</p>
 
 <p>However, Kronick (1990) argued that peer review as feedback from peers, in the broad sense of the word, existed as soon as scientists began to exchange research results. Peer review emerged in the form of letters, reviews, and comments that appeared after publication (usually in the case of books).</p>
@@ -50,7 +58,11 @@ peer review in 1976. The rapidly increasing flow of manuscripts played a key rol
 institutionalization of peer review, prompting journals to conduct an "entry filtration" of content.
 Thus, by the second half of the 20th century, the traditional model of pre-publication peer review
 had been definitively established (Fig. 1).</p>
-${renderImage(9, 1, 'Figure 1: Evolution of peer review models in scientific communication')}
+${renderImage(
+  9,
+  1,
+  'Figure 1: Evolution of peer review models in scientific communication',
+)}
 <p>The institutionalization of peer review is manifested in the development of ethical principles
 which have been adopted by the majority of the academic community. One of the most wellknown documents, Ethical Guidelines for Peer Reviewers (2013), was developed by the
 Committee on Publication Ethics (COPE). This document contains basic principles for
@@ -65,14 +77,14 @@ some of the existing issues, and now we will consider them in more detail. In pa
 following issues can be highlighted:
 </p>
 ${generateOrderedList([
-    "The rapidly growing volume of manuscripts, coupled with an increasing workload for researchers and faculty, leads to a shortage of reviewers. The primary reason for declining to review is the simple lack of time (Tite & Schroter, 2007; Willis, 2016). This issue causes extension of review periods and frustration of authors.",
-    "The shortage of reviewers forces journals to expand their search. Sometimes, this results in manuscripts being reviewed by researchers who do not possess sufficient expertise in the subject. Several studies have noted a low level of consensus among reviewers (Bornmann, 2011), leading some research to refer to peer review as a “game of chance” (Neff & Olden, 2006). The low level of peer review also contributes to the crisis of reproducibility in scientific research (Stoddart, 2016). Although this crisis is due to a multitude of factors, the peer review system bears a significant responsibility for it.",
-    "The current peer review system exacerbates inequality in science. Bias often hides behind anonymity, creating a 'black box' problem. Despite constant calls for equality and inclusivity in science (COPE, 2021), a few groups still dominate scientific periodicals, such as male authors from the United States and the United Kingdom. O. M. Smith et al. (2023) analyzed 300,000 manuscripts in biological sciences and concluded that authors from historically excluded communities face worse outcomes in peer review, and journal efforts to eliminate reviewer bias have not yet been successful. Nevertheless, we must recognize the debatable nature of this issue. For instance, Squazzoni et al. (2021) found no systematic bias against manuscripts submitted by women in the peer review process, with some evidence of favorable treatment for women in certain fields. Walker et al. (2015) found that the gender of the author and the characteristics of the author's institution had a significant impact on the review outcomes. However, it is impossible to determine whether this was due to objective differences in scientific merit or to biases.",
-    "Continuing from point 3, peer review is also often seen to protect widely accepted approaches and concepts to the detriment of novelty. Peer review can inadvertently stifle innovation and radical new ideas (Steinhauser et al., 2012). The process tends to favor established concepts and discourage the publication of unusual or disparate discoveries (Hess, 1975). As a result, it may limit opportunities for game-changing scientific discoveries (Braben & Dowler, 2017). The neoclassical school in economics may be seen as an example of this phenomenon. The crisis of the neoclassical school began in the early 21st century (Williams & McNeill, 2005), partly due to the inability to explain the global financial crisis of 2008 (Keen, 2015). However, a paradigm shift has still not occurred - the neoclassical school still occupies a central position in the economic science (and the policies of many countries).",
-    "Finally, the current form of peer review is simply inefficient. On the one hand, long peer review slows down the process of disseminating new knowledge (see point 1), and on the other hand, often a large number of reviews are required for a single article. The reason for this is that when authors receive a rejection from one journal, they often submit the same article to another journal, starting the entire process anew. Aczel et al. (2021) found that in 2021, reviewers worldwide spent over 100 million hours, equivalent to more than 15,000 years. If we evaluate this time in terms of money, the cost for reviewers in the USA amounted to over $1.5 billion, in China over $600 million, and in the UK around $400 million. Therefore, peer review is a quite costly activity, and currently, doubts arise regarding the efficiency of its utilization."
+  'The rapidly growing volume of manuscripts, coupled with an increasing workload for researchers and faculty, leads to a shortage of reviewers. The primary reason for declining to review is the simple lack of time (Tite & Schroter, 2007; Willis, 2016). This issue causes extension of review periods and frustration of authors.',
+  'The shortage of reviewers forces journals to expand their search. Sometimes, this results in manuscripts being reviewed by researchers who do not possess sufficient expertise in the subject. Several studies have noted a low level of consensus among reviewers (Bornmann, 2011), leading some research to refer to peer review as a “game of chance” (Neff & Olden, 2006). The low level of peer review also contributes to the crisis of reproducibility in scientific research (Stoddart, 2016). Although this crisis is due to a multitude of factors, the peer review system bears a significant responsibility for it.',
+  "The current peer review system exacerbates inequality in science. Bias often hides behind anonymity, creating a 'black box' problem. Despite constant calls for equality and inclusivity in science (COPE, 2021), a few groups still dominate scientific periodicals, such as male authors from the United States and the United Kingdom. O. M. Smith et al. (2023) analyzed 300,000 manuscripts in biological sciences and concluded that authors from historically excluded communities face worse outcomes in peer review, and journal efforts to eliminate reviewer bias have not yet been successful. Nevertheless, we must recognize the debatable nature of this issue. For instance, Squazzoni et al. (2021) found no systematic bias against manuscripts submitted by women in the peer review process, with some evidence of favorable treatment for women in certain fields. Walker et al. (2015) found that the gender of the author and the characteristics of the author's institution had a significant impact on the review outcomes. However, it is impossible to determine whether this was due to objective differences in scientific merit or to biases.",
+  'Continuing from point 3, peer review is also often seen to protect widely accepted approaches and concepts to the detriment of novelty. Peer review can inadvertently stifle innovation and radical new ideas (Steinhauser et al., 2012). The process tends to favor established concepts and discourage the publication of unusual or disparate discoveries (Hess, 1975). As a result, it may limit opportunities for game-changing scientific discoveries (Braben & Dowler, 2017). The neoclassical school in economics may be seen as an example of this phenomenon. The crisis of the neoclassical school began in the early 21st century (Williams & McNeill, 2005), partly due to the inability to explain the global financial crisis of 2008 (Keen, 2015). However, a paradigm shift has still not occurred - the neoclassical school still occupies a central position in the economic science (and the policies of many countries).',
+  'Finally, the current form of peer review is simply inefficient. On the one hand, long peer review slows down the process of disseminating new knowledge (see point 1), and on the other hand, often a large number of reviews are required for a single article. The reason for this is that when authors receive a rejection from one journal, they often submit the same article to another journal, starting the entire process anew. Aczel et al. (2021) found that in 2021, reviewers worldwide spent over 100 million hours, equivalent to more than 15,000 years. If we evaluate this time in terms of money, the cost for reviewers in the USA amounted to over $1.5 billion, in China over $600 million, and in the UK around $400 million. Therefore, peer review is a quite costly activity, and currently, doubts arise regarding the efficiency of its utilization.',
 ])}
     `,
-    'Innovations in peer review': /*html*/ `
+  'Innovations in peer review': /* html */ `
     <p>We have demonstrated the current crisis of the traditional peer review model. In this regard, the
 question arises about the possible ways to overcome the crisis. Recently, a lot of literature has
 been published on innovations in the field of peer review (see reviews by Kaltenbrunner et al.,
@@ -80,7 +92,11 @@ been published on innovations in the field of peer review (see reviews by Kalten
 "schools of thought." We propose adding a parameter to this typology that will characterize
 innovations relative to the currently dominant publication workflow (incremental / radical). It
 enables creation of a two-factor matrix (Table 1).</p>
-${renderImage(9, 2, 'Source: compiled by the author based on Waltman et al. (2023).')}
+${renderImage(
+  9,
+  2,
+  'Source: compiled by the author based on Waltman et al. (2023).',
+)}
 <p>We should acknowledge that the above-mentioned innovations can simultaneously be placed in different groups. For example, registered reports not only aim to improve the quality of peer review, but also aim to contribute to its efficiency. Now, let's consider each of the directions in detail.</p>
 <h4>3.1. Quality and reproducibility</h4>
 <p>Training of reviewers through seminars and online courses is part of the strategies of many
@@ -109,7 +125,11 @@ directly. If the peer review results are positive, the study is provisionally ac
 publication, after which data collection, analysis, and interpretation are carried out. These steps
 are followed by the second stage of peer review, during which the conducted study is compared
 to the previously registered methodological approach (study protocol).</p>
-${renderImage(9, 3, 'Figure 2: Registered reports - publication workflow (Model 2).')}
+${renderImage(
+  9,
+  3,
+  'Figure 2: Registered reports - publication workflow (Model 2).',
+)}
 <p>It should be noted that most initiatives aimed at improving the quality of peer review
 simultaneously increase the costs.</p>
 
@@ -138,7 +158,11 @@ important to note that for each specific case it will be slightly different. E.g
 MetaROR, the publication is initially hosted on preprint servers such as arXiv, MetaArXiv,
 SocArXiv, bioRxiv, or OSF Preprints.</p>
 ${renderImage(9, 4)}
-${renderImage(9, 5, 'Figure 3: “Publish-Review-Curate” model (Model 3). Model 3a involves uploading the manuscript directly to a platform (e.g., F1000Research). Model 3b, on the other hand, involves initially posting a preprint on a preprint server followed by peer review on a peer review platform (e.g., eLife and Peer Community in).')}
+${renderImage(
+  9,
+  5,
+  'Figure 3: “Publish-Review-Curate” model (Model 3). Model 3a involves uploading the manuscript directly to a platform (e.g., F1000Research). Model 3b, on the other hand, involves initially posting a preprint on a preprint server followed by peer review on a peer review platform (e.g., eLife and Peer Community in).',
+)}
 <p>In addition to the projects mentioned, there are other platforms, for example, PREreview12
 ,
 which departs even more radically from the traditional review format due to the decentralized
@@ -155,7 +179,7 @@ structure of work.</p>
 rather than the question whether it fits a particular journal. However, we believe that journalindependent peer review is a special case of Model 3 (“Publish-Review-Curate”).
 </p>
     `,
-    'Modular Publishing': /*html*/ `
+  'Modular Publishing': /* html */ `
     <p>Strictly speaking, modular publishing is primarily an innovative approach for the publishing
 workflow in general rather than specifically for peer review. This approach allows for a more
 detailed and in-depth exploration of the research process. Besides, modular publishing, which is
@@ -183,13 +207,17 @@ Journals, n.d.). These journals will combine the idea of modular publishing with
 post-publication peer review and registered reports. Although the initiative is currently in the
 planning stage, it seems promising.</p>
     `,
-    'Discussion and Conclusion': /*html*/ `
+  'Discussion and Conclusion': /* html */ `
     <p>In the previous sections, we briefly examined the evolution of the peer review and its current
 crisis in relation to scientific communication. Next, we explored the main innovations in peer
 review, which can be classified according to the course of proposed changes and the degree of
 influence on the editorial workflow, incremental and radical. As a result, we can conclude that, at
 present, there are three major models of peer review and related editorial workflow:</p>
-${generateUnorderedList(['Model 1: traditional model (pre-publication peer review),', 'Model 2: registered reports,', 'Model 3: “Publish-Review-Curate” (post-publication review).'])}
+${generateUnorderedList([
+  'Model 1: traditional model (pre-publication peer review),',
+  'Model 2: registered reports,',
+  'Model 3: “Publish-Review-Curate” (post-publication review).',
+])}
 <p>Table 2 presents comparative characteristics of these models.</p>
 <p>Table 2 – Comparative analysis of the three review models in terms of editorial workflow</p>
 ${renderImage(9, 6)}
@@ -217,7 +245,11 @@ stage).</p>
 normative regulation here are quite limited - much depends on the traditions embedded in the
 academic community, and it will take a lot of time to change them. Openness is a complex
 process that requires three conditions:</p>
-${generateOrderedList(['Group of people willing to take responsibility for the quality of scientific communication in this academic community,', 'Authors and reviewers willing to accept this practice,', 'Appropriate infrastructure.' ])}
+${generateOrderedList([
+  'Group of people willing to take responsibility for the quality of scientific communication in this academic community,',
+  'Authors and reviewers willing to accept this practice,',
+  'Appropriate infrastructure.',
+])}
 <p>Avissar-Whiting et al. (2024) provided a useful toolbox of recommendations for all parties
 potentially involved in the preprint review process.
 A significant development was the announcement by the Bill & Melinda Gates Foundation of its
@@ -267,7 +299,7 @@ so they do not significantly affect the publishing landscape</p>
     Data sharing is not applicable to this article as no new data were created in this study.
 </p>
     `,
-    References: /*html*/ `
+  References: /* html */ `
 <div class="references">
 <p>
     A Reviewer’s Quick Guide to Assessing Open Datasets. (n.d.). PLOS. Retrieved January 23, 2024, from https://plos.org/resource/peer-reviewing-data/
@@ -447,121 +479,265 @@ so they do not significantly affect the publishing landscape</p>
 </p>
 </div>
     `,
-};
- const manuscriptData = {
-        9: {
-            title: 'Evolution of Peer Review in Scientific Communication',
-            doi: '10.31235/osf.io/b2ra3',
-            published: 'Published on Nov 19, 2024',
-            reviews: [],
-            authors: [{
-                name: 'Dmitry Kochetkov',
-                affiliations: [],
-            }],
-            sections: article9Sections,
-        },
-        12: {
-            meta: {
-                doi: '',
-                reviews: [],
-                authors: [{
-                    name: '',
-                    reviewNumber: 1,
-                }]
-            },
-            fullText: {
-                sections: {
-                    abstract: '',
-                }
-            },
-            peerReview: '',
-        },
-        13: {
-            meta: {
-                doi: '',
-                reviews: [],
-                authors: [{
-                    name: '',
-                    reviewNumber: 1,
-                }]
-            },
-            fullText: {
-                sections: {
-                    abstract: '',
-                }
-            },
-            peerReview: '',
-        },
-        14: {
-            meta: {
-                doi: '',
-                reviews: [],
-                authors: [{
-                    name: '',
-                    reviewNumber: 1,
-                }]
-            },
-            fullText: {
-                sections: {
-                    abstract: '',
-                }
-            },
-            peerReview: '',
-        },
-        15: {
-            meta: {
-                doi: '',
-                reviews: [],
-                authors: [{
-                    name: '',
-                    reviewNumber: 1,
-                }]
-            },
-            fullText: {
-                sections: {
-                    abstract: '',
-                }
-            },
-            peerReview: '',
-        },
-};
+}
 
-document.addEventListener('DOMContentLoaded', ()=> {
-    const $content = document.querySelector('#content');
-    const $authorsList = document.querySelector('#author-links');
-    const tabs = document.querySelectorAll('.tab');
-    const $doi = document.querySelector('#doi');
-    const $title = document.querySelector('#title');
-    const $articleNav = document.querySelector('#article-nav > ul');
-    const $publishedOn = document.querySelector('.published-on');
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            tabs.forEach(tab => tab.classList.remove('active'));
-            tab.classList.add('active');
-        });
-    });
+const manuscriptData = {
+  9: {
+    title: 'Evolution of Peer Review in Scientific Communication',
+    doi: '10.31235/osf.io/b2ra3',
+    published: 'Published on Nov 19, 2024',
+    reviews: [
+      {
+        reviewer: {
+          name: 'Balazs Aczel',
+          orcid: '0000-0001-9364-4988',
+          review: splitTextIntoParagraphs(`
+                    The work ‘Evolution of Peer Review in Scientific Communication’ provides a consise and radable summary of the historical role of peer review in modern science. The paper categorises the peer review practices into three models: (1) traditional pre-publication peer review; (2) registered reports; (3) post-publication peer review. The author compares the three models and draws the conclusion that the “third model offers the best way to implement the main funtion of scientific communication”. 
 
-    const articleNumber = getArticleNumberFromURL();
-    const manuscript = manuscriptData[articleNumber];
-    const { doi, sections, title, authors, published } = manuscript;
+I would contest this conclusion. In my eyes the three models serve different aims - with more or less drawbacks. For example, although Model 3 is less chance to insert bias to the readers, it also weakens the filtering function of the review system. Let’s just think about the dangers of machine-generated articles, paper-mills, p-hacked research reports and so on. Although the editors does some pre-screening for the submissions, in a world with only Model 3 peer review the literature could easily get loaded with even more ‘garbage’ than in a model where additional peers help the screening. 
 
+Compared to registered reports other aspects can come to focus that Model 3 cannot cover. It’s the efficiency of researchers’ work. In the care of registered reports, Stage 1 review can still help researchers to modify or improve their research design or data collection method. Empirical work can be costly and time-consuming and post-publication review can only say that “you should have done it differently then it would make sense” . 
 
-    $authorsList.innerHTML = authors.map((author) => `<a href="#">${author.name}</a>`).join(', ');
+Finally, the author puts openness as a strength of Model 3. In my eyes, openness is a separate question. All models can work very openly and transparently in the right circumstances. This dimension is not an inherent part of the models. 
 
-    published && ($publishedOn.textContent = published);
-    title && ($title.textContent = title);
-    doi && ($doi.textContent = `https://doi.org/${doi}`);
-    doi && ($doi.href = `https://doi.org/${doi}`);
-    articleNumber && ($content.innerHTML = '');
-    Object.entries(sections).forEach(([k, v]) => {
-        const title = document.createElement('h3')
-        const sectionContent = document.createElement('p');
-        title.id = k;
-        title.textContent = k;
-        sectionContent.innerHTML = v;
-        $content.appendChild(title);
-        $content.appendChild(sectionContent);
-        $articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`;
-    });
+In conclusion, I would not make verdict over the models, instead emphasise the different functions they can play in scientific communication.
+
+A minor comment: I found that a number of statements lack references in the Introduction. I would have found them useful for statements such as “There is a point of view that peer review is included in the implicit contract of the researcher.”
+`),
+        },
+      },
+      {
+        reviewer: {
+          name: 'Martin Bush',
+          orcid: '0000-0001-9018-4373',
+          review: splitTextIntoParagraphs(`
+In "Evolution of Peer Review in Scientific Communication", Kochetkov provides a point-of-view discussion of the current state of play of peer review for scientific literature, focussing on the major models in contemporary use and recent innovations in reform. In particular, they present a typology of three main forms of peer review: traditional pre-
+
+publication review; registered reports; and post-publication review, their preferred model. The main contribution it could make would be to help consolidate typologies and terminologies, to consolidate major lines of argument and to present some useful visualisations of these. On the other hand, the overall discussion is not strongly original in character.
+
+The major strength of this article is that the discussion is well-informed by contemporary developments in peer-review reform. The typology presented is modest and, for that, readily comprehensible and intuitive. This is to some extent a weakness as well as a strength; a typology that is too straightforward may not be useful enough. As suggested at the end it might be worth considering how to complexify the typology at least at subordinate levels without sacrificing this strength. The diagrams of workflows are particularly clear.
+
+The primary weakness of this article is that it presents itself as an 'analysis' from which they 'conclude' certain results such as their typology, when this appears clearly to be an opinion piece. In my view, this results in a false claim of objectivity which detracts from what would otherwise be an interesting and informative, albeit subjective, discussion, and thus fails to discuss the limitations of this approach. A secondary weakness is that the discussion is not well structured and there are some imprecisions of expression that have the potential to confuse, at least at first.
+
+This primary weakness is manifested in several ways. The evidence and reasoning for claims made is patchy or absent. One instance of the former is the discussion of bias in peer review. There are a multitude of studies of such bias and indeed quite a few meta-analyses of these studies. A systematic search could have been done here but there is no attempt to discuss the totality of this literature. Instead, only a few specific studies are cited. Why are these ones chosen? We have no idea. To this extent I am not convinced that the references used here are the most appropriate. Instances of the latter are the claim that "The most well-known initiatives at the moment are ResearchEquals and Octopus" for which no evidence is provided, the claim that " we believe that journal-independent peer review is a special case of Model 3" for which no further argument is provided, and the claim that "the function of being the "supreme judge" in deciding what is "good" and "bad" science is taken on by peer review" for which neither is provided.
+
+A particular example of this weakness, which is perhaps of marginal importance to the overall paper but of strong interest to this reviewer is the rather odd engagement with history within the paper. It is titled "Evolution of Peer Review" but is really focussed on the contemporary state-of-play. Section 2 starts with a short history of peer review in scientific publishing, but that seems intended only to establish what is described as the 'traditional' model of peer review. Given that that short history had just shown how peer review had been continually changing in character over centuries - and indeed Kochetkov goes on to describe further changes - it is a little difficult to work out what 'traditional' might mean here; what was 'traditional' in 2010 was not the same as what was 'traditional' in 1970. It is not clear how seriously this history is being taken. Kochetkov has earlier written that "as early as the beginning of the 21st century, it was argued that the system of peer review is 'broken'" but of course criticisms - including fundamental criticisms - of peer review are much older than this. Overall, this use of history seems designed to privilege the experience of a particular moment in time, that coincides with the start of the metascience reform movement.
+
+Section 2 also demonstrates some of the second weakness described, a rather loose structure. Having moved from a discussion of the history of peer review to detail the first model, 'traditional' peer review, it then also goes on to describe the problems of this model. This part of the paper is one of the best - and best -evidenced. Given the importance of it to the main thrust of the discussion it should probably have been given more space as a Section all on its own.
+
+Another example is Section 4 on Modular Publishing, in which Kochetkov notes "Strictly speaking, modular publishing is primarily an innovative approach for the publishing workflow in general rather than specifically for peer review." Kochetkov says "This is why we have placed this innovation in a separate category" but if it is not an innovation in peer review, the bigger question is 'Why was it included in this article at all?'.
+
+One example of the imprecisions of language is as follows. The author also shifts between the terms 'scientific communication' and 'science communication' but, at least in many contexts familiar to this reviewer, these are not the same things, the former denoting science-internal dissemination of results through publication (which the author considers), conferences and the like (which the author specifically excludes) while the latter denotes the science-external public dissemination of scientific findings to non-technical audiences, which is entirely out of scope for this article.
+
+A final note is that Section 3, while an interesting discussion, seems largely derivative from a typology of Waltman, with the addition of a consideration of whether a reform is 'radical' or 'incremental', based on how 'disruptive' the reform is. Given that this is inherently a subjective decision, I wonder if it might not have been more informative to consider 'disruptiveness' on a scale and plot it accordingly. This would allow for some range to be imagined for each reform as well; surely reforms might be more or less disruptive depending on how they are implemented. Given that each reform is considered against each model, it is somewhat surprising that this is not presented in a tabular or graphical form.
+
+Beyond the specific suggestions in the preceding paragraphs, my suggestions to improve this article are as follows:
+
+1. Reconceptualize this as an opinion piece. Where systematic evidence can be drawn upon to make points, use that, but don't be afraid to just present a discussion from what is clearly a well-informed author.
+
+2. Reconsider the focus on history and 'evolution' if the point is about the current state of play and evaluation of reforms (much as I would always want to see more studies on the history and evolution of peer review).
+
+3. Consider ways in which the typology might be expanded, even if at subordinate level.
+
+I have no competing interests in the compilation of this review, although I do have specific interests as noted above.
+          `)
+        }
+      },
+      {
+        reviewer: {
+          name: 'Olmo R. van den Akker',
+          orcid: '0000-0002-0712-3746',
+          review: splitTextIntoParagraphs(`
+          missing!!
+          `)
+        }
+      },
+      {
+        reviewer: {
+          name: 'Wendy Leuenberger',
+          orcid: '0000-0001-6567-9913',
+          review: splitTextIntoParagraphs(`
+          Overall thoughts: This is an interesting history piece regarding peer review and the development of review over time. Given the author’s conflict of interest and association with the Centre developing MetaROR, I think that this paper might be a better fit for an information page or introduction to the journal and rationale for the creation of MetaROR, rather than being billed as an independent article. Alternatively, more thorough information about advantages to pre-publication review or more downsides/challenges to post-publication review might make the article seem less affiliated. I appreciate seeing the history and current efforts to change peer review, though I am not comfortable broadly encouraging use of these new approaches based on this article alone.
+
+ 
+
+Page 3: It’s hard to get a feel for the timeline given the dates that are described. We have peer review becoming standard after WWII (after 1945), definitively established by the second half of the century, an example of obligatory peer review starting in 1976, and in crisis by the end of the 20th century. I would consider adding examples that better support this timeline – did it become more common in specific journals before 1976? Was the crisis by the end of the 20th century something that happened over time or something that was already intrinsic to the institution? It doesn’t seem like enough time to get established and then enter crisis, but more details/examples could help make the timeline clear. 
+
+Consider discussing the benefits of the traditional model of peer review.
+
+Table 1 – Most of these are self-explanatory to me as a reader, but not all. I don’t know what a registered report refers to, and it stands to reason that not all of these innovations are familiar to all readers. You do go through each of these sections, but that’s not clear when I initially look at the table. Consider having a more informative caption. Additionally, the left column is “Course of changes” here but “Directions” in text. I’d pick one and go with it for consistency.
+
+3.2: Considering mentioning your conflict of interest here where MetaROR is mentioned.
+
+With some of these methods, there’s the ability to also submit to a regular journal. Going to a regular journal presumably would instigate a whole new round of review, which may or may not contradict the previous round of post-publication review and would increase the length of time to publication by going through both types. If someone has a goal to publish in a journal, what benefit would they get by going through the post-publication review first, given this extra time?
+
+There’s a section talking about institutional change (page 14). It mentions that openness requires three conditions – people taking responsibility for scientific communication, authors and reviewers, and infrastructure. I would consider adding some discussion of readers and evaluators. Readers have to be willing to accept these papers as reliable, trustworthy, and respectable to read and use the information in them. Evaluators such as tenure committees and potential employers would need to consider papers submitted through these approaches as evidence of scientific scholarship for the effort to be worthwhile for scientists.
+
+Based on this overview, which seems somewhat skewed towards the merits of these methods (conflict of interest, limited perspective on downsides to new methods/upsides to old methods), I am not quite ready to accept this effort as equivalent of a regular journal and pre-publication peer review process. I look forward to learning more about the approach and seeing this review method in action and as it develops.  
+          `)
+        }
+      },
+    ],
+    authors: [
+      {
+        name: 'Dmitry Kochetkov',
+        affiliations: [],
+      },
+    ],
+    sections: article9Sections,
+  },
+  12: {
+    meta: {
+      doi: '',
+      reviews: [],
+      authors: [
+        {
+          name: '',
+          reviewNumber: 1,
+        },
+      ],
+    },
+    fullText: {
+      sections: {
+        abstract: '',
+      },
+    },
+    peerReview: '',
+  },
+  13: {
+    meta: {
+      doi: '',
+      reviews: [],
+      authors: [
+        {
+          name: '',
+          reviewNumber: 1,
+        },
+      ],
+    },
+    fullText: {
+      sections: {
+        abstract: '',
+      },
+    },
+    peerReview: '',
+  },
+  14: {
+    meta: {
+      doi: '',
+      reviews: [],
+      authors: [
+        {
+          name: '',
+          reviewNumber: 1,
+        },
+      ],
+    },
+    fullText: {
+      sections: {
+        abstract: '',
+      },
+    },
+    peerReview: '',
+  },
+  15: {
+    meta: {
+      doi: '',
+      reviews: [],
+      authors: [
+        {
+          name: '',
+          reviewNumber: 1,
+        },
+      ],
+    },
+    fullText: {
+      sections: {
+        abstract: '',
+      },
+    },
+    peerReview: '',
+  },
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const $contentSection = document.querySelector('#content-section')
+  const $content = document.querySelector('#content')
+  const $authorsList = document.querySelector('#author-links')
+  const tabs = document.querySelectorAll('.tab')
+  const $doi = document.querySelector('#doi')
+  const $title = document.querySelector('#title')
+  const $articleNav = document.querySelector('#article-nav > ul')
+  const $publishedOn = document.querySelector('.published-on')
+  const $reviewSection = document.querySelector('#reviews-section')
+
+  const handleTabChange = e => {
+    const tab = e.target
+    tabs.forEach(tab => tab.classList.remove('active'))
+    tab.classList.add('active')
+    tab.textContent !== 'Article' && ($contentSection.style.display = 'none')
+    tab.textContent !== 'Review' && ($reviewSection.style.display = 'none')
+    tab.textContent === 'Article' && ($contentSection.style.display = 'flex')
+    tab.textContent === 'Review' && ($reviewSection.style.display = 'flex')
+    const url = new URL(window.location)
+    url.searchParams.set('tab', tab.textContent.toLowerCase())
+    window.history.pushState({}, '', url)
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', handleTabChange)
+  })
+
+  // Check for the presence of the 'tab' parameter in the URL
+  const urlParams = new URLSearchParams(window.location.search)
+  const tabParam = urlParams.get('tab')
+
+  // If there is no 'tab' parameter, call handleTabChange for the first tab
+  if (!tabParam) {
+    handleTabChange({ target: tabs[0] })
+  } else {
+    // If there is a 'tab' parameter, set the corresponding tab as active
+    const activeTab = Array.from(tabs).find(
+      tab => tab.textContent.toLowerCase() === tabParam,
+    )
+
+    if (activeTab) {
+      handleTabChange({ target: activeTab })
+    }
+  }
+
+  const articleNumber = getArticleNumberFromURL()
+  const manuscript = manuscriptData[articleNumber]
+  const { doi, sections, title, authors, published, reviews } = manuscript
+
+  $authorsList.innerHTML = authors
+    .map(author => `<a href="#">${author.name}</a>`)
+    .join(', ')
+
+  published && ($publishedOn.textContent = published)
+  title && ($title.textContent = title)
+  doi && ($doi.textContent = `https://doi.org/${doi}`)
+  doi && ($doi.href = `https://doi.org/${doi}`)
+  articleNumber && ($content.innerHTML = '')
+
+  reviews.forEach(review => {
+    const reviewEl = document.createElement('div')
+    reviewEl.innerHTML = `
+            <h4>${review.reviewer.name}</h4>
+            <p>${review.reviewer.orcid}</p>
+            ${review.reviewer.review}
+        `
+    $reviewSection.appendChild(reviewEl)
+  })
+
+  Object.entries(sections).forEach(([k, v]) => {
+    const title = document.createElement('h3')
+    const sectionContent = document.createElement('p')
+    title.id = k
+    title.textContent = k
+    sectionContent.innerHTML = v
+    $content.appendChild(title)
+    $content.appendChild(sectionContent)
+    $articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`
+  })
 })
