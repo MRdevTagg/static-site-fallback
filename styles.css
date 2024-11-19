@@ -25,6 +25,7 @@ html {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
+    -webkit-tap-highlight-color: #0000;
 
     ::-webkit-scrollbar {
         width: 5px;
@@ -48,6 +49,11 @@ html {
 body {
     max-width: 80%;
     background-color: #fff;
+    overflow: hidden;
+
+    @media screen and (max-width: 768px) {
+        max-width: 100%;
+    }
 }
 
 h1 {
@@ -61,6 +67,8 @@ header {
     height: 100px;
     justify-content: space-between;
     padding: 0 0 0 30px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
 
     img.logo {
         height: 61px;
@@ -71,6 +79,7 @@ header {
         align-items: center;
         height: 100%;
         display: flex;
+        overflow-x: hidden;
 
         a, .link {
             display: flex;
@@ -83,6 +92,7 @@ header {
             transition:all 0.3s;
             text-decoration: none;
             position: relative;
+            white-space: nowrap;
 
             &::before {
                 background-color: var(--primary-color);
@@ -115,6 +125,38 @@ header {
             line-height: 1;
            }
         }
+        @media (max-width: 768px) {
+            transition: all 0.3s;
+            border-left: 1px solid #ddd;
+            position: absolute;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 10px;
+            background-color: #fff;
+            height: calc(100dvh - 100px);
+            right: 0;
+            top: 100px;
+            z-index: 30;
+            width: 300px;
+            max-width: 0;
+
+            >:first-child {
+                padding-top: 10px;
+            }
+
+            a, .link {
+                margin: 0;
+                padding: 0 20px 10px;
+                width: 100%;
+                height: fit-content;
+                text-align: center;
+                border-bottom: 1px solid #ddd;
+
+                &::before {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -129,7 +171,7 @@ section {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    padding: 20px 40px;
+    padding: 20px 0 20px 40px;
     width: 100%;
     height: calc(100dvh - 100px);
     overflow-y: auto;

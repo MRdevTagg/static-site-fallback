@@ -1,0 +1,73 @@
+input#menu {
+    display: none;
+}
+
+.menu-icon {
+    cursor: pointer;
+    display: flex;
+    height: 24px;
+    padding: 16px;
+    width: 24px;
+}
+
+label.menu-icon {
+    position: relative;
+    z-index: 200;
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.menu-icon .menu,
+.menu-icon .menu::before,
+.menu-icon .menu::after {
+    background: #9FB1BD;
+    content: '';
+    display: block;
+    height: 2px;
+    position: absolute;
+    transition: background ease .2s, top ease .2s .2s, transform ease .2s;
+    width: 20px;
+}
+
+.menu-icon:hover .menu,
+.menu-icon:hover .menu::before,
+.menu-icon:hover .menu::after {
+    background: var(--primary-color);
+}
+
+.menu-icon .menu {
+    left: 6px;
+    top: 16px;
+}
+
+.menu-icon .menu::before {
+    top: -6px;
+}
+
+.menu-icon .menu::after {
+    top: 6px;
+}
+
+#menu:checked + .menu-icon .menu {
+    background: transparent;
+}
+
+#menu:checked + .menu-icon .menu::before {
+    transform: rotate(45deg);
+}
+
+#menu:checked + .menu-icon .menu::after {
+    transform: rotate(-45deg);
+}
+
+#menu:checked + .menu-icon .menu::before,
+#menu:checked + .menu-icon .menu::after {
+    top: 0;
+    transition: top ease .2s, transform ease .2s .2s;
+}
+
+#menu:checked ~ nav {
+    max-width: 100%;
+}
