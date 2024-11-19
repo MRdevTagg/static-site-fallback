@@ -19,9 +19,33 @@ html {
     width: 100dvw;
 }
 
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #fff0;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #8881;
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #5555;
+    }
+}
+
 body {
     font-family: 'DM Sans', sans-serif;
-    max-width: 1200px;
+    max-width: 1250px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -116,8 +140,11 @@ section {
     gap: 20px;
     padding: 20px;
     width: 100%;
+        height: calc(100dvh - 100px);
+    overflow-y: auto;
     h2 {
         font-size: 1.5em;
+        margin:0;
     }
     p {
         font-size: 1.2em;
@@ -125,7 +152,6 @@ section {
 }
 
 aside {
-    /* background-color: #0470c0; */
     display: flex;
     flex-direction: column;
     width: 35%;
@@ -186,6 +212,14 @@ aside {
     justify-content: center;
     display: flex;
     gap: 10px;
+}
+.flex-col {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
 }
 
 .share-links {
