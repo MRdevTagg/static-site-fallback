@@ -19,7 +19,7 @@
     justify-content: center;
     height: 100%;
     width: 25px;
-    color: #fff;
+    color: #222;
     margin-right: 5px;
 
     &::after {
@@ -35,7 +35,7 @@
     justify-content: center;
     height: 100%;
     width: 25px;
-    color: #fff;
+    color: #222;
     margin-right: 5px;
 
 

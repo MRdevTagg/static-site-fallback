@@ -47,6 +47,7 @@ html {
 
 body {
     max-width: 1200px;
+    background-color: #fff;
 }
 
 h1 {
@@ -141,12 +142,24 @@ section {
     }
     p {
         font-size: 1.2em;
+        
+        &.published-on {
+            font-size: 0.8em;
+            color: #777;
+        }
     }
 }
 #content-section {
+    padding: 20px 0 40px;
     display: flex;
     width: 100%;
     height: calc(100dvh - 100px);
+        img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+    
 }
 #article-nav {
     display: flex;
@@ -155,7 +168,9 @@ section {
     min-width: 200px;
     height: calc(100dvh - 100px);
     border-right: 1px solid #eee;
-    
+    position: sticky;
+    top: 110px;
+
     ul {
         list-style: none;
         padding: 0;
@@ -201,6 +216,11 @@ aside {
         padding: 20px 10px;
         padding-right: 0;
         border-bottom: 1px solid #ddd;
+        strong {
+            color: var(--primary-color);
+            font-size: 16px;
+            margin-block: 10px;
+        }
         p {
             font-size: 16px;
             margin-bottom: 20px;
@@ -224,6 +244,21 @@ aside {
                 font-size: 16px;
                 margin-bottom: 10px;
             }
+        }
+    }
+    .date-block {
+        padding-block: 5px;
+
+        p {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 0
+        }
+        span {
+            font-size: 14px;
+            color: #777;
+            margin: 0;
         }
     }
 }

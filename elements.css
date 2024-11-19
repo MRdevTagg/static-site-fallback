@@ -1,8 +1,9 @@
 .action-button {
-    background-color: var(--primary-color);
+    background-color: #edeff4;
     border: none;
     border-radius: 4px;
-    color: white;
+    color: #222;
+    font-weight: 700;
     padding: 11px 23px;
     line-height: 16px;
     font-size: 13px;
@@ -13,7 +14,7 @@
     transition: background-color 0.3s;
 
     &:hover {
-        background-color: var(--primary-color-dark);
+        background-color: #d0d2d7;
     }
 }
 
@@ -49,15 +50,18 @@
         border-bottom: 3px solid #fff0;
         background-color: #fff;
         display: flex;
+        color: #777;
         align-items: center;
         justify-content: center;
-        padding: 20px 40px;
+        padding: 15px 40px;
         cursor: pointer;
         transition: all 0.3s;
-        font-size: 18px;
+        font-size: 15px;
+        text-transform: uppercase;
 
         &.active {
-           border-color: var(--primary-color);
+            color: #000;
+            border-bottom-color: var(--primary-color);
         }
 
         &:hover {
@@ -106,5 +110,5 @@
 }
 
 #title {
-
+    max-width: 90%;
 }
