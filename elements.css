@@ -42,11 +42,12 @@
         border-top: 3px solid #fff0;
         background-color: #f0f5fb;
         display: flex;
+        font-weight: 700;
         align-items: center;
         justify-content: center;
         padding: 11px 40px;
         cursor: pointer;
-        transition: background-color 0.3s;
+        transition: all 0.3s;
         font-family: "Gowun Batang", Arial, Helvetica, sans-serif;
         font-size: 22px;
 
@@ -56,7 +57,7 @@
         }
 
         &:hover {
-            background-color: #fff;
+           background-color: #fff;
         }
     }
 }
@@ -65,8 +66,17 @@
     .content {
         padding: 30px 30px;
 
-        h3 {
+        h2, h3 {
             font-family: "Gowun Batang", Arial, Helvetica, sans-serif;
+
+        }
+
+        h2 {
+            font-size: 35px;
+            margin-bottom: 40px;
+        }
+
+        h3 {
             font-size: 29px;
             margin-bottom: 20px;
         }
