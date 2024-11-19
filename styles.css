@@ -46,7 +46,7 @@ html {
 }
 
 body {
-    max-width: 1200px;
+    max-width: 80%;
     background-color: #fff;
 }
 
@@ -159,7 +159,7 @@ section {
     display: flex;
     flex-direction: column;
     width: 35%;
-    min-width: 200px;
+    min-width: 300px;
     max-height: calc(100dvh - 100px);
     height: calc(100dvh - 100px);
     border-right: 1px solid #eee;

@@ -675,9 +675,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tab = e.target
     tabs.forEach(tab => tab.classList.remove('active'))
     tab.classList.add('active')
-    tab.textContent !== 'Article' && ($contentSection.style.display = 'none')
+    tab.textContent !== 'Preprints' && ($contentSection.style.display = 'none')
     tab.textContent !== 'Review' && ($reviewSection.style.display = 'none')
-    tab.textContent === 'Article' && ($contentSection.style.display = 'flex')
+    tab.textContent === 'Preprints' && ($contentSection.style.display = 'flex')
     tab.textContent === 'Review' && ($reviewSection.style.display = 'flex')
     const url = new URL(window.location)
     url.searchParams.set('tab', tab.textContent.toLowerCase())
@@ -688,15 +688,12 @@ document.addEventListener('DOMContentLoaded', () => {
     tab.addEventListener('click', handleTabChange)
   })
 
-  // Check for the presence of the 'tab' parameter in the URL
   const urlParams = new URLSearchParams(window.location.search)
   const tabParam = urlParams.get('tab')
 
-  // If there is no 'tab' parameter, call handleTabChange for the first tab
   if (!tabParam) {
     handleTabChange({ target: tabs[0] })
   } else {
-    // If there is a 'tab' parameter, set the corresponding tab as active
     const activeTab = Array.from(tabs).find(
       tab => tab.textContent.toLowerCase() === tabParam,
     )
