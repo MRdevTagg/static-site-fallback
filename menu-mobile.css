@@ -15,7 +15,7 @@ label.menu-icon {
     position: relative;
     z-index: 200;
     display: none;
-    margin-right: 15px;
+    margin-right: 10px;
     margin-bottom: 5px;
     @media screen and (max-width: 768px) {
         display: flex;
