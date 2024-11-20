@@ -10,6 +10,12 @@
 :root {
     --primary-color: #0470c0;
     --primary-color-dark: #065088;
+    --header-height: 100px;
+    --height-calc: calc(100dvh - var(--header-height));
+
+    @media screen and (max-width: 768px) {
+        --header-height: 60px;        
+    }
 }
 html {
     align-items: center;
@@ -64,14 +70,14 @@ h1 {
 header {
     align-items: center;
     display: flex;
-    height: 100px;
+    height: var(--header-height);
     justify-content: space-between;
-    padding: 0 0 0 30px;
+    padding: 0 40px 0 10px;
     position: relative;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #eee;
 
     img.logo {
-        height: 61px;
+        height: 60%;
         object-fit: contain;
     }
 
@@ -133,9 +139,9 @@ header {
             justify-content: flex-start;
             gap: 10px;
             background-color: #fff;
-            height: calc(100dvh - 100px);
+            height: calc(100dvh - var(--header-height));
             right: 0;
-            top: 100px;
+            top: var(--header-height);
             z-index: 30;
             width: 300px;
             max-width: 0;
@@ -164,8 +170,12 @@ main {
     display: flex;
     width: 100%;
     justify-content: center;
-    height: calc(100dvh - 100px);
+    height: calc(100dvh - var(--header-height));
     overflow-y: auto;
+
+    @media screen and (max-width: 768px) {
+        padding-inline: 40px;
+    }
 }
 section {
     display: flex;
@@ -173,7 +183,7 @@ section {
     gap: 20px;
     padding: 20px 0 20px 40px;
     width: 100%;
-    height: calc(100dvh - 100px);
+    height: calc(100dvh - var(--header-height));
     overflow-y: auto;
     scroll-behavior: smooth;
     position: relative;
@@ -191,19 +201,22 @@ section {
             color: #777;
         }
     }
+
+    @media screen and (max-width: 768px) {
+        padding: 20px 0;
+    }
 }
 #content-section {
-    padding: 20px 0 40px;
+    padding: 0;
     display: flex;
     width: 100%;
 }
 #article-nav {
-    display: flex;
     flex-direction: column;
     width: 35%;
     min-width: 300px;
-    max-height: calc(100dvh - 100px);
-    height: calc(100dvh - 100px);
+    max-height: calc(100dvh - var(--header-height));
+    height: calc(100dvh - var(--header-height));
     border-right: 1px solid #eee;
     position: sticky;
     top: 40px;
@@ -246,7 +259,7 @@ aside {
     display: flex;
     flex-direction: column;
     width: 35%;
-    height: calc(100dvh - 100px);
+    height: calc(100dvh - var(--header-height));
     padding-inline: 40px 0;
 
     .block {
@@ -283,21 +296,6 @@ aside {
                 font-size: 16px;
                 margin-bottom: 10px;
             }
-        }
-    }
-    .date-block {
-        padding-block: 5px;
-
-        p {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: 0
-        }
-        span {
-            font-size: 14px;
-            color: #777;
-            margin: 0;
         }
     }
 }

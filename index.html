@@ -37,6 +37,7 @@
                 <ol id="affiliations" class="flex-col" style="align-items: flex-start; gap: 5px;"></ol>
                 <a href="" id="doi"></a>
                 <p class="published-on"></p>
+                <div class="block dateblock mobile-only"></div>
             </div>
             <div class="content-container">
                 <div class="flex-row tabs">
@@ -44,13 +45,13 @@
                     <button class="tab active">Preprint</button>
                 </div>
                 <div id="content-section">
-                    <nav id="article-nav"><ul></ul></nav>
+                    <nav id="article-nav" class="desktop-only"><ul></ul></nav>
                     <article id="content"></article>
                 </div>
                 <div id="reviews-section"></div>
             </div>
         </section>
-        <aside>
+        <aside class="desktop-only">
             <div class="block">
                 <strong>Curated article</strong>
                 <p>MetaROR Editors have curated this preprint that was revised by authors after peer review.</p>
@@ -66,20 +67,7 @@
                     </button>
                 </div>
             </div>
-            <div class="block">
-                <div class="date-block">
-                    <p>Curated version:</p>
-                    <span>May 23, 2024</span>
-                </div>
-                <div class="date-block">
-                    <p>Peer reviewed:</p>
-                    <span>May 23, 2024</span>
-                </div>
-                <div class="date-block">
-                    <p>Preprint posted:</p>
-                    <span>May 23, 2024</span>
-                </div>
-            </div>
+            <div class="block dateblock"></div>
             <div class="flex-row" style="flex-direction: column;">
                 <h3 style="margin-block: 33px;">Share this work</h3>
                 <div class="flex-row share-links">

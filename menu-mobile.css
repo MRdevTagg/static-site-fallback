@@ -8,6 +8,7 @@ input#menu {
     height: 24px;
     padding: 16px;
     width: 24px;
+    transform: scale(1.5);
 }
 
 label.menu-icon {
@@ -70,4 +71,18 @@ label.menu-icon {
 
 #menu:checked ~ nav {
     max-width: 100%;
+}
+
+.mobile-only {
+    display: none;
+    @media screen and (max-width: 768px) {
+        display: flex;
+    }
+}
+
+.desktop-only {
+    display: flex;
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
 }

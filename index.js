@@ -584,6 +584,11 @@ Based on this overview, which seems somewhat skewed towards the merits of these 
         affiliations: [],
       },
     ],
+    dates: {
+        'Curated version': 'May 23, 2024',
+        'Peer reviewed': 'May 23, 2024',
+        'Preprint posted': 'May 23, 2024',
+    },
     sections: article9Sections,
   },
   12: {
@@ -670,6 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const $articleNav = document.querySelector('#article-nav > ul')
   const $publishedOn = document.querySelector('.published-on')
   const $reviewSection = document.querySelector('#reviews-section')
+  const $dates = document.querySelectorAll('.dateblock')
 
   const handleTabChange = e => {
     const tab = e.target
@@ -705,7 +711,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const articleNumber = getArticleNumberFromURL()
   const manuscript = manuscriptData[articleNumber]
-  const { doi, sections, title, authors, published, reviews } = manuscript
+  const { doi, sections, title, authors, published, reviews, dates } = manuscript
 
   $authorsList.innerHTML = authors
     .map(author => `<a href="#">${author.name}</a>`)
@@ -716,6 +722,15 @@ document.addEventListener('DOMContentLoaded', () => {
   doi && ($doi.textContent = `https://doi.org/${doi}`)
   doi && ($doi.href = `https://doi.org/${doi}`)
   articleNumber && ($content.innerHTML = '')
+  $dates.forEach(date => {
+  const dateContent = Object.entries(dates).map(([k, v]) => {
+   return`<div class="date-block"><p>${k}:</p><span>${v}</span></div>`
+})
+    console.log(dateContent)
+    console.log($dates)
+    date.innerHTML = dateContent.join('')
+})
+    
 
   reviews.forEach(review => {
     const reviewEl = document.createElement('div')
