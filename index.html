@@ -1,88 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="icons.css">
-    <link rel="stylesheet" href="elements.css">
-    <link rel="stylesheet" href="menu-mobile.css">
-    
-</head>
-<body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="icons.css" />
+    <link rel="stylesheet" href="elements.css" />
+    <link rel="stylesheet" href="menu-mobile.css" />
+  </head>
+  <body>
     <header>
-        <img class="logo"src="./assets/metaror-logo.png" alt="logo">
-        <input type="checkbox" id="menu">
+      <div class="topBar"><span>contact@metaror.org</span></div>
+      <div class="secondBar">
+        <img class="logo" src="./assets/metaror-logo.png" alt="logo" />
+        <input type="checkbox" id="menu" />
         <label for="menu" class="menu-icon">
-                <div class="menu"></div>
+          <div class="menu"></div>
         </label>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Research Articles</a>
-            <span class="dropdown link">Submit</span>
-            <span class="dropdown link">About</span>
-            <span class="link icon ico-search desktop-only"></span>
+          <a href="#">Home</a>
+          <a href="#">Research Articles</a>
+          <span class="dropdown link">Submit</span>
+          <span class="dropdown link">About</span>
+          <span class="link icon ico-search desktop-only"></span>
         </nav>
+      </div>
     </header>
     <main>
-        <section>
-            <div class="first-block">
-                <p>Metascience</p>
-                <h1 id="title"></h1>
-                <div class="flex-row" id="author-links"></div>
-                <ol id="affiliations" class="flex-col" style="align-items: flex-start; gap: 5px;"></ol>
-                <div class="info">
-                    <a href="" id="doi"></a>
-                    <p class="published-on"></p>
-                </div>
-                <div class="block dateblock mobile-only"></div>
-            </div>
-            <div class="content-container">
-                <div class="flex-row tabs">
-                    <button class="tab">Reviews</button>
-                    <button class="tab active">Preprint</button>
-                </div>
-                <div id="content-section">
-                    <nav id="article-nav" class="desktop-only"><ul></ul></nav>
-                    <article id="content"></article>
-                </div>
-                <div id="reviews-section"></div>
-            </div>
-        </section>
-        <aside class="desktop-only">
-            <div class="block">
-                <strong>Curated article</strong>
-                <p>MetaROR Editors have curated this preprint that was revised by authors after peer review.</p>
-                <a href="">About MetaROR’s process</a>
-                <div class="flex-row" style="height:88px;margin-top: 20px;">
-                    <button class="action-button">
-                        <span class="icon ico-download"></span>
-                        Download
-                    </button>
-                    <button class="action-button">
-                        <span class="icon ico-cite"></span>
-                        Cite
-                    </button>
-                </div>
-            </div>
-            <div class="block dateblock"></div>
-            <div class="flex-row" style="flex-direction: column;">
-                <h3 style="margin-block: 33px;">Share this work</h3>
-                <div class="flex-row share-links">
-                    <a href="" class="icon ico-fb"></a>
-                    <a href="" class="icon ico-x"></a>
-                    <a href="" class="icon ico-in"></a>
-                    <a href="" class="icon ico-wpp"></a>
-                    <a href="" class="icon ico-tgm"></a>
-                    <a href="" class="icon ico-mail"></a>
-                </div>
-            </div>
-        </aside>
+      <section>
+        <div class="first-block">
+          <p>Metascience</p>
+          <h1 id="title"></h1>
+          <div class="flex-row" id="author-links"></div>
+          <ol
+            id="affiliations"
+            class="flex-col"
+            style="align-items: flex-start; gap: 5px"
+          ></ol>
+          <div class="info">
+            <a href="" id="doi"></a>
+            <p class="published-on"></p>
+          </div>
+          <div class="block dateblock mobile-only"></div>
+        </div>
+        <div class="content-container">
+          <div class="flex-row tabs">
+            <button class="tab">Reviews</button>
+            <button class="tab active">Preprint</button>
+          </div>
+          <div id="content-section">
+            <nav id="article-nav" class="desktop-only"><ul></ul></nav>
+            <article id="content"></article>
+          </div>
+          <div id="reviews-section"></div>
+        </div>
+      </section>
+      <aside class="desktop-only">
+        <div class="block">
+          <strong>Curated article</strong>
+          <p>
+            MetaROR Editors have curated this preprint that was revised by
+            authors after peer review.
+          </p>
+          <a href="">About MetaROR’s process</a>
+          <div class="flex-row" style="height: 88px; margin-top: 20px">
+            <button class="action-button">
+              <span class="icon ico-download"></span>
+              Download
+            </button>
+            <button class="action-button">
+              <span class="icon ico-cite"></span>
+              Cite
+            </button>
+          </div>
+        </div>
+        <div class="block dateblock"></div>
+        <div class="flex-row" style="flex-direction: column">
+          <h3 style="margin-block: 33px">Share this work</h3>
+          <div class="flex-row share-links">
+            <a href="" class="icon ico-fb"></a>
+            <a href="" class="icon ico-x"></a>
+            <a href="" class="icon ico-in"></a>
+            <a href="" class="icon ico-wpp"></a>
+            <a href="" class="icon ico-tgm"></a>
+            <a href="" class="icon ico-mail"></a>
+          </div>
+        </div>
+      </aside>
     </main>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
