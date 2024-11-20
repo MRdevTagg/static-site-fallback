@@ -87,6 +87,10 @@
         width: 100%;
         padding: 0 30px;
 
+        * {
+            max-width: 100%;
+        }
+
         h3, h4 {
             font-size: 24px;
             color: #222;
@@ -106,7 +110,7 @@
             line-height: 27.2px;
         }
 
-        img {
+        img, figure {
             width: 100%;
             height: auto;
             object-fit: contain;
@@ -138,7 +142,16 @@
                 }
             }
         }
-
+        code {
+            background-color: #f5f5f5;
+            border-radius: 5px;
+            padding: 5px 10px;
+            font-size: 14px;
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            overflow-wrap: anywhere;
+        }
         .references {
 
             p {
