@@ -1275,7 +1275,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .join("");
 
   $affiliationsList.innerHTML = authors
-    .map((author) => author.affiliations.join(","))
+    .map((author) => (author.affiliations || []).join(","))
     .join(",");
 
   published && ($publishedOn.textContent = published);
