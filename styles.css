@@ -223,7 +223,7 @@ section {
 #article-nav {
     flex-direction: column;
     width: 35%;
-    min-width: 300px;
+    min-width: 305px;
     max-height: calc(100dvh - var(--header-height));
     height: calc(100dvh - var(--header-height));
     border-right: 1px solid #eee;
@@ -274,7 +274,7 @@ aside {
     width: 35%;
     height: calc(100dvh - var(--header-height));
     padding-inline: 40px 0;
-    padding-top: 40px;
+    padding-top: 49px;
 
     .block {
         display: flex;
