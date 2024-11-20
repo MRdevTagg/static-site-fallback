@@ -52,6 +52,10 @@ html {
     }
 }
 
+a {
+    word-break: break-all;
+}
+
 body {
     max-width: 80%;
     background-color: #fff;
@@ -269,6 +273,7 @@ aside {
     width: 35%;
     height: calc(100dvh - var(--header-height));
     padding-inline: 40px 0;
+    padding-top: 40px;
 
     .block {
         display: flex;

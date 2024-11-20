@@ -19,16 +19,22 @@
 }
 
 #author-links {
+    display: flex;
     justify-content: flex-start;
-    gap: 10px;
+    gap: 0;
     margin-bottom: 20px;
+    width: 80%;
+    flex-wrap: wrap;
 
     a { 
         text-decoration: none;
         font-weight: bold;
-        color: black;
+        color: #555;
+        font-size: 15px;
         transition: color 0.3s;
-
+        margin-left: 1ch;
+        margin-bottom: 8px;
+        white-space: nowrap;
         &:hover {
             color: var(--primary-color);
         }
@@ -81,11 +87,14 @@
         width: 100%;
         padding: 0 30px;
 
-        h2 {
-            font-size: 35px;
+        h3, h4 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 10px;
+            font-weight: 500;
         }
 
-        h3 {
+        h2 {
             font-size: 29px;
             padding-block: 70px 20px;
         }
@@ -104,8 +113,10 @@
         }
 
         figcaption {
+            border: 1px solid #777; 
             font-size: 14px;
-            color: #777;
+            padding: 10px 20px;
+            color: #555;
             margin-block: 10px;
         }
         ol, ul {
@@ -143,7 +154,18 @@
 }
 
 .first-block{
-    margin-bottom: 20px;
+    padding-block: 20px;
+
+    >:first-child {
+        font-weight: 500;
+        color: #333;
+        padding-left: 10px;
+        margin-bottom: 0;
+    }
+    
+    .info {
+        padding-left: 10px;
+    }
 
     @media screen and (max-width: 768px) {
         padding-inline: 30px;
@@ -159,6 +181,8 @@
 
 #title {
     max-width: 90%;
+    padding-left: 10px;
+    margin: 10px 0;
 }
 
 #reviews-section {
@@ -172,7 +196,7 @@
         flex-direction: column;
         gap: 10px;
         margin-bottom: 20px;
-        padding: 40px 60px;
+        padding: 30px;
         p {
             font-size: 16px;
             margin: 0;
@@ -191,7 +215,8 @@
         font-size: 14px;
         font-weight: 700;
         color: var(--primary-color);
-        margin: 0
+        margin: 0;
+        margin-bottom: 0 !important;
     }
     span {
         font-size: 14px;
@@ -210,4 +235,8 @@
     flex-direction: column;
     padding: 20px 10px;
     padding-right: 0;
+}
+
+.block.dateblock.mobile-only {
+    padding-inline: 0;
 }
