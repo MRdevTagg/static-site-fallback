@@ -485,7 +485,7 @@ const manuscriptData = {
   9: {
     title: 'Evolution of Peer Review in Scientific Communication',
     doi: '10.31235/osf.io/b2ra3',
-    published: 'Published on Nov 19, 2024',
+    published: 'Published on Nov 20, 2024',
     reviews: [
       {
           name: 'Balazs Aczel',
@@ -684,8 +684,54 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
         `,
     },
   },
-  13: {
-    authors: [],
+  14: {
+    authors: [
+        {
+            name: 'Susana Oliveira Henriques',
+            affiliations: [
+                'Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)',
+                'Leiden University',
+                'Leiden, the Netherlands',
+                'Scientific Research Department',
+                'Azerbaijan University of Architecture and Construction',
+                'Baku, Azerbaijan'
+            ],
+            email: 's.oliveira@cwts.leidenuniv.nl',
+            orcid: '0000-0002-0947-5083',
+            ror: null
+        },
+        {
+            name: 'Narmin Rzayeva',
+            affiliations: [
+                'Research on Research Institute (RoRI) Information School',
+                'University of Sheffield',
+                'Sheffield, UK'
+            ],
+            email: 'n.rzayeva@cwts.leidenuniv.nl',
+            orcid: '0000-0003-0397-5412',
+            ror: 'https://ror.org/02shm3a27'
+        },
+        {
+            name: 'Stephen Pinfield',
+            affiliations: [
+                'Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)',
+                'Leiden University',
+                'Leiden, the Netherlands'
+            ],
+            email: 's.pinfield@sheffield.ac.uk',
+            orcid: '0000-0003-4696-764X',
+            ror: 'https://ror.org/05krs5044'
+        },
+        {
+            name: 'Ludo Waltman',
+            affiliations: [
+                'Leiden University'
+            ],
+            email: 'waltmanlr@cwts.leidenuniv.nl',
+            orcid: '0000-0001-8249-1752',
+            ror: 'https://ror.org/027bh9e22'
+        }
+    ],
     reviews: [],
     published: 'Published on Aug 02, 2024',
     doi: '10.31235/osf.io/8c6xm',
@@ -790,7 +836,9 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
         <em>Royal Society of Chemistry</em>.&nbsp;<a href="https://www.rsc.org/policy-evidence-campaigns/inclusion-diversity/joint-commitment-for-action-inclusion-and-diversity-in-publishing/" rel="" target="blank">https://www.rsc.org/policy-evidence-campaigns/inclusion-diversity/joint-commitment-for-action-inclusion-and-diversity-in-publishing/</a></p><p class="paragraph">RR\C19. (n.d.). Rapid Reviews Infectious Diseases. Retrieved 19 July 2024, from https://rrid.mitpress.mit.edu/rrc19</p><p class="paragraph">Saderi, D., &amp; Greaves, S. (2021, July 7).<em>&nbsp;</em>Using preprint reviews to drive journal peer review.&nbsp;<em>ASAPbio</em>. https://asapbio.org/using-preprint-reviews-to-drive-journal-peer-review</p><p class="paragraph">Swoger, B. (2013). Can you take it with you when you go? Portable peer review.&nbsp;<em>Scientific American Blog Network.</em>https://blogs.scientificamerican.com/information-culture/can-you-take-it-with-you-when-you-go-portable-peer-review/</p><p class="paragraph">Waltman, L., Kaltenbrunner, W., Pinfield, S., &amp; Woods, H. B. (2023). How to improve scientific peer review: Four schools of thought.&nbsp;<em>Learned Publishing</em>,&nbsp;<em>36</em>(3), 334–347. https://doi.org/10.1002/leap.1544</p>
         `,
     },
-    dates: {}
+    dates: {
+
+    }
   }
 }
 
