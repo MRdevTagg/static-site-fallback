@@ -852,13 +852,143 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
     },
   },
   15: {
-    doi: '10.1101/2024.09.12.20241096',
-    title: 'Preprint review services: Disrupting the scholarly communication landscape?',
-    authors: [],
-    reviews: [],
+    doi: '10.48550/arXiv.2404.06500',
+    title: 'The Rise and Fall of the Initial Era',
+    authors: [
+        {
+            name: 'Simon Porter',
+            email: 's.porter@digital-science.com'
+        },
+        {
+            name: 'Daniel Hook',
+            email: 'd.hook@digital-science.com',
+        },
+    ],
+    reviews: [
+        {
+            name: 'Dmitry Kochetkov',
+            orcid: '0000-0001-7890-7532',
+            review: `
+            <p class="paragraph">The presented preprint is a well-researched study on a relevant topic that could be of interest to a broad audience. The study's strengths include a well-structured and clearly presented methodology. The code and data used in the research are openly available on Figshare, in line with best practices for transparency. Furthermore, the findings are presented in a clear and organized manner, with visualization that aid understanding.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">At the same time, I would like to draw your attention to a few points that could potentially improve the work.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; I think it would be beneficial to expand the annotation to approximately 250 words.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The introduction starts with a very broad context, but the connection between this context and the object of the research is not immediately clear. There are few references in this section, making it difficult to determine whether the authors are citing others or their own findings.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The transition to the main topic of the study is not well-defined, and there is no description of the gap in the literature regarding the object of study. Additionally, "bibliometric archaeology" appears at the end of the introduction but is only mentioned again later in the discussion, which may cause confusion for the reader.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; It would be helpful to clearly state the purpose and objectives of the study both in the Introduction and in the abstract as well.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Besides, it is important to elaborate on the contribution of this study in the introduction section.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The same applies to the background - a very broad context, but the connection with the object of the research is not entirely clear.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Page 4 - as far as I understand, these are conclusions from a literature review, while point 3 (Reflective Richness of Data) does not follow from the previous analysis.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">8.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The overall impression of the introduction and background is that it is an interesting text, but it is not well related to the objectives of the study. I would recommend shortening these sections by making the introduction and literature review more pragmatic and structured. At the same time, this text could be published as a standalone contribution.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">9.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; As I mentioned above, the methodology refers to the strengths of the study. However, in this section, it would be helpful to introduce and justify the structure of presenting the results.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">10.&nbsp;&nbsp; In the methodology section, the authors could also provide a footnote with a link to the code and dataset (currently, it is only given at the end).</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">11.&nbsp;&nbsp; With regard to the discussion, I would like to encourage the authors to place their results more clearly in the academic context. Ideally, references from the introduction and/or literature review would reappear in this section to help clarify the research contribution.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">12.&nbsp;&nbsp; Although Discussion C is an interesting read, it seems more related to the introduction than the results. Again, the text itself is rather interesting, but it would benefit from a more thorough justification.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">Remarks on the images:</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; At least the data source for the images should be specified in the background, because it is not obvious to the reader before describing the methodology.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The color distinction between China and Russia in Figure 8 is not very clear.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The gray lines in Figures 9-11 make the figures difficult to read. Additionally, the meaning of these lines is not clearly indicated in the legends of Figures 10 and 11. These issues should be addressed.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">All comments and suggestions are intended to improve the article. Overall, I have a very positive impression of the work.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">Sincere,</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">Dmitry Kochetkov</p>
+            `,
+        },
+        {
+            name: 'Erjia Yan',
+            orcid: '0000-0002-0365-9340',
+            review: `
+            <p class="paragraph"><strong>Overview</strong></p>
+            <p class="paragraph">This manuscript provides an in-depth examination of the use of initials versus full names in academic publications over time, identifying what the authors term the "Initial Era" (1945-1980) as a period during which initials were predominantly used. The authors contextualize this within broader technological, cultural, and societal changes, leveraging a large dataset from the Dimensions database. This study contributes to the understanding of how bibliographic metadata reflects shifts in research culture.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>Strengths</strong></p>
+            <p class="paragraph"><strong>+ Novel concept and historical depth</strong></p>
+            <p class="paragraph">The paper introduces a unique angle on the evolution of scholarly communication by focusing on the use of initials in author names. The concept of the "Initial Era" is original and well- defined, adding a historical dimension to the study of metadata that is often overlooked. The manuscript provides a compelling narrative that connects technological changes with shifts in academic culture.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>+ Comprehensive dataset</strong></p>
+            <p class="paragraph">The use of the Dimensions database, which includes over 144 million publications, lends significant weight to the findings. The authors effectively utilize this resource to provide both anecdotal and statistical analyses, giving the paper a broad scope. The differentiation between the anecdotal and statistical epochs helps clarify the limitations of the dataset and strengthens the authors' conclusions.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>+ Cross-disciplinary relevance</strong></p>
+            <p class="paragraph">The study's insights into the sociology of research, particularly the implications of name usage for gender and cultural representation, are highly relevant across multiple disciplines. The paper touches on issues of diversity, bias, and the visibility of researchers from different backgrounds, making it an important contribution to ongoing discussions about equity in academia.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>+ Technological impact</strong></p>
+            <p class="paragraph">The authors successfully connect the decline of the "Initial Era" to the rise of digital publishing technologies, such as Crossref, PubMed, and ORCID. This link between technological infrastructure and shifts in scholarly norms is a critical insight, showing how the adoption of new tools has real-world implications for academic practices.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>Weaknesses</strong></p>
+            <p class="paragraph">-&nbsp; <strong>Lack of clarity and readability</strong></p>
+            <p class="paragraph">While the manuscript is rich in data and analysis, it can be dense and challenging to follow for readers not familiar with the technical details of bibliometric studies. The text occasionally delves into highly specific discussions that may be difficult for a broader audience to grasp while other concepts are introduced in cursory. Consider condensing the introduction section, removing unrelated historical accounts, and leading the audience to the key objectives of this research much earlier.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">-&nbsp; <strong>Missing empirical case studies</strong></p>
+            <p class="paragraph">The manuscript remains largely theoretical, relying heavily on data analysis without providing concrete case studies or empirical examples of how the "Initial Era" affected individual disciplines or researchers. A more detailed exploration of specific instances where the use of initials had significant consequences would make the findings more tangible. Incorporating case studies or anecdotes from the history of science that illustrate the real-world impacts of the trends identified in the data would enrich the paper. These examples could help ground the analysis in practical outcomes and demonstrate the relevance of the "Initial Era" to contemporary debates.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">-&nbsp; <strong>Half-baked comparative analysis</strong></p>
+            <p class="paragraph">Although the paper presents interesting data about different countries and disciplines, the comparative analysis between these groups could be further developed. For example, the reasons behind the differences in initial use between countries with different writing systems or academic cultures are not fully explored. A more in-depth comparative analysis that explains the cultural, linguistic, or institutional factors driving the observed differences in initial use would add nuance to the findings. This could involve a more detailed discussion of how non-Roman writing systems influence name formatting or how specific national academic policies shape author metadata.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph">-&nbsp; <strong>Limited discussion of alternative explanations</strong></p>
+            <p class="paragraph">While the authors link the decline of the "Initial Era" to technological advancements, other potential explanations, such as changing editorial policies (“technological harmonisation”), shifts in academic prestige, or the influence of global collaboration, are not fully explored. The paper could benefit from a broader discussion of these factors. Expanding the discussion to include alternative explanations for the decline of initial use, and how these might interact with technological changes, would provide a more comprehensive view. Engaging with literature on academic publishing practices, editorial decisions, and global research trends could help contextualize the findings within a wider framework.</p>
+            <p class="paragraph">&nbsp;</p>
+            <p class="paragraph"><strong>Conclusion</strong></p>
+            <p class="paragraph">This manuscript offers a novel and insightful analysis of the evolution of name usage in academic publications, providing valuable contributions to the fields of bibliometrics, science studies, and research culture. With improvements in clarity, comparative analysis, and the incorporation of case studies, this paper has the potential to make a significant impact on our understanding of how metadata reflects broader societal and technological changes in academia. The authors are encouraged to refine their discussion and expand on the implications of their findings to make the manuscript more accessible and applicable to a wider audience.</p>
+            </div>
+            `,
+        },
+        {
+            name: 'Laurel L Haak',
+            orcid: '0000-0001-5109-3700',
+            review: `
+            <p class="paragraph">I started reading this paper with great interest, which flagged over time. As someone with extensive experience both publishing peer-reviewed research articles and working with publication data (Web of Science, Scopus, PubMed, PubMedCentral) I understand there are vagaries in the data because of how and when it was collected, and when certain policies and processes were implemented. For example, as an author starting in the late 1980s, we were instructed by the journal “guide to authors” to use only initials. My early papers were all only using initials. This changed in the mid-late 1990s. Another example, when working with NIH publications data, one knows dates like 1946 (how far back MedLine data go), 1996 (when PubMed was launched), and 2000 (when PubMedCentral was launched) and 2008 (when NIH Open Access policy enacted). There are also intermediate dates for changes in curation policy…. that underlie a transition from initials to full name in the biomedical literature.</p>
+            <p class="paragraph">I realize that the study covers all research disciplines, but still I am surprised that the authors of this paper don’t start with an examination of the policies underlying publications data, and only get to this at the end of a fairly torturous study.</p>
+            <p class="paragraph">As a reader, this reviewer felt pulled all over the place in this article and increasingly frustrated that this is a paper that explores the Dimensions database vagaries only and not really the core overall challenges of bibliometric data, irrespective of data source. Dimensions ingests data from multiple sources — so any analysis of its contents needs to examine those sources first.</p>
+            <p class="paragraph">A few specific comments:</p>
+            <ul><li data-listnumber=""><p class="paragraph">The “history of science” portion of the paper focuses on English learned societies in the 17th century. There were many other learned societies across Europe, and also “papers” (books, treatises) from long before the 17th century in Middle-eastern and Asian countries (e.g, see history of mathematics, engineering, governance and policy, etc.). These other histories were not acknowledged by the authors. Research didn’t just spring full-formed out of Zeus’ head.</p>
+            </li><li data-listnumber=""><p class="paragraph">It is unclear throughout if the authors are referring to science, research, which disciplines are or are not included. The first chart on discipinary coverage is Fig 13 and goes back to 1940ish. Also, which languages are included in the analysis? For example, Figure 2 says “academic output” but from which academies? What countries? What languages? Disciplines? Also, in Figure 2, this reviewer would have like to see discussion about the variability in the noisiness of the data over time.</p>
+            </li><li data-listnumber=""><p class="paragraph">The inclusion of gender in the paper misses the mark for this reviewer. When dealing with initials, how can one identify gender? And when working in times/societies where women had to hide their identity to be published…. how can a name-based analysis of gender be applied? If this paper remains a study of the “initial era”, this reviewer recommends removing the gender analysis.</p>
+            </li><li data-listnumber=""><p class="paragraph">Reference needed for “It is just as important to see ourselves reflected in the outputs of the research careers…” (section B).</p>
+            </li><li data-listnumber=""><p class="paragraph">Reference needed for “This period marked the emergence of “Big Science” (Section B). How do we know this is Big Science? What is the relationship with the nature of science careers? Here it would be useful perhaps to mention that postdocs were virtually unheard of before Sputnik.</p>
+            </li><li data-listnumber=""><p class="paragraph">Fig 3. This would be more effective as a % total papers than absolute #.</p>
+            </li><li data-listnumber=""><p class="paragraph">Gradual Evolution of the Scholarly Record. This reviewer would like to see proportion of papers without authors. A lot of history of science research is available for this period, and a few references here would be welcome, as well as a by-country analysis (or acknowledgement that the data are largely from Europe and/or English-speaking countries).</p>
+            </li><li data-listnumber=""><p class="paragraph">Accelerated Changes in Recent Times. Again, this reviewer would like to see reference to scholarship on the history of science. One of the things happening in the post WW2 timeframe is the increase in government spending (in the US particularly) on R&amp;D and academic research. So, is the academy changing or is it responding to “market forces”.</p>
+            </li><li data-listnumber=""><p class="paragraph">Reflective richness of data. “Evolution of the research community” is not described in the text, not is collaborative networks.</p>
+            </li><li data-listnumber=""><p class="paragraph">In the following paragraph, one could argue that evaluation was a driver of change, not a response to it. This reviewer would like to see references here.</p>
+            </li><li data-listnumber=""><p class="paragraph">II. Methodology. (i) 2nd sentence missing “to” “… and full form to refer to an author name…”. (ii) 2nd para the authors talk about epochs, but the data could be (are) discontinuous because of (a) curation policy, (b) curation technology, (c) data sources (e.g., Medline rolled out in the 1960s and back-populated to 1946). (iii) 4th para referes to Figs 3 and 4 showing a marked change between 1940 and 1950, but Fig 3 goes back only to 1960, and Fig 4 is so compressed it is hard to see anything in that time range. (iv) Para 7. “the active publishing community is a reasonable proxy for the global research population”. We need a reference here and more analysis. Is this Europe? English language? Which disciplines? All academia? Dimensions data? (v) Para 12 “In exploring the issue of gender…” see comments above. Gender is an important consideration but is out of scope, in this reviewer’s opinion, for this paper focused on use of initials vs. full name.</p>
+            </li><li data-listnumber=""><p class="paragraph">Listing 1. Is there a resolvable URL/DOI for this query?</p>
+            </li><li data-listnumber=""><p class="paragraph">Figs 9-11, 14, 15. This reviewer would like to see a more fulsome examination / discussion of data discontinuities. Particularly around ~1985-2000.</p>
+            </li></ul><p class="paragraph">Discussion.</p>
+            <ul><li data-listnumber=""><p class="paragraph">The country-level discussion suggests the data (publications included) are only those that have been translated into English. Please clarify. Also, please add references in this section. There are a lot of bold statements, such as “A characteristic of these countries was the establishment of strong national academies.” Is this different from other places in the world? How? In the para before this statement, there is a phrase “picking out Slavonic stages” that is not clear to this reviewer.</p>
+            </li><li data-listnumber=""><p class="paragraph">The authors seem to get ahead of themselves talking about “formal” and “informal” in relation to whether initials or full names are used. And then discuss the “Power Distance” and end up arguing that it isn’t formal/informal … but rather publisher policies and curation practices driving the initial era and its end.</p>
+            </li><li data-listnumber=""><p class="paragraph">And then the authors come full circle on research articles being a technology, akin to a contract. Which is neat and useful. But all the intermediate data analysis is focused on the Dimensions data base and this reviewer would argue should be a part of the database documentation rather than a scholarly article.</p>
+            </li><li data-listnumber=""><p class="paragraph">This reviewer would prefer this paper be focused much more tightly on how publishing technology can and has driven the sociology of science. Dig more into the E. Journal Analysis and F. Technological analysis. Stick with what you have deep data for, and provide us readers with a practical and useful paper that maybe, just maybe, publishers will read and be incentivized to up their game with respect to adoption of “new” technologies like ORCID, DOIs for data, etc. Because these papers are not just expositions on a disciplinary discourse, they are also a window into how science (research) works and is done.</p></li></ul></div>
+            `,
+        },
+    ],
     published: 'Sep 12, 2024',
-    dates: {},
+    dates: {
+        'Curated version': 'Sep 30, 2024',
+        'Peer reviewed': 'Sep 30, 2024',
+        'Preprint posted': 'Sep 30, 2024',
+    },
     sections: {
+        Abstract: `
+        Bibliographic data is a rich source of information that goes beyond the use cases of location and citation -- it also encodes both cultural and technological context. For most of its existence, the scholarly record has changed slowly and hence provides an opportunity to gain insight through its reflection of the cultural norms of the research community over the last four centuries. While it is often difficult to distinguish the originating driver of change, it is still valuable to consider the motivating influences that have led to changes in the structure of the scholarly record. An "initial era" is identified during which initials were used in preference to full names by authors on scholarly communications. Causes of the emergence and demise of this era are considered as well as the implications of this era on research culture and practice.
+        `,
         rest: `
         <h2>Introduction</h2><p class="paragraph">In the contemporary discourse on technology, dominated by references to digital and electronic innovations, the notion of the research article as a form of technology may appear incongruous. However, an exploration of the research article through the lens of technology is critical for a comprehensive understanding of its role, interactions with other technological forms, and its consequent impact on society. The research article, viewed technologically, is a significant construct, with a long-standing history of shaping social norms and establishing institutions that extend their influence across the research community, irrespective of disciplinary boundaries, geographical locations, or historical periods&nbsp;[<a href="https://arxiv.org/html/2404.06500v2#bib.bib1" rel="" target="blank">1</a>]. This technology has achieved ubiquity on three distinct levels: spatial, with researchers globally engaging with and understanding research articles under shared assumptions; temporal, allowing for the contextual comprehension of older articles through a slow evolution of the format; and disciplinary, with a cross-disciplinary recognition of the rigorous scrutiny and scientific methodology underpinning the work. These characteristics are critical for research to function, as an incremental activity that builds on prior results and knowledge.</p>
         <p class="paragraph">The intrinsic characteristics of research papers have rendered them the foundational elements of research communication and, crucially, the conduits of trust among researchers, transcending spatial, temporal, and disciplinary divides. This established trust facilitates incremental research and underpins the development and cohesion of the global research community. Analogous to economic institutions, the norms surrounding research papers enable researchers to make assumptions similar to the reliability of contracts in legally robust countries, thus enabling international academic transactions. Beyond facilitating trust, the structured format of a research paper—detailing the research’s specifics, the researchers, the location and timing of the research, funding sources, and relevant previous work—supports the provenance and contextualisation essential for the credibility of its communicated results.</p>
@@ -1159,8 +1289,7 @@ document.addEventListener('DOMContentLoaded', () => {
         title.textContent = k
         title.id = k
         $content.appendChild(title)
-        !Object.keys(sections).includes('rest') && ($articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>
-        `)
+        !Object.keys(sections).includes('rest') && ($articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`)
     } 
     console.log(sectionContent)
     $content.appendChild(sectionContent)
@@ -1170,8 +1299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         headings.forEach(h2 => {
             const id = h2.textContent
             h2.id = id
-            $articleNav.innerHTML += `<li><a href="#${id}">${id}</a></li>
-            `
+            $articleNav.innerHTML += `<li><a href="#${id}">${id}</a></li>`
         })
     } 
   })
