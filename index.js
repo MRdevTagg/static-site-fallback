@@ -682,9 +682,9 @@ document.addEventListener('DOMContentLoaded', () => {
     tabs.forEach(tab => tab.classList.remove('active'))
     tab.classList.add('active')
     tab.textContent !== 'Preprint' && ($contentSection.style.display = 'none')
-    tab.textContent !== 'Review' && ($reviewSection.style.display = 'none')
+    tab.textContent !== 'Reviews' && ($reviewSection.style.display = 'none')
     tab.textContent === 'Preprint' && ($contentSection.style.display = 'flex')
-    tab.textContent === 'Review' && ($reviewSection.style.display = 'flex')
+    tab.textContent === 'Reviews' && ($reviewSection.style.display = 'flex')
     const url = new URL(window.location)
     url.searchParams.set('tab', tab.textContent.toLowerCase())
     window.history.pushState({}, '', url)
@@ -697,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search)
   const tabParam = urlParams.get('tab')
 
-  if (!tabParam || !['preprint', 'review'].includes(tabParam)) {
+  if (!tabParam || !['preprint', 'reviews'].includes(tabParam)) {
     handleTabChange({ target: tabs[0] })
   } else {
     const activeTab = Array.from(tabs).find(
