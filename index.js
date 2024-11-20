@@ -1,35 +1,35 @@
 const getArticleNumberFromURL = () => {
-  const urlParams = new URLSearchParams(window.location.search)
-  return urlParams.get('manuscript')
-}
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("manuscript");
+};
 
 function splitTextIntoParagraphs(text) {
-  const lines = text.split('\n').filter(Boolean)
-  const paragraphs = lines.map(line => `<p>${line.trim()}</p>`)
-  return paragraphs.join('\n')
+  const lines = text.split("\n").filter(Boolean);
+  const paragraphs = lines.map((line) => `<p>${line.trim()}</p>`);
+  return paragraphs.join("\n");
 }
 
-const renderImage = (num, fig, alt = '') => {
-  return `<img src="./assets/article-${num}/fig${fig}.png" alt="${alt}" /><figcaption>${alt}</figcaption>`
-}
+const renderImage = (num, fig, alt = "") => {
+  return `<img src="./assets/article-${num}/fig${fig}.png" alt="${alt}" /><figcaption>${alt}</figcaption>`;
+};
 
-const generateOrderedList = items => {
-  let ol = '<ol>'
-  items.forEach(item => {
-    ol += `<li>${item}</li>`
-  })
-  ol += '</ol>'
-  return ol
-}
+const generateOrderedList = (items) => {
+  let ol = "<ol>";
+  items.forEach((item) => {
+    ol += `<li>${item}</li>`;
+  });
+  ol += "</ol>";
+  return ol;
+};
 
-const generateUnorderedList = items => {
-  let ul = '<ul>'
-  items.forEach(item => {
-    ul += `<li>${item}</li>`
-  })
-  ul += '</ul>'
-  return ul
-}
+const generateUnorderedList = (items) => {
+  let ul = "<ul>";
+  items.forEach((item) => {
+    ul += `<li>${item}</li>`;
+  });
+  ul += "</ul>";
+  return ul;
+};
 
 const article9Sections = {
   Abstract: /* html */ `
@@ -38,7 +38,7 @@ const article9Sections = {
   Introduction: /* html */ `
     <p>International journals often require additional assessment of the level of English. However, this is not a comprehensive list, and the list of criteria to be evaluated may vary from journal to journal. Nevertheless, as early as the beginning of the 21st century, it was argued that the system of peer review is "broken" (McCook, 2006). The main problem noted by McCook is the increasing number of manuscripts and the burden on reviewers. However, this is just the tip of the iceberg. Allen et al. (2022) highlighted the issue of the "black box": the anonymity of traditional peer review should maintain honesty and ethical norms, but it also can stifle discussion, generate biases, and reduce the overall effectiveness of peer review. In fact, the function of being the "supreme judge" in deciding what is "good" and "bad" science is taken on by peer review, defending the dominant scientific paradigm and stifling the emergence of new ideas that always arise on the periphery. However, as academician L.I. Abalkin once remarked, "no one has the right to usurp the truth" (Sukharev, 2020, p. 44). If we do not change our approach, science will either stagnate or transition into other forms of communication. Moreover, the current system has become an "exploitation machine": publishers benefit in most cases, while reviewers work voluntarily. There is a point of view that peer review is included in the implicit contract of the researcher. Nevertheless, given that most of the research and, accordingly, research positions are funded from public funds, we nonetheless observe a tendency to "reap where they did not sow." R. Smith (2006) strongly criticized the review while at the same time comparing it to democracy: "a system full of problems but the least worst we have" (p. 178). Is this really the case? And can we talk about peer review as a uniform concept, given the variety of existing models? This study aims to synthesize the key characteristics, practices, and outcomes of traditional and innovative peer review models in scholarly publishing. In the following section, we will attempt to demonstrate how the traditional peer review model has developed and how it has come to the current crisis. Furthermore, we will discuss possible ways to overcome the crisis and how the institution of peer review is evolving in the context of global changes in scientific publishing. A separate section discusses modular publishing, which incorporates various innovations in the publishing process, and in particular, the review process. The scope of this piece is limited to peer review in the context of the publication of scientific articles, but its findings are quite applicable to the publication of books or conference proceedings. At the same time, review for other purposes, e.g., evaluation of grant applications, is a topic for a separate discussion</p>
     `,
-  'Evolution and crisis of peer review': /* html */ `
+  "Evolution and crisis of peer review": /* html */ `
     <p>The practice of prepublication peer review as we understand it today emerged much later than the founding of first academic journals. E.g., Journal des Sçavans, which was published from 1665 and is considered the first academic journal, printed a warning on the first page “We aim to report the ideas of others without guaranteeing them” (Rennie, 1999, p. 2).</p>
 
 <p>However, Kronick (1990) argued that peer review as feedback from peers, in the broad sense of the word, existed as soon as scientists began to exchange research results. Peer review emerged in the form of letters, reviews, and comments that appeared after publication (usually in the case of books).</p>
@@ -61,7 +61,7 @@ had been definitively established (Fig. 1).</p>
 ${renderImage(
   9,
   1,
-  'Figure 1: Evolution of peer review models in scientific communication',
+  "Figure 1: Evolution of peer review models in scientific communication"
 )}
 <p>The institutionalization of peer review is manifested in the development of ethical principles
 which have been adopted by the majority of the academic community. One of the most wellknown documents, Ethical Guidelines for Peer Reviewers (2013), was developed by the
@@ -77,14 +77,14 @@ some of the existing issues, and now we will consider them in more detail. In pa
 following issues can be highlighted:
 </p>
 ${generateOrderedList([
-  'The rapidly growing volume of manuscripts, coupled with an increasing workload for researchers and faculty, leads to a shortage of reviewers. The primary reason for declining to review is the simple lack of time (Tite & Schroter, 2007; Willis, 2016). This issue causes extension of review periods and frustration of authors.',
-  'The shortage of reviewers forces journals to expand their search. Sometimes, this results in manuscripts being reviewed by researchers who do not possess sufficient expertise in the subject. Several studies have noted a low level of consensus among reviewers (Bornmann, 2011), leading some research to refer to peer review as a “game of chance” (Neff & Olden, 2006). The low level of peer review also contributes to the crisis of reproducibility in scientific research (Stoddart, 2016). Although this crisis is due to a multitude of factors, the peer review system bears a significant responsibility for it.',
+  "The rapidly growing volume of manuscripts, coupled with an increasing workload for researchers and faculty, leads to a shortage of reviewers. The primary reason for declining to review is the simple lack of time (Tite & Schroter, 2007; Willis, 2016). This issue causes extension of review periods and frustration of authors.",
+  "The shortage of reviewers forces journals to expand their search. Sometimes, this results in manuscripts being reviewed by researchers who do not possess sufficient expertise in the subject. Several studies have noted a low level of consensus among reviewers (Bornmann, 2011), leading some research to refer to peer review as a “game of chance” (Neff & Olden, 2006). The low level of peer review also contributes to the crisis of reproducibility in scientific research (Stoddart, 2016). Although this crisis is due to a multitude of factors, the peer review system bears a significant responsibility for it.",
   "The current peer review system exacerbates inequality in science. Bias often hides behind anonymity, creating a 'black box' problem. Despite constant calls for equality and inclusivity in science (COPE, 2021), a few groups still dominate scientific periodicals, such as male authors from the United States and the United Kingdom. O. M. Smith et al. (2023) analyzed 300,000 manuscripts in biological sciences and concluded that authors from historically excluded communities face worse outcomes in peer review, and journal efforts to eliminate reviewer bias have not yet been successful. Nevertheless, we must recognize the debatable nature of this issue. For instance, Squazzoni et al. (2021) found no systematic bias against manuscripts submitted by women in the peer review process, with some evidence of favorable treatment for women in certain fields. Walker et al. (2015) found that the gender of the author and the characteristics of the author's institution had a significant impact on the review outcomes. However, it is impossible to determine whether this was due to objective differences in scientific merit or to biases.",
-  'Continuing from point 3, peer review is also often seen to protect widely accepted approaches and concepts to the detriment of novelty. Peer review can inadvertently stifle innovation and radical new ideas (Steinhauser et al., 2012). The process tends to favor established concepts and discourage the publication of unusual or disparate discoveries (Hess, 1975). As a result, it may limit opportunities for game-changing scientific discoveries (Braben & Dowler, 2017). The neoclassical school in economics may be seen as an example of this phenomenon. The crisis of the neoclassical school began in the early 21st century (Williams & McNeill, 2005), partly due to the inability to explain the global financial crisis of 2008 (Keen, 2015). However, a paradigm shift has still not occurred - the neoclassical school still occupies a central position in the economic science (and the policies of many countries).',
-  'Finally, the current form of peer review is simply inefficient. On the one hand, long peer review slows down the process of disseminating new knowledge (see point 1), and on the other hand, often a large number of reviews are required for a single article. The reason for this is that when authors receive a rejection from one journal, they often submit the same article to another journal, starting the entire process anew. Aczel et al. (2021) found that in 2021, reviewers worldwide spent over 100 million hours, equivalent to more than 15,000 years. If we evaluate this time in terms of money, the cost for reviewers in the USA amounted to over $1.5 billion, in China over $600 million, and in the UK around $400 million. Therefore, peer review is a quite costly activity, and currently, doubts arise regarding the efficiency of its utilization.',
+  "Continuing from point 3, peer review is also often seen to protect widely accepted approaches and concepts to the detriment of novelty. Peer review can inadvertently stifle innovation and radical new ideas (Steinhauser et al., 2012). The process tends to favor established concepts and discourage the publication of unusual or disparate discoveries (Hess, 1975). As a result, it may limit opportunities for game-changing scientific discoveries (Braben & Dowler, 2017). The neoclassical school in economics may be seen as an example of this phenomenon. The crisis of the neoclassical school began in the early 21st century (Williams & McNeill, 2005), partly due to the inability to explain the global financial crisis of 2008 (Keen, 2015). However, a paradigm shift has still not occurred - the neoclassical school still occupies a central position in the economic science (and the policies of many countries).",
+  "Finally, the current form of peer review is simply inefficient. On the one hand, long peer review slows down the process of disseminating new knowledge (see point 1), and on the other hand, often a large number of reviews are required for a single article. The reason for this is that when authors receive a rejection from one journal, they often submit the same article to another journal, starting the entire process anew. Aczel et al. (2021) found that in 2021, reviewers worldwide spent over 100 million hours, equivalent to more than 15,000 years. If we evaluate this time in terms of money, the cost for reviewers in the USA amounted to over $1.5 billion, in China over $600 million, and in the UK around $400 million. Therefore, peer review is a quite costly activity, and currently, doubts arise regarding the efficiency of its utilization.",
 ])}
     `,
-  'Innovations in peer review': /* html */ `
+  "Innovations in peer review": /* html */ `
     <p>We have demonstrated the current crisis of the traditional peer review model. In this regard, the
 question arises about the possible ways to overcome the crisis. Recently, a lot of literature has
 been published on innovations in the field of peer review (see reviews by Kaltenbrunner et al.,
@@ -95,7 +95,7 @@ enables creation of a two-factor matrix (Table 1).</p>
 ${renderImage(
   9,
   2,
-  'Source: compiled by the author based on Waltman et al. (2023).',
+  "Source: compiled by the author based on Waltman et al. (2023)."
 )}
 <p>We should acknowledge that the above-mentioned innovations can simultaneously be placed in different groups. For example, registered reports not only aim to improve the quality of peer review, but also aim to contribute to its efficiency. Now, let's consider each of the directions in detail.</p>
 <h4>3.1. Quality and reproducibility</h4>
@@ -128,7 +128,7 @@ to the previously registered methodological approach (study protocol).</p>
 ${renderImage(
   9,
   3,
-  'Figure 2: Registered reports - publication workflow (Model 2).',
+  "Figure 2: Registered reports - publication workflow (Model 2)."
 )}
 <p>It should be noted that most initiatives aimed at improving the quality of peer review
 simultaneously increase the costs.</p>
@@ -161,7 +161,7 @@ ${renderImage(9, 4)}
 ${renderImage(
   9,
   5,
-  'Figure 3: “Publish-Review-Curate” model (Model 3). Model 3a involves uploading the manuscript directly to a platform (e.g., F1000Research). Model 3b, on the other hand, involves initially posting a preprint on a preprint server followed by peer review on a peer review platform (e.g., eLife and Peer Community in).',
+  "Figure 3: “Publish-Review-Curate” model (Model 3). Model 3a involves uploading the manuscript directly to a platform (e.g., F1000Research). Model 3b, on the other hand, involves initially posting a preprint on a preprint server followed by peer review on a peer review platform (e.g., eLife and Peer Community in)."
 )}
 <p>In addition to the projects mentioned, there are other platforms, for example, PREreview12
 ,
@@ -179,7 +179,7 @@ structure of work.</p>
 rather than the question whether it fits a particular journal. However, we believe that journalindependent peer review is a special case of Model 3 (“Publish-Review-Curate”).
 </p>
     `,
-  'Modular Publishing': /* html */ `
+  "Modular Publishing": /* html */ `
     <p>Strictly speaking, modular publishing is primarily an innovative approach for the publishing
 workflow in general rather than specifically for peer review. This approach allows for a more
 detailed and in-depth exploration of the research process. Besides, modular publishing, which is
@@ -207,16 +207,16 @@ Journals, n.d.). These journals will combine the idea of modular publishing with
 post-publication peer review and registered reports. Although the initiative is currently in the
 planning stage, it seems promising.</p>
     `,
-  'Discussion and Conclusion': /* html */ `
+  "Discussion and Conclusion": /* html */ `
     <p>In the previous sections, we briefly examined the evolution of the peer review and its current
 crisis in relation to scientific communication. Next, we explored the main innovations in peer
 review, which can be classified according to the course of proposed changes and the degree of
 influence on the editorial workflow, incremental and radical. As a result, we can conclude that, at
 present, there are three major models of peer review and related editorial workflow:</p>
 ${generateUnorderedList([
-  'Model 1: traditional model (pre-publication peer review),',
-  'Model 2: registered reports,',
-  'Model 3: “Publish-Review-Curate” (post-publication review).',
+  "Model 1: traditional model (pre-publication peer review),",
+  "Model 2: registered reports,",
+  "Model 3: “Publish-Review-Curate” (post-publication review).",
 ])}
 <p>Table 2 presents comparative characteristics of these models.</p>
 <p>Table 2 – Comparative analysis of the three review models in terms of editorial workflow</p>
@@ -226,7 +226,7 @@ ${renderImage(9, 6)}
 certification and archiving (Roosendaal & Geurts, 1997; Taubert, 2017).</p>
 <p>Table 3 - Comparative analysis of the three models of review in terms of functions of scientific communication</p>
 ${renderImage(9, 7)}
-${renderImage(9, 8, '* Preprint is optional for Models 1 and 2.')}
+${renderImage(9, 8, "* Preprint is optional for Models 1 and 2.")}
 <p>Thus, in Model 3, all functions of scientific communication are implemented most quickly and
 transparently. The additional costs arising from the independent assessment of information based
 on open reviews are more than compensated by the emerging opportunities for scientific
@@ -246,9 +246,9 @@ normative regulation here are quite limited - much depends on the traditions emb
 academic community, and it will take a lot of time to change them. Openness is a complex
 process that requires three conditions:</p>
 ${generateOrderedList([
-  'Group of people willing to take responsibility for the quality of scientific communication in this academic community,',
-  'Authors and reviewers willing to accept this practice,',
-  'Appropriate infrastructure.',
+  "Group of people willing to take responsibility for the quality of scientific communication in this academic community,",
+  "Authors and reviewers willing to accept this practice,",
+  "Appropriate infrastructure.",
 ])}
 <p>Avissar-Whiting et al. (2024) provided a useful toolbox of recommendations for all parties
 potentially involved in the preprint review process.
@@ -479,18 +479,18 @@ so they do not significantly affect the publishing landscape</p>
 </p>
 </div>
     `,
-}
+};
 
 const manuscriptData = {
   9: {
-    title: 'Evolution of Peer Review in Scientific Communication',
-    doi: '10.31235/osf.io/b2ra3',
-    published: 'Published on Nov 20, 2024',
+    title: "Evolution of Peer Review in Scientific Communication",
+    doi: "10.31235/osf.io/b2ra3",
+    published: "Published on Nov 20, 2024",
     reviews: [
       {
-          name: 'Balazs Aczel',
-          orcid: '0000-0001-9364-4988',
-          review: splitTextIntoParagraphs(`
+        name: "Balazs Aczel",
+        orcid: "0000-0001-9364-4988",
+        review: splitTextIntoParagraphs(`
                     The work ‘Evolution of Peer Review in Scientific Communication’ provides a consise and radable summary of the historical role of peer review in modern science. The paper categorises the peer review practices into three models: (1) traditional pre-publication peer review; (2) registered reports; (3) post-publication peer review. The author compares the three models and draws the conclusion that the “third model offers the best way to implement the main funtion of scientific communication”. 
 
 I would contest this conclusion. In my eyes the three models serve different aims - with more or less drawbacks. For example, although Model 3 is less chance to insert bias to the readers, it also weakens the filtering function of the review system. Let’s just think about the dangers of machine-generated articles, paper-mills, p-hacked research reports and so on. Although the editors does some pre-screening for the submissions, in a world with only Model 3 peer review the literature could easily get loaded with even more ‘garbage’ than in a model where additional peers help the screening. 
@@ -505,9 +505,9 @@ A minor comment: I found that a number of statements lack references in the Intr
 `),
       },
       {
-          name: 'Martin Bush',
-          orcid: '0000-0001-9018-4373',
-          review: splitTextIntoParagraphs(`
+        name: "Martin Bush",
+        orcid: "0000-0001-9018-4373",
+        review: splitTextIntoParagraphs(`
 In "Evolution of Peer Review in Scientific Communication", Kochetkov provides a point-of-view discussion of the current state of play of peer review for scientific literature, focussing on the major models in contemporary use and recent innovations in reform. In particular, they present a typology of three main forms of peer review: traditional pre-
 
 publication review; registered reports; and post-publication review, their preferred model. The main contribution it could make would be to help consolidate typologies and terminologies, to consolidate major lines of argument and to present some useful visualisations of these. On the other hand, the overall discussion is not strongly original in character.
@@ -537,19 +537,19 @@ Beyond the specific suggestions in the preceding paragraphs, my suggestions to i
 3. Consider ways in which the typology might be expanded, even if at subordinate level.
 
 I have no competing interests in the compilation of this review, although I do have specific interests as noted above.
-          `)
+          `),
       },
       {
-          name: 'Olmo R. van den Akker',
-          orcid: '0000-0002-0712-3746',
-          review: splitTextIntoParagraphs(`
+        name: "Olmo R. van den Akker",
+        orcid: "0000-0002-0712-3746",
+        review: splitTextIntoParagraphs(`
           missing!!
-          `)
+          `),
       },
       {
-          name: 'Wendy Leuenberger',
-          orcid: '0000-0001-6567-9913',
-          review: splitTextIntoParagraphs(`
+        name: "Wendy Leuenberger",
+        orcid: "0000-0001-6567-9913",
+        review: splitTextIntoParagraphs(`
           Overall thoughts: This is an interesting history piece regarding peer review and the development of review over time. Given the author’s conflict of interest and association with the Centre developing MetaROR, I think that this paper might be a better fit for an information page or introduction to the journal and rationale for the creation of MetaROR, rather than being billed as an independent article. Alternatively, more thorough information about advantages to pre-publication review or more downsides/challenges to post-publication review might make the article seem less affiliated. I appreciate seeing the history and current efforts to change peer review, though I am not comfortable broadly encouraging use of these new approaches based on this article alone.
 
  
@@ -567,31 +567,32 @@ With some of these methods, there’s the ability to also submit to a regular jo
 There’s a section talking about institutional change (page 14). It mentions that openness requires three conditions – people taking responsibility for scientific communication, authors and reviewers, and infrastructure. I would consider adding some discussion of readers and evaluators. Readers have to be willing to accept these papers as reliable, trustworthy, and respectable to read and use the information in them. Evaluators such as tenure committees and potential employers would need to consider papers submitted through these approaches as evidence of scientific scholarship for the effort to be worthwhile for scientists.
 
 Based on this overview, which seems somewhat skewed towards the merits of these methods (conflict of interest, limited perspective on downsides to new methods/upsides to old methods), I am not quite ready to accept this effort as equivalent of a regular journal and pre-publication peer review process. I look forward to learning more about the approach and seeing this review method in action and as it develops.  
-          `)
+          `),
       },
     ],
     authors: [
       {
-        name: 'Dmitry Kochetkov',
+        name: "Dmitry Kochetkov",
         affiliations: [],
       },
     ],
     dates: {
-        'Curated version': 'May 23, 2024',
-        'Peer reviewed': 'May 23, 2024',
-        'Preprint posted': 'May 23, 2024',
+      "Curated version": "May 23, 2024",
+      "Peer reviewed": "May 23, 2024",
+      "Preprint posted": "May 23, 2024",
     },
     sections: article9Sections,
   },
   12: {
-    title: 'Researchers are willing to trade their results for journal prestige: results from a discrete choice experiment',
-    doi: '10.31219/osf.io/uwt3b',
-    published: 'Published on Aug 02, 2024',
+    title:
+      "Researchers are willing to trade their results for journal prestige: results from a discrete choice experiment",
+    doi: "10.31219/osf.io/uwt3b",
+    published: "Published on Aug 02, 2024",
     reviews: [
       {
-          name: 'Stephen Curry',
-          orcid: '0000-0002-0552-8870',
-          review: `<p class="paragraph">This manuscript reports the results of an interesting discrete choice experiment designed to probe the values and interests that inform researchers’ decisions on where to publish their work.</p>
+        name: "Stephen Curry",
+        orcid: "0000-0002-0552-8870",
+        review: `<p class="paragraph">This manuscript reports the results of an interesting discrete choice experiment designed to probe the values and interests that inform researchers’ decisions on where to publish their work.</p>
           <p class="paragraph">&nbsp;</p>
           <p class="paragraph">Although I am not an expert in the design of discrete choice experiments, the methodology is well explained and the design of the study comes across as well considered, having been developed in a staged way to identify the most appropriate pairings of journal attributes to include.</p>
           <p class="paragraph">&nbsp;</p>
@@ -610,9 +611,9 @@ Based on this overview, which seems somewhat skewed towards the merits of these 
             `,
       },
       {
-          name: 'Tony Ross-Hellauer',
-          orcid: '0000-0003-4470-7027',
-          review: `
+        name: "Tony Ross-Hellauer",
+        orcid: "0000-0003-4470-7027",
+        review: `
           <p class="paragraph">Peer Review of Preprint: "Researchers Are Willing to Trade Their Results for Journal Prestige: Results from a Discrete Choice Experiment", <a href="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Furldefense.com%2Fv3%2F__https%3A%2F%2Fdoi.org%2F10.31219%2Fosf.io%2Fuwt3b__%3B!!NVzLfOphnbDXSw!HdeyeHHei6yWQHFjhN3deSSfp82ur9i9JNOLEVOYZN0BvyslUO2S8DlvjBbautmafJEvlUsxQZbT0JLQX7lO8EcOWleCpgE%24&amp;data=05%7C02%7Ca.l.brasil.varandas.pinto%40cwts.leidenuniv.nl%7C9f47a111adec49d04bb608dd0614ae94%7Cca2a7f76dbd74ec091086b3d524fb7c8%7C0%7C0%7C638673408085227949%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=%2Fk4Kg%2BJVM4lOvkopA0GieRD5h3nDwLeMNsXdg7kcgvE%3D&amp;reserved=0" rel="" target="blank" title="https://eur03.safelinks.protection.outlook.com/?url=https%3A%2F%2Furldefense.com%2Fv3%2F__https%3A%2F%2Fdoi.org%2F10.31219%2Fosf.io%2Fuwt3b__%3B!!NVzLfOphnbDXSw!HdeyeHHei6yWQHFjhN3deSSfp82ur9i9JNOLEVOYZN0BvyslUO2S8DlvjBbautmafJEvlUsxQZbT0JLQX7lO8EcOWleCpgE%24&amp;data=05%7C02%7Ca.l.brasil.varandas.pinto%40cwts.leidenuniv.nl%7C9f47a111adec49d04bb608dd0614ae94%7Cca2a7f76dbd74ec091086b3d524fb7c8%7C0%7C0%7C638673408085227949%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&amp;sdata=%2Fk4Kg%2BJVM4lOvkopA0GieRD5h3nDwLeMNsXdg7kcgvE%3D&amp;reserved=0">https://doi.org/10.31219/osf.io/uwt3b</a></p><p class="paragraph">&nbsp;</p><p class="paragraph">Tony Ross-Hellauer, <a href="mailto:tross@know-center.at" rel="" target="blank" title="mailto:tross@know-center.at">tross@know-center.at</a>, 2nd Nov 2024</p>
           <p class="paragraph">&nbsp;</p>
           <p class="paragraph">In "<em>Researchers Are Willing to Trade Their Results for Journal Prestige: Results from a Discrete Choice Experiment</em>", the authors investigate researchers’ publication preferences using a discrete choice experiment in a cross-sectional survey of international health and medical researchers. The study investigates publishing decisions in relation to negotiation of trade-offs amongst various factors like journal impact factor, review helpfulness, formatting requirements, and usefulness for promotion in their decisions on where to publish. The research is timely; as the authors point out, reform of research assessment is currently a very active topic. The design and methods of the study are suitable and robust. The use of focus groups and interviews in developing the attributes for study shows care in the design. The survey instrument itself is generally very well-designed, with important tests of survey fatigue, understanding (<em>dominant choice task</em>) and respondent choice consistency (repeat choice task) included. Respondent performance was good or excellent across all these checks. Analysis methods (pMMNL and latent class analysis) are well-suited to the task. Pre-registration and sharing of data and code show commitment to transparency. Limitations are generally well-described.</p>
@@ -637,116 +638,114 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
       },
     ],
     authors: [
-        {
-            name: 'Natalia Gonzalez Bohorquez',
-            affiliations: ['Queensland University of Technology'],
-            email: 'natalia.gonzalezbohorquez@hdr.qut.edu.au',
-        },
-        {
-            name: 'Sucharitha Weerasuriya',
-            affiliations: ['Queensland University of Technology'],
-            email: 'sucharitha.weerasuriya@qut.edu.au',
-        },
-        {
-            name: 'David Brain',
-            affiliations: ['Queensland University of Technology'],
-            email: 'david.brain@qut.edu.au',
-        },
-        {
-            name: 'Sameera Senanayake',
-            affiliations: ['Duke-NUS Medical School'],
-            email: 'sameera.senanayake@duke-nus.edu.sg',
-        },
-        {
-            name: 'Sanjeewa Kularatna',
-            affiliations: ['Duke-NUS Medical School'],
-            email: 'sanjeewa.kularatna@duke-nus.edu.sg',
-        },
-        {
-            name: 'Adrian Barnett',
-            affiliations: ['Queensland University of Technology'],
-            email: 'a.barnett@qut.edu.au',
-            orcid: '0000-0001-6339-0374',
-        },
+      {
+        name: "Natalia Gonzalez Bohorquez",
+        affiliations: ["Queensland University of Technology"],
+        email: "natalia.gonzalezbohorquez@hdr.qut.edu.au",
+      },
+      {
+        name: "Sucharitha Weerasuriya",
+        affiliations: ["Queensland University of Technology"],
+        email: "sucharitha.weerasuriya@qut.edu.au",
+      },
+      {
+        name: "David Brain",
+        affiliations: ["Queensland University of Technology"],
+        email: "david.brain@qut.edu.au",
+      },
+      {
+        name: "Sameera Senanayake",
+        affiliations: ["Duke-NUS Medical School"],
+        email: "sameera.senanayake@duke-nus.edu.sg",
+      },
+      {
+        name: "Sanjeewa Kularatna",
+        affiliations: ["Duke-NUS Medical School"],
+        email: "sanjeewa.kularatna@duke-nus.edu.sg",
+      },
+      {
+        name: "Adrian Barnett",
+        affiliations: ["Queensland University of Technology"],
+        email: "a.barnett@qut.edu.au",
+        orcid: "0000-0001-6339-0374",
+      },
     ],
     dates: {
-        'Curated version': 'Sep 12, 2024',
-        'Peer reviewed': 'Sep 12, 2024',
-        'Preprint posted': 'Sep 12, 2024',
+      "Curated version": "Sep 12, 2024",
+      "Peer reviewed": "Sep 12, 2024",
+      "Preprint posted": "Sep 12, 2024",
     },
     sections: {
-        Abstract: splitTextIntoParagraphs(`
+      Abstract: splitTextIntoParagraphs(`
         The research community’s fixation on journal prestige is harming research quality, as some researchers focus on where to publish instead of what. We examined researchers’ publication preferences using a discrete choice experiment in a cross-sectional survey of international health and medical researchers. We asked researchers to consider two hypothetical journals and decide which they would prefer. The hypothetical journals varied in their impact factor, formatting requirements, speed of peer review, helpfulness of peer review, editor’s request to cut results, and whether the paper would be useful for their next promotion. These attributes were designed using focus groups and interviews with researchers, with the aim of creating a tension between personal and societal benefit. Our survey found that researchers’ strongest preference was for the highest impact factor, and the second strongest for a moderate impact factor. The least important attribute was a preference for making changes in format and wording compared with cutting results. Some respondents were willing to cut results in exchange for a higher impact factor. Despite international efforts to reduce the importance of impact factor, it remains a driver of researchers’ behaviour. The most prestigious journals may have the most partial evidence, as researchers are willing to trade their results for prestige.
-        `
-        ),
-        rest: `
+        `),
+      rest: `
         <p class="paragraph">Peer reviewed publications are academic currency [1]. Having sufficient publications in the bank is important for hiring, promotion and funding [2, 3]. Publications are also a vital record of evidence which can improve policy and practice, and direct future research [4]. Ideally publications could be both useful as academic currency and sources of evidence for scientific progress. However, the value of publications as a currency may be trumping their main purpose to provide reliable evidence [5]. The intrinsic motivation of a “Taste for Science” (described by Merton [6]) may have been superseded by the extrinsic motivation of a “Taste for Publications” [7]. In a “publish or perish” world, researchers may “prefer popularity to intrinsic value” and hence focus on where to publish instead of what to publish [1].</p><p class="paragraph">Most researchers regularly make considered decisions on what journal to submit to and how to navigate peer review. Factors include the journal’s prestige (often defined using the impact factor), the target audience, the article processing charges, the required formatting, and the journal’s rejection rate and turnaround times. The perfect home for a paper is rare [8], and researchers often need to make compromises to be successful [9]. We aimed to study some of the important compromises that researchers make and thus examine how researchers publish their research.<br>We were especially interested in the trade-offs that researchers make concerning personal benefits and the wider benefits for society. We aimed to test trade-offs between earning academic currency and creating an accurate record of the evidence.</p><h2>Results</h2><h3>Sample description</h3><p class="paragraph">The surveys were collected between 26 March 2024 and 30 May 2024 (66 days) (see Supplement S.1). The median time to complete the survey was 7 minutes. We received 616 responses from 7,376 invites giving a response rate of 8.5%; this excludes 170 emails that were no longer active. A classification tree found that the response rate varied by email domain, with a higher response rate of 21% for – amongst others – Australia, Switzerland and the UK, and lower response rate of 3% for – amongst others – China, Germany and Japan (see Supplement S.2). The questions were generally well completed but there was some survey fatigue with under 1% missing the first choice task and 15% missing the tenth and last choice task (Supplement S.3).</p><p class="paragraph">Thirteen percent of respondents found answering the hypothetical choices to be difficult or very difficult. The dominant choice task was selected by over 99% of respondents, indicating an excellent understanding of the attributes and levels. The repeat choice task had the same answer as the original for 79% of respondents, indicating good internal consistency.</p><p class="paragraph">Summary statistics on the sample are in Table 1. Respondents had been working in research for a median of 10 years and had a median of 43 peer reviewed papers. Forty-seven percent were female. The most popular broad research area was Clinical Sciences (57%). Forty percent of respondents had a personal target for their annual number of publications.</p><p class="paragraph">Table 1: Summary statistics on the respondents’ characteristics. Whether researchers had a target number of publications was only asked in the final sample; respondents could tick multiple answers for this question. Q1 = first quartile, Q3 = third quartile.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_t1-1024x835.png" alt="" data-id="c1fbc548-5ea2-4d8e-8919-2e4c664bb105"><figcaption id="c1fbc548-5ea2-4d8e-8919-2e4c664bb105" class="decoration"></figcaption></figure><p class="paragraph">The sample included responses from 63 countries, with the three most common of USA (15%), UK (11%) and Australia (10%) (table of all countries in Supplement S.4).</p><h3>Researchers’ preferences</h3><p class="paragraph">The utilities for each attribute are in Figure 1 and Table 2. The figure also shows the utilities stratified by the respondents’ characteristics and the scenario wording concerning prior rejections.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_1-1024x926.png" alt="" data-id="ca96f181-2f8e-45b6-b3a3-1329346e475a"><figcaption class="wp-element-caption">Figure 1: Utility estimates and 95% confidence intervals for the six attributes. The dotted vertical line at zero is for no difference in utility. Forty-three publications was the sample median. JIF = journal impact factor.</figcaption></figure><p class="paragraph">Table 2: Utilities for the journal preferences and attribute importance. See Table 3 for the full wording of the attributes and levels. JIF = journal impact factor.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_t2-1024x270.png" alt="" data-id="11ab5674-e945-4e88-8313-154cfad55909"><figcaption id="11ab5674-e945-4e88-8313-154cfad55909" class="decoration"></figcaption></figure><p class="paragraph">The strongest preference was for the highest impact factor and the second strongest for the moderate impact factor. The least important attribute was a preference for making changes in format and wording compared with cutting a table and analysis.</p><p class="paragraph">After the impact factor, the next strongest preference was for a helpful review. The utilities for a fast review and minor formatting were similar. Researchers had a clear preference for papers that were useful for their promotion.</p><p class="paragraph">More experienced researchers had a stronger preference for the highest impact factor and minor formatting. Researchers who had more peer reviewed papers had a much stronger preference for the highest and moderate impact factors.</p><p class="paragraph">Female researchers had slightly stronger preferences for helpful reviews and papers that were useful for their promotion.</p><p class="paragraph">There was little difference in researchers’ preferences by whether the paper had been previously rejected or not.</p><p class="paragraph">The latent class results are in Figure 2. The optimal number of groups according to the AIC was four. The largest group had the strongest preferences for impact factor, a relatively small preference for fast results, and a slight preference for cutting results over minor formatting. The second largest group had the strongest preference for a helpful review, with a much reduced – although still positive – preference for journal impact factor. The third group were not concerned about a helpful review, but strongly preferred minor over major formatting and a paper that was useful for their promotion. Ten percent of respondents provided non-informative responses.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_2-1024x964.png" alt="" data-id="13d7cf77-cccd-4be0-b096-fd8073de7101"><figcaption class="wp-element-caption">Figure 2: Utility estimates and 95% confidence intervals for the six attributes using a latent class model. The percents in the panel headers are the group sizes. The dotted vertical line at zero is for no difference in utility. JIF = journal impact factor.</figcaption></figure><h3>Interactions</h3><p class="paragraph">The five planned interactions are plotted in Figure 3 with the estimates in Supplement S.5. When the journal had no impact factor, there was a stronger preference for a faster review. The journal rank had a similar interaction with both the editor’s requests and the style requirements, as there was no difference in utility when the journal had no impact factor. This could indicate an indifference by researchers about their papers in journals without an impact factor.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_3-1024x895.png" alt="" data-id="8aba2156-827f-4b5d-bd4a-df6535fbe41f"><figcaption class="wp-element-caption">Figure 3: Utility estimates for the five planned interactions. The dots are the means and the vertical lines are 95% confidence intervals. The reference group is the left-most level on the x-axis with the green line</figcaption></figure><p class="paragraph">There was an interaction between the editor’s requests and a helpful review, as if the review was not helpful then there was a stronger preference for formatting and wording changes over cutting results. Whereas for helpful reviews, researchers showed little difference between the editor’s requests, which could be because they interpreted all requests as helpful.</p><p class="paragraph">There was a small interaction between a helpful review and speed, as researchers were more willing to wait for a helpful review.</p><h2>Discussion</h2><p class="paragraph">Researchers had the strongest preference for impact factor above any other tested attributes. This was both a desire for high impact factors and an aversion to papers with no impact factor. The importance of impact factor to researchers has been called an “obsession” [10], a “mania” [11], and a “game” that encourages “questionable practices” [12]. Major international initiatives have sought to combat the influence of impact factors, such as DORA in 2012<br>(https://sfdora.org/) and COARA in 2022 (https://coara.eu/). Despite these initiatives and the extensive debate on the negative consequences of using impact factors for evaluating researchers, the highest possible impact factor is a target for many researchers. A focus group participant framed impact factors as useful for “quantifying my academic abilities”, whilst a survey participant commented, “I’ve been told if it isn’t in an impact factor over 10 it doesn’t matter/count”. Journals must be indexed for three years to get an impact factor, but some respondents interpreted a journal without an impact factor as predatory rather than new, as stated by a survey participant, “I would never select a journal without an impact factor as I always publish in journals that I know and can trust that are not predatory.”</p><p class="paragraph">Researchers with more publications and more years of experience had a stronger preference for impact factor (Figure 1). This could be because some early career researchers are yet to understand the importance impact factors. Another explanation is a survivorship effect, as researchers with high impact factor publications have an advantage in employment and promotion [13], whilst researchers with less prestigious papers are out-competed [5].</p><p class="paragraph">Some survey respondents commented that they could not understand how a paper in a high impact factor journal could not be useful for their promotion or fellowship, which was a combination in the discrete choice tasks. This illustrates the power of the impact factor, as it trumps the content of the paper [11]. A recent survey showed how the content of papers is commonly neglected by grant and hiring committees, as over half use journal impact factor to assess credibility [14]. When fellowship and hiring committees make career-changing decisions based on impact factors, this sends a clear signal to researchers to prioritise impact factors over content. A researcher in our interviews appeared comfortable with being assessed based on impact factors: “People have to quantify me by something. So impact factor is a very important way to do that.” However, a focus groups participant recognised that impact factors are usually meaningless when considering real-world impacts: “I’ve been working together with senior executives in the government and federal government. They don’t care about that [journal impact factor], they only want you to give them a half-page summary.”</p><p class="paragraph">A focus group participant gave a perspective on impact factors that was pragmatic and confessional, “Considering and admitting for everybody, for various reasons, usually go for a top ranked journal in its field, and everything, and some of that will be purely mercenary, because that’s what’s required.” Personal values are ceded to the reward systems that use impact factors and/or journal ranking. We aimed to distinguish researchers with a stronger focus on system requirements by asking if they had a target number of publications per year, and 53% had a personal and/or institutional target. However, having a target did not greatly alter researchers’ preferences (Figure 1). Potentially most researchers are “playing the game” and the preference for journal ranking remains high regardless of the desired publication numbers [15].</p><p class="paragraph">A surprising result was the lack of difference in researchers’ preferences for papers that were useful for promotion by experience and publication numbers (Figure 1). This could be because the competition for funding and promotion never ends and researchers are always looking to earn academic currency. Tenured or retired professors may be under less pressure [16] and a professor from the focus groups commented, “I am the least strategic person when it comes to publishing but I think that also comes with seniority as I have no need to ever write a promotion application again!”</p><p class="paragraph">Survey participants were randomised to a scenario where their hypothetical paper had not yet been submitted to a journal or had already been desk-rejected twice (Box 1). This was raised in the focus groups, with comments including: “But then, after many rejections, right? You just want to get it out”. However, in the survey the previous rejections had no effect as researchers’ preferences were remarkably similar (Figure 1). Researchers’ preferences may be impervious to rejection, as the logical approach is to continue to pursue the highest impact factor possible. Preferences may change with more than two rejections or if the rejections were after peer review rather than desk-rejections.</p><p class="paragraph">The lowest utility was for an editor’s request of formatting changes compared with cutting a table and analysis. On average, researchers preferred not to cut their analysis, but this was less of priority than the impact factor, formatting at the submission stage, or the speed of the peer review. In the latent class analysis, the group with the strongest preference for impact factor had a surprising preference for cutting results (Figure 2), showing a willingness to compromise on their evidence to get published in prestigious journals [11]. This compromise was also discussed in our focus groups as a likely trade-off during the peer review process: “I certainly have examples where I have cut things out of papers to try and get something published.” Cutting results has also been discussed in the literature, for example: “Academics who play the ‘publish or perish’ game have a strong incentive to […] accept all ‘suggestions’ by the referees even if one knows that they are misleading or even incorrect” [17], and how during peer review “authors […] remove ideas and insights that they believe in from their work” [18]. To the best of our knowledge, our survey is the first to empirically show this compromise. An important implication is that the journals with the highest impact factors potentially have the most partial evidence, as researchers are more willing to “hold their nose” to satisfy the editors at influential journals [8]. One could argue that the journals were correct, and that the cuts improved the paper. However, in the scenario we told researchers “you believe it [your paper] is good quality” and the cut was 1,000 out of 4,000 words and included a table. Some researchers potentially rationalised this compromise by thinking that the removed results could be included in a supplement, but this relegates their findings at the “whim” of an editor [19].</p><p class="paragraph">An interesting finding from the focus groups and the survey is that researchers showed a relatively strong preference for helpful reviews and were willing to wait longer for helpful reviews. For example, an interview respondent said, “If there’s something that can improve them [my papers], I want them to be improved.” The preference for helpful reviews did not change by the researchers’ experience or number of publications (Figure 1), so it was not restricted to early career researchers. The latent group analysis showed that the second largest group most preferred a helpful review (Figure 2). The relatively strong preference for helpful reviews shows clear support for peer review, as many researchers want the expertise of their peers. Similarly, an international survey on the perception of peer review found that 93% disagree with the claim that peer review is unnecessary and 85% believe that peer review benefits scientific communication [20].</p><h3>Related studies</h3><p class="paragraph">Previous studies have examined researchers’ publication preferences using hypothetical journal choices. Similar to our results, the journal’s impact factor dominated preferences compared with the journal’s editorial board, journal’s standing among peers, quality of reviews, waiting time for reviews, and probability of being accepted [21]. Journal prestige, described using “journal level”, was also the most important attribute to junior authors in a conjoint analysis that compared journal prestige, author numbers, author order, and researchers’ time investment [22]. A choice-set survey found that researchers were willing to trade citations for a more prestigious journal [23].</p><p class="paragraph">A discrete choice experiment examined what metrics academics use when choosing papers to read [24]. There were clear preferences for citation counts, followed by the journal impact factor and download counts.</p><h3>Limitations</h3><p class="paragraph">Our discrete choice experiment was hypothetical and examined stated preferences not revealed preferences.<br>The low response rate (8.5%) reduces our ability to generalise and likely creates a non-response bias. Our approach email included words such as “journal” and “publishing” and so may have appeared similar to the many nuisance journal requests that researchers regularly receive and may have been automatically or manually deleted.</p><p class="paragraph">Respondents to our survey could be more engaged about the publication process than the wider population. We found a difference in response rate by country, hence our results over-represent some countries.</p><h2>Methods</h2><h3>Designing the discrete choice experiment</h3><p class="paragraph">We used a discrete choice experiment to examine researchers’ publication preferences as this is well-suited to testing the multiple trade-offs that researchers make when publishing papers.</p><p class="paragraph">We used multiple stages to design and deploy the discrete choice experiment (see Figure 4 and Supplement S.6 for details). With the aim of considering a wide array of attributes, we started with a literature review of papers that examined one or more potential attributes. The review collected 77 potential attributes about publications, with most concerning the journal (e.g., impact factor), the impact (e.g., social media discussion), and paper’s characteristics (e.g., paper with novel findings).</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_4-1024x915.png" alt="" data-id="5945149d-074a-42a9-9311-44c9dde3c7aa"><figcaption class="wp-element-caption">Figure 4: The stages of designing and deploying the discrete choice experiment to elicit researchers’ publication preferences</figcaption></figure><p class="paragraph">We used focus groups and in-depth interviews with health researchers from Australian academic institutions to explore the most important attributes, collect new attributes, and test potential trade-offs. We recruited participants from our networks and maximised for variation in career stage, gender, and research field. We ran focus groups in clinical sciences (8 participants), public health and health services research (8 participants), and used interviews for the two participants in fundamental science as we did not have enough people for a focus group. We piloted the focus group with 9 participants from health services research. The focus groups and interviews sample sizes were arbitrary, being mostly determined by the number of interested participants.</p><p class="paragraph">We used a semi-structured interview guide with an adapted nominal group technique without consensus [25]. Participants were asked to imagine they had written a paper and were now thinking of submitting it to a journal. They were asked about the attributes they consider most important when submitting to a journal. Each participant talked through up to ten attributes with the group and explained their choices. The attributes mentioned were then added to an online survey and participants voted on their most important attributes, explaining the rationale for their choices. We analysed and selected the attributes using the five steps of attribute development with a distilling approach [26].</p><p class="paragraph">An initial design of eight attributes was tested using a thinking-aloud exercise with ten researchers [27]. Researchers were shown a choice task and were asked to discuss their thoughts aloud on whether: they had any comments on the content or wording; there were any levels that they struggled to understand or that seemed unrealistic; the gaps between any levels were too jarring or obvious; and there was anything missing. This exercise identified that an attribute on journal prestige was sometimes contradictory to an attribute on journal ranking, and hence the prestige attribute was removed.</p><h3>Attribute and level selection</h3><p class="paragraph">The final attributes and levels are in Table 3. In this section we explain the choices behind the attributes and levels, and explain the perceived importance of some attributes and why some attributes were excluded.</p><p class="paragraph">Table 3: The six attributes and their levels for the discrete choice experiment. The first column is a short label used to refer to the attributes.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_t3-1024x345.png" alt="" data-id="6b137755-50e4-4ff7-a513-950a9b7dedbc"><figcaption id="6b137755-50e4-4ff7-a513-950a9b7dedbc" class="decoration"></figcaption></figure><p class="paragraph">Journal impact factor was the most common attribute in the literature review and was also frequently mentioned in the focus groups and interviews. Participants suggested that its importance relied on self-serving purposes like job promotions, grants, and funding, but also it was perceived as a reflection of the excellence of the researcher and a way to quantify the worth of their work. Related to the impact factor was the idea of predatory journals, which raised strong feelings of aversion due to reputational damage (e.g., “I avoid them like the plague”). For the levels, we decided against numeric impact factors because these numbers vary by field [28], hence we used a relative field ranking of the highest, middle, and a journal without an impact factor, which could represent a new journal or a potentially predatory journal.</p><p class="paragraph">Formatting was often considered as a “painful” process. Concerns were mentioned about the time needed to fit a journal’s style requirements, and respondents wanted to avoid onerous systems. We used two simple levels of minor and major formatting.</p><p class="paragraph">Peer review was widely discussed, with researchers interested in the speed and quality of reviews. We framed both these attributes by what their colleagues had told them, as colleagues were an important source of information about prospective journals. We used the relative labels of “slow” and “fast” rather than numeric review times (e.g., 30 days) because average times vary by field [29].</p><p class="paragraph">The focus group discussions uncovered a new issue as some researchers raised experiences of being asked by a journal editor to cut results from their paper at the peer review stage. There were multiple potential reasons including to reduce the word count, to keep a “clean story”, to make the story “digestible”, to remove results that contradicted previous findings, or to remove findings that were not of interest to journals or colleagues. We included this as an attribute as it suited the tension we were aiming to test, being a trade-off between the loss of evidence from presenting an abridged version of the work against the potential benefit of earning a publication. A difference between this attribute and the others is that it occurs post-submission.</p><p class="paragraph">The final attribute was a direct appeal to personal benefit, as it concerned whether the paper was useful or not for their next promotion or fellowship application. An example of a good quality paper that researchers might not use in a fellowship application is a “negative” study, where, for example, a new intervention or treatment did not work (often judged by the arbitrary statistical significance threshold of p &lt; 0.05). “Negative” studies can be less cited and receive less publicity than “positive” studies [30, 31], highlighting their reduced value as academic currency.</p><p class="paragraph">Article processing charges (APCs) were often discussed, but we excluded them as an attribute because they could often not be traded – for example, researchers with no budget to pay APCs. Using charges could have introduced a hypothetical bias, as researchers mostly do not personally pay the APCs and therefore the choices would be not be as meaningful [32].</p><p class="paragraph">Citations were a common attribute in the literature review, but focus group discussions revealed that these were seen as being beyond the control of the researchers and somewhat due to chance. Hence it would not be plausible to use varying citation numbers as attribute levels. Supporting this decision, a prospective study of journal editors found that citation counts were difficult to predict [33].</p><h3>Scenario</h3><p class="paragraph">The scenario in Box 1 was shown at the start of the survey and was repeated under every choice task.</p><p class="paragraph">The scenario framed the choice tasks and included some attributes of journal choice relevant for decision-making that: 1) could not be measured independently as they overlapped with other attributes, or 2) their importance was either relative across participants or deterministic. For example, the scope and readership of the journal were often mentioned in focus groups as one of the most important attributes. However, as researchers were strongly unwilling to submit to journals outside their scope, we added it to the scenario.</p><figure><figcaption id="" class=""><strong>Box 1: Scenario for the discrete choice experiment</strong><br>Imagine you have written a paper and are now trying to get it published in a journal.<br>Your paper contains original research and is around 4,000 words long with tables and figures. Your paper is relevant in your field and you believe it is good quality.<br>You will only consider journals that fit the scope of your paper and are read by your target audience. You have no previous experience with the journals (good or bad). You do not have any personal or professional relationships with the journal editors or publishers.<br>You are the first author and will make all decisions on behalf of your co-authors.<br><strong>Scenario 1 ending:</strong> Your paper has not yet been submitted to any journal.<br><strong>Scenario 2 ending:</strong> Your paper has been submitted and desk-rejected (rejected without peer reviews) by two journals.</figcaption></figure><p class="paragraph">The two scenario endings were created because in the focus groups some researchers mentioned how they might change behaviour after experiencing some rejections. To test this potential difference in the survey, researchers were randomised to view one or the other scenario ending in a 1:1 ratio.</p><p class="paragraph">Focus group participants mentioned that previous experiences with a journal, good or bad, would strongly influence their choices. To avoid this concern, the scenario stated that the researchers did not have any experience with the journal. Similarly we stated that they did not know the editorial staff, as this also influences researchers’ journal choices.</p><h3>Dominant task</h3><p class="paragraph">An example discrete choice task is shown in Figure 5. The choice tasks were unlabelled as the hypothetical journals were “A” and “B”. This example is the dominant choice task where “Journal A” is clearly the most desirable. It was used to examine whether respondents understood the task. It was shown as the first task to warm up respondents and was not used in the data analysis.</p><h3>Survey of discrete choice tasks</h3><p class="paragraph">The online survey started with a link to the participant information sheet (Supplement S.7) and asked researchers to indicate their consent. Fourteen respondents did not consent. Those who consented were shown the scenario (Box 1) and dominant task (Figure 5). Respondents next answered eight choice tasks. A final task was a repeat task of one of the eight. This was used to assess the stability of the participants’ responses based on the percentage of respondents that gave the same answer as the original task [34]. Differing answers could be due to learning effects or fatigue [34]. The repeat task was not used in the analysis.</p><p class="paragraph">The final section of the survey asked respondents if they found the choice tasks easy or difficult. We also gathered the following information from the respondents: their broad research area, gender, years of experience in research, number of published papers, country, and their perceived publication pressure. Lastly, the respondents could add optional comments. Respondents could skip any question. The complete survey is available from Supplement S.7.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_5-1024x539.png" alt="" data-id="62cb9a20-541f-4ed4-b47a-b155ac7ec676"><figcaption class="wp-element-caption">Figure 5: Example discrete choice task showing the attributes and levels. This is the dominant choice task where Journal A has the levels we assumed most respondents would prefer.</figcaption></figure><p class="paragraph">The NGene (version 13.0) software was used to select 24 pairwise choice tasks based on the D-error to give an efficient fractional design. This D-efficient design was developed using the Modified Federov algorithm to estimate a multinomial logit model. For the final D-efficient design, the weights were selected from the pilot test. The 24 choice tasks were divided into three blocks of eight. Using a fractional design maximised the design’s statistical efficiency, whilst giving a manageable number of choice tasks of ten: eight plus the dominant task and re-test.</p><h2>Statistical methods</h2><p class="paragraph">We used the panel mixed multinomial logit (pMMNL) model and the panel Latent Class Model (pLCM) for the main analysis. We also used the pMMNL model to examine whether preferences systematically differed based on respondents’ characteristics. Results are presented as mean utilities with 95% confidence intervals, and the estimated attribute importance [35]. Subgroup analyses were conducted using the following characteristics: years of experience, gender, number of publications, having a publication target, and the hypothetical paper’s prior rejection. The pLCM was used to capture non-systematic heterogeneity in preferences among respondents, assuming that differences in preferences manifest as discrete groups or latent classes [36]. The ideal number of classes was determined using the Akaike Information Criterion (AIC). A pLCM was used to assess task non-attendance, incorporating a “garbage class” to identify respondents who provided non-informative responses [37]. This approach enabled an evaluation of preference heterogeneity that distinguished between attentive and non-attentive participants.</p><p class="paragraph">Our data collection and analyses were preregistered in a study protocol [38]. The only change from our planned design was that we did not use the pre-notification email for most invites, as it did not appear to increase the response rate.</p><h3>Data and code availability</h3><p class="paragraph">Our R code and data are available on GitHub [39].</p><h3>Sample size</h3><p class="paragraph">Sample size formulae are not available for discrete choice experiments and estimates are often made using rules of thumb or simulations [40, 41]. We faced uncertainty in selecting plausible model parameters, with 1 to 2 parameters per discrete choice attribute and no similar prior studies. Hence our final sample size was based on a pilot. Pilot testing has been recommended to inform sample size calculations for complex interventions [42].</p><p class="paragraph">We analysed the pilot data of 51 respondents to inform the final design. The required sample size based on minimising the D-error was 309. Both the pilot and final design had 24 choice tasks in three blocks of eight. The attributes and levels were the same in the pilot and final design, hence we combined respondents from the pilot and final surveys in our analyses.</p><h3>Sampling frame</h3><p class="paragraph">Our target population was current health and medical researchers. We approached this population by creating a sampling frame of researchers extracted from papers on the PubMed database, which is a widely used search engine that contains the MEDLINE database of published papers in life sciences and biomedical topics [43]. To capture current researchers we restricted the search from the year 2022 onwards. We used the “publication type” search field to exclude non-research papers like obituaries. We only extracted researchers who had an email available. The search was conducted on 11 April 2024.</p><p class="paragraph">The search returned over 140,000 papers, which we randomly re-ordered and iteratively extracted no more than one unique email per paper until we had a sample of 9,000 researchers. Randomly selected researchers from the sampling frame were sent an initial email with reminders one and two weeks later.</p><h2>Additional information</h2><h3>Contributions</h3><p class="paragraph">Conceptualization: NGB, SW, DB, SS, SK and AB.<br>Methodology: NGB, SS and AB.<br>Software: SS and AB.<br>Formal analysis: NGB, SS and AB.<br>Investigation: NGB, SW, DB, SS, SK and AB.<br>Data curation: AB.<br>Visualization: AB.<br>Writing—original draft: AB.<br>Writing—review and editing: NGB, SS, DB, SW, SK.<br>Funding acquisition: DB, SS, SK and AB.</p><h3>Ethics declarations</h3><p class="paragraph">The focus groups and interviews were approved by the Queensland University of Technology Human Research Ethics committee (Date: 18 April 2023, number: LR 2023-6685-13695). The survey was approved by the Queensland University of Technology Human Research Ethics committee (Date: 5 March 2024, number: LR 2024-8188-18148).</p><h3>Funding</h3><p class="paragraph">This work received funding from an internal grant from the Centre for Healthcare Transformation at Queensland University of Technology.</p><h2>References</h2><p class="paragraph">[1] Génova, Gonzalo, Astudillo, Hern´an, and Fraga, Anabel. “The Scientometric Bubble Considered Harmful”. In: Science and Engineering Ethics 22.1 (Feb. 2015), pp. 227–235. doi: 10.1007/s11948-015-9632-6.<br>[2] Schimanski, Lesley A. and Alperin, Juan Pablo. “The evaluation of scholarship in academic promotion and tenure processes: Past, present, and future”. In: F1000Research 7 (Oct. 2018), p. 1605. doi: 10.12688/f1000research.16493.1.<br>[3] Rice, Danielle B et al. “Academic criteria for promotion and tenure in biomedical sciences faculties: cross sectional analysis of international sample of universities”. In: BMJ 369 (2020). doi: 10.1136/bmj.m2081.<br>[4] Dawes, Martin et al. “Sicily statement on evidence-based practice”. In: BMC Medical Education 5.1 (Jan. 2005). doi: 10.1186/1472-6920-5-1.<br>[5] Smaldino, Paul E. and McElreath, Richard. “The natural selection of bad science”. In: Royal Society Open Science 3.9 (Sept. 2016), p. 160384. doi: 10.1098/rsos.160384.<br>[6] Merton, R.K. and Storer, N.W. The Sociology of Science: Theoretical and Empirical Investigations. Phoenix books. University of Chicago Press, 1973. isbn: 9780226520926.<br>[7] Binswanger, Mathias. “Excellence by Nonsense: The Competition for Publications in Modern Science”. In: Opening Science. Springer International Publishing, Dec. 2013, pp. 49–72. isbn: 9783319000268. doi: 10.1007/978-3-319-00026-8_3.<br>[8] Maggio, Lauren A. et al. ““The best home for this paper”: A qualitative study of how authors select where to submit manuscripts”. In: (May 2024). doi: 10.1101/2024.05.14.594165.<br>[9] Anderson, Melissa S. et al. “The Perverse Effects of Competition on Scientists’ Work and Relationships”. In: Science and Engineering Ethics 13.4 (Nov. 2007), pp. 437–461. doi: 10.1007/s11948-007-9042-5.<br>[10] Onstad, David W and Sime, Karen R. “The ethical and social effects of the obsession over Journal Impact Factor”. In: Annals of the Entomological Society of America 117.3 (Mar. 2024). Ed. by Matt Hudson, pp. 160–162. doi: 10.1093/aesa/saae013.<br>[11] Casadevall, Arturo and Fang, Ferric C. “Causes for the Persistence of Impact Factor Mania”. In: mBio 5.2 (2014), 10.1128/mbio.00064–14. doi: 10.1128/mbio.00064-14.<br>[12] Falagas, Matthew E. and Alexiou, Vangelis G. “The top-ten in journal impact factor manipulation”. In: Archivum Immunologiae et Therapiae Experimentalis 56.4 (July 2008), pp. 223–226. doi: 10.1007/s00005-008-0024-5.<br>[13] Pitt, Rachael and Mewburn, Inger. “Academic superheroes? A critical analysis of academic job descriptions”. In: Journal of Higher Education Policy and Management 38.1 (2016), pp. 88–101. doi: 10.1080/1360080X.2015.1126896.<br>[14] Hrynaszkiewicz, Iain et al. “A survey of how biology researchers assess credibility when serving on grant and hiring committees”. In: (Mar. 2024). doi: 10.31222/osf.io/ht836.<br>[15] Chapman, Colin A. et al. “Games academics play and their consequences: how authorship, h-index and journal impact factors are shaping the future of academia”. In: Proceedings of the Royal Society B: Biological Sciences 286.1916 (2019), p. 20192047. doi: 10.1098/rspb.2019.2047.<br>[16] Niles, Meredith T. et al. “Why we publish where we do: Faculty publishing values and their relationship to review, promotion and tenure expectations”. In: PLOS ONE 15.3 (Mar. 2020), pp. 1–15. doi: 10.1371/journal.pone.0228914.<br>[17] Frey, Bruno S., Eichenberger, Reiner, and Frey, Ren´e L. “Editorial Ruminations: Publishing Kyklos”. In: Kyklos 62.2 (Apr. 2009), pp. 151–160. doi: 10.1111/j.1467-6435.2009.00428.x.<br>[18] Eisen, Michael B et al. “Peer review without gatekeeping”. In: eLife 11 (Oct. 2022). doi: 10.7554/elife.83889.<br>[19] Schmid, Sandra L. “Five years post-DORA: promoting best practices for research assessment”. In: Molecular Biology of the Cell 28.22 (Nov. 2017). Ed. by Doug Kellogg, pp. 2941–2944. doi: 10.1091/mbc.e17-08-0534.<br>[20] Ware, Mark. “Peer review in scholarly journals: Perspective of the scholarly community–Results from an international study”. In: Information Services &amp; Use 28.2 (2008), pp. 109–112.<br>[21] Rousseau, Sandra and Rousseau, Ronald. “Interactions between journal attributes and authors’ willingness to wait for editorial decisions”. In: Journal of the American Society for Information Science and Technology 63.6 (Mar. 2012), pp. 1213–1225. doi: 10.1002/asi.22637.<br>[22] Krasnova, Hanna et al. “Publication Trade-Offs for Junior Scholars in IS: Conjoint Analysis of Preferences for Quality, First Authorship, Collaboration, and Time”. In: Proceedings of the International Conference on Information Systems (ICIS). 2014.<br>[23] Salandra, Rossella, Salter, Ammon, and Walker, James T. “Are Academics Willing to Forgo Citations to Publish in High-Status Journals? Examining Preferences for 4* and 4-Rated Journal Publication Among UK Business and Management Academics”. In: British Journal of Management 33.3 (May 2021), pp. 1254–1270. doi: 10.1111/1467-8551.12510.<br>[24] Lemke, Steffen, Mazarakis, Athanasios, and Peters, Isabella. “Conjoint analysis of researchers’ hidden preferences for bibliometrics, altmetrics, and usage metrics”. In: Journal of the Association for Information Science and Technology 72.6 (2021), pp. 777–792. doi: https://doi.org/10.1002/asi.24445.<br>[25] Bohorquez, Natalia Gonzalez et al. “Attribute Development in Health-Related Discrete Choice Experiments: A Systematic Review of Qualitative Methods and Techniques to Inform Quantitative Instruments”. In: Value in Health (June 2024). doi: 10.1016/j.jval.2024.05.014.<br>[26] Bohorquez, Natalia Gonzalez et al. “Enhancing Health Preferences Research: Guidelines for Qualitative Attribute Development in Stated Preference Studies”. In: OSF (July 2024). url: https://osf.io/g9jbt.<br>[27] Leighton, J.P. Using Think-Aloud Interviews and Cognitive Labs in Educational Research.<br>Understanding Qualitative Research. Oxford University Press, 2017. isbn: 9780199372911.<br>[28] Althouse, Benjamin M. et al. “Differences in impact factor across fields and over time”. In: Journal of the American Society for Information Science and Technology 60.1 (Dec. 2008), pp. 27–34. issn: 1532-2890. doi: 10.1002/asi.20936. url: http://dx.doi.org/10.1002/asi.20936.<br>[29] Publons. 2018 Global state of peer review series. 2018. doi: 10.14322/publons.GSPR2018. url: https://publons.com/static/Publons-Global-State-Of-Peer-Review-2018.pdf.<br>[30] Greenberg, S. A. “How citation distortions create unfounded authority: analysis of a citation network”. In: BMJ 339.jul20 3 (July 2009), b2680. doi: 10.1136/bmj.b2680.<br>[31] Koren, Gideon. “Bias Against Negative Studies in Newspaper Reports of Medical Research”. In: JAMA: The Journal of the American Medical Association 266.13 (Oct. 1991), p. 1824. doi: 10.1001/jama.1991.03470130104037.<br>[32] Hensher, David A. “Hypothetical bias, choice experiments and willingness to pay”. In: Transportation Research Part B: Methodological 44.6 (July 2010), pp. 735–752. doi: 10.1016/j.trb.2009.12.012.<br>[33] Schroter, Sara et al. “Evaluation of editors’ abilities to predict the citation potential of research manuscripts submitted to The BMJ: a cohort study”. In: BMJ 379 (2022). doi: 10.1136/bmj-2022-073880.<br>[34] Ozdemir, Semra et al. “Who pays attention in stated-choice surveys?” In:¨ Health Economics 19.1 (Mar. 2009), pp. 111–118. doi: 10.1002/hec.1452.<br>[35] Gonzalez, Juan Marcos. “A Guide to Measuring and Interpreting Attribute Importance”. In: The Patient - Patient-Centered Outcomes Research 12.3 (Mar. 2019), pp. 287–295. doi: 10.1007/s40271-019-00360-3.<br>[36] Greene, William H. and Hensher, David A. “A latent class model for discrete choice analysis: contrasts with mixed logit”. In: Transportation Research Part B: Methodological 37.8 (2003), pp. 681–698. doi: https://doi.org/10.1016/S0191-2615(02)00046-2.<br>[37] Gonzalez, Juan Marcos, Johnson, F. Reed, and Finkelstein, Eric. “To pool or not to pool: Accounting for task non-attendance in subgroup analysis”. In: Journal of Choice Modelling 51 (2024), p. 100487. doi: https://doi.org/10.1016/j.jocm.2024.100487.<br>[38] Barnett, Adrian G et al. Study protocol: A discrete choice experiment to examine researchers’ publication preferences: an international cross-sectional survey. Mar. 2024. doi: 10.17605/OSF.IO/P9GUJ. url: https://doi.org/10.17605/OSF.IO/P9GUJ.<br>[39] Barnett, Adrian G. Code and data for a discrete choice experiment of authors’ preferences. July 2024. doi: 10.5281/zenodo.12814359. url:https://github.com/agbarnett/publication_preferences.<br>[40] Lancsar, Emily and Louviere, Jordan. “Conducting Discrete Choice Experiments to Inform Healthcare Decision Making: A User’s Guide”. In: PharmacoEconomics 26.8 (2008), pp. 661–677. doi: 10.2165/00019053-200826080-00004.<br>[41] Reed Johnson, F. et al. “Constructing Experimental Designs for Discrete-Choice Experiments: Report of the ISPOR Conjoint Analysis Experimental Design Good Research Practices Task Force”. In: Value in Health 16.1 (Jan. 2013), pp. 3–13. doi: 10.1016/j.jval.2012.08.2223.<br>[42] Lancaster, GA et al. “Trials in primary care: statistical issues in the design, conduct and evaluation of complex interventions”. In: Statistical Methods in Medical Research 19.4 (May 2010), pp. 349–377. doi: 10.1177/0962280209359883.<br>[43] Sayers, Eric W et al. “Database resources of the national center for biotechnology information”. In: Nucleic Acids Research 50.D1 (Dec. 2021), pp. D20–D26. doi: 10.1093/nar/gkab1112. url: http://dx.doi.org/10.1093/nar/gkab1112.</p><h2>Supplementary material</h2><h3>S.1 Survey responses over time</h3><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_s1-1024x855.png" alt="" data-id="35c10b14-d738-47b8-ba4f-1c921fa2ffc9"><figcaption class="wp-element-caption">Figure S.1: Cumulative number of survey responses over time for the pilot and final design.</figcaption></figure><h3>S.2 Classification tree predicting survey response</h3><p class="paragraph">Table S.1: Results of the classification tree using email domain.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_s2-1024x344.png" alt="" data-id="2cc1239b-562d-41f1-993c-d10febdb1b64"><figcaption id="2cc1239b-562d-41f1-993c-d10febdb1b64" class="decoration"></figcaption></figure><p class="paragraph">We used a classification tree to predict survey response (yes/no) based on the researchers’ email domain (a proxy for country, e.g., au = Australia), and whether the researcher’s affiliation mentioned the words “Hospital”, “Dentist*” or “University”. The classification tree had three leaves with a cross-validated error of 0.990 with a standard error of 0.034. The tree only used the email domain, but found a relatively large difference in response proportions. We present the results as a table instead of a plotted tree as the number of email domains makes the plot cluttered.</p><h3>S.3 Item-missing data</h3><p class="paragraph">The plot below shows item missing data by question number. The missing data patterns are clustered by similarity. The question numbers are presented in order. There is evidence of survey fatigue as the percent missing increases from left-to-right.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_s3-1024x654.png" alt="" data-id="a6751daa-68da-4b49-8298-c42cc1d1bb9e"><figcaption class="wp-element-caption">Figure S.2: Item missing data for the 616 survey responses. The column headings show the question number and percent missing. The panel on the right shows the questions for each question number.</figcaption></figure><h3>S.4 Respondents’ countries</h3><p class="paragraph">Table S.2: Number and percent of responses by country. There were 63 countries in total.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_s4-1017x1024.png" alt="" data-id="05ae2ae9-fc81-4069-8b8b-6b173a95344a"><figcaption id="05ae2ae9-fc81-4069-8b8b-6b173a95344a" class="decoration"></figcaption></figure><h3>S.5 Attribute interactions</h3><p class="paragraph">Table S.3: Utility estimates and 95% confidence intervals for the planned interactions between attributes. The interactions are plotted in Figure 3. This table shows only the interaction terms and not the main effects. These results help judge the null hypothesis of whether there was no interaction.</p><figure><img src="https://cms.metaror.org/wp-content/uploads/2024/11/12_s5-1024x343.png" alt="" data-id="b2c9d6e8-5814-4595-b3f1-a826050eacbe"><figcaption id="b2c9d6e8-5814-4595-b3f1-a826050eacbe" class="decoration"></figcaption></figure><h3>S.6 Details on the discrete choice experiment design</h3><p class="paragraph">This additional file includes details on the literature review, focus groups and interviews, and thinking aloud exercise. It is available here: https://osf.io/gjch7.</p><h3>S.7 Participant information sheet and survey questions</h3><p class="paragraph">The online version of the participant information sheet is available here https://osf.io/p9guj/wiki/home/.</p><p class="paragraph">A PDF version of the survey is available here https://osf.io/j7mce. The survey was delivered online using Qualtrics.</p><p class="paragraph">The survey questions differed by two questions between the pilot and final survey as we altered the question that aimed to examine researcher’s publishing expectations. This is because for the original question – “My department’s or research group’s expectations with respect to publishing are reasonable” – 81% responded as “Agree” or “Strongly agree” creating limited variance between respondents. Hence in the main survey we asked researchers if they had an annual publication target and what it was.</p>
         `,
     },
   },
   14: {
     authors: [
-        {
-            name: 'Susana Oliveira Henriques',
-            affiliations: [
-                'Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)',
-                'Leiden University',
-                'Leiden, the Netherlands',
-                'Scientific Research Department',
-                'Azerbaijan University of Architecture and Construction',
-                'Baku, Azerbaijan'
-            ],
-            email: 's.oliveira@cwts.leidenuniv.nl',
-            orcid: '0000-0002-0947-5083',
-            ror: null
-        },
-        {
-            name: 'Narmin Rzayeva',
-            affiliations: [
-                'Research on Research Institute (RoRI) Information School',
-                'University of Sheffield',
-                'Sheffield, UK'
-            ],
-            email: 'n.rzayeva@cwts.leidenuniv.nl',
-            orcid: '0000-0003-0397-5412',
-            ror: 'https://ror.org/02shm3a27'
-        },
-        {
-            name: 'Stephen Pinfield',
-            affiliations: [
-                'Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)',
-                'Leiden University',
-                'Leiden, the Netherlands'
-            ],
-            email: 's.pinfield@sheffield.ac.uk',
-            orcid: '0000-0003-4696-764X',
-            ror: 'https://ror.org/05krs5044'
-        },
-        {
-            name: 'Ludo Waltman',
-            affiliations: [
-                'Leiden University'
-            ],
-            email: 'waltmanlr@cwts.leidenuniv.nl',
-            orcid: '0000-0001-8249-1752',
-            ror: 'https://ror.org/027bh9e22'
-        }
+      {
+        name: "Susana Oliveira Henriques",
+        affiliations: [
+          "Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)",
+          "Leiden University",
+          "Leiden, the Netherlands",
+          "Scientific Research Department",
+          "Azerbaijan University of Architecture and Construction",
+          "Baku, Azerbaijan",
+        ],
+        email: "s.oliveira@cwts.leidenuniv.nl",
+        orcid: "0000-0002-0947-5083",
+        ror: null,
+      },
+      {
+        name: "Narmin Rzayeva",
+        affiliations: [
+          "Research on Research Institute (RoRI) Information School",
+          "University of Sheffield",
+          "Sheffield, UK",
+        ],
+        email: "n.rzayeva@cwts.leidenuniv.nl",
+        orcid: "0000-0003-0397-5412",
+        ror: "https://ror.org/02shm3a27",
+      },
+      {
+        name: "Stephen Pinfield",
+        affiliations: [
+          "Research on Research Institute (RoRI) Centre for Science and Technology Studies (CWTS)",
+          "Leiden University",
+          "Leiden, the Netherlands",
+        ],
+        email: "s.pinfield@sheffield.ac.uk",
+        orcid: "0000-0003-4696-764X",
+        ror: "https://ror.org/05krs5044",
+      },
+      {
+        name: "Ludo Waltman",
+        affiliations: ["Leiden University"],
+        email: "waltmanlr@cwts.leidenuniv.nl",
+        orcid: "0000-0001-8249-1752",
+        ror: "https://ror.org/027bh9e22",
+      },
     ],
     reviews: [
-        {
-            name: 'Ross Mounce',
-            orcid: '0000-0002-3520-2046',
-            review: `<p class="paragraph">This manuscript examines preprint review services and their role in the scholarly communications ecosystem. &nbsp;It seems quite thorough to me. In Table 1 they list many peer-review services that I was unaware of e.g. SciRate and Sinai Immunology Review Project.</p><p class="paragraph">To help elicit critical &amp; confirmatory responses for this peer review report I am trialling Elsevier’s suggested “structured peer review” core questions, and treating this manuscript as a research article.</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Introduction</strong></p><p class="paragraph"><strong>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the background and literature section up to date and appropriate for the topic?</strong></p><p class="paragraph">Yes.</p><p class="paragraph"><strong>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are the primary (and secondary) objectives clearly stated at the end of the introduction?</strong></p><p class="paragraph">No. Instead the authors have chosen to put the two research questions on page 6 in the methods section. I wonder if they ought to be moved into the introduction – the research questions are not methods in themselves. Might it be better to state the research questions first and then detail the methods one uses to address those questions afterwards? [as Elsevier’s structured template seems implicitly to prefer]</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Methods</strong></p><p class="paragraph"><strong>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are the study methods (including theory/applicability/modelling) reported in sufficient detail to allow for their replicability or reproducibility?</strong></p><p class="paragraph">I note with approval that the version number of the software they used (ATLAS.ti) was given.</p><p class="paragraph">I note with approval that the underlying data is publicly archived under CC BY at figshare.</p><p class="paragraph">The Atlas.ti report data spreadsheet could do with some small improvement – the column headers are little cryptic e.g. “Nº&nbsp; ST “ and “ST” which I eventually deduced was Number of Schools of Thought and Schools of Thought (?) &nbsp;&nbsp;</p><p class="paragraph">Is there a rawer form of the data that could be deposited with which to evidence the work done? The Atlas.ti report spreadsheet seemed like it was downstream output data from Atlas.ti. What was the rawer input data entered into Atlas.ti? Can this be archived somewhere in case researchers want to reanalyse it using other tools and methods.</p><p class="paragraph">I note with disapproval that Atlas.ti is proprietary software which may hinder the reproducibility of this work. Nonetheless I acknowledge that Atlas.ti usage is somewhat ‘accepted’ in social sciences despite this issue.</p><p class="paragraph">I think the qualitative text analysis is a little vague and/or under-described: “Using ATLAS.ti Windows (version 23.0.8.0), we carried out a qualitative analysis of text from the relevant sites, assigning codes covering what they do and why they have chosen to do it that way.” That’s not enough detail. Perhaps an example or two could be given? Was inter-rater reliability performed when ‘assigning codes’ ? How do we know the ‘codes’ were assigned accurately?</p><p class="paragraph"><strong>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are statistical analyses, controls, sampling mechanism, and statistical reporting (e.g., P-values, CIs, effect sizes) appropriate and well described?</strong></p><p class="paragraph">This is a descriptive study (and that’s fine) so there aren’t really any statistics on show here other than simple ‘counts’ (of Schools of Thought) in this manuscript. There are probably some statistical processes going on within the proprietary qualitative analysis of text done in ATLAS.ti but it is under described and so hard for me to evaluate.</p><p class="paragraph"><strong>&nbsp;</strong></p><p class="paragraph"><strong>Results</strong></p><p class="paragraph"><strong>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the results presentation, including the number of tables and figures, appropriate to best present the study findings?</strong></p><p class="paragraph">Yes. However, I think a canonical URL to each service should be given.&nbsp; A URL is very useful for disambiguation, to confirm e.g. that the authors mean this Hypothesis (www.hypothes.is) and NOT this Hypothesis (<a href="http://www.hyp.io/" rel="" target="blank">www.hyp.io</a>). I know exactly which Hypothesis is the one the authors are referring to but we cannot assume all readers are experts 😊</p><p class="paragraph">Optional suggestion: I wonder if the authors couldn’t present the table data in a slightly more visual and/or compact way? It’s not very visually appealing in its current state. Purely as an optional suggestion, to make the table more compact one could recode the answers given in one or more of the columns 2, 3 and 4 in the table e.g. "all disciplines =&nbsp;⬤ , biomedical and life sciences =&nbsp;▲, social sciences =&nbsp;&nbsp;‡&nbsp; , engineering and technology&nbsp;=&nbsp;† ". I note this would give more space in the table to print the URLs for each service that both reviewers have requested.</p><p class="paragraph"><strong>Service name</strong></p><p class="paragraph"><strong>Developed by</strong></p><p class="paragraph"><strong>Scientific disciplines</strong></p><p class="paragraph"><strong>Types of outputs</strong></p><p class="paragraph">Episciences</p><p class="paragraph">Other</p><p class="paragraph">⬤</p><p class="paragraph">blah blah blah</p><p class="paragraph">Faculty Opinions</p><p class="paragraph">Individual researcher</p><p class="paragraph">▲</p><p class="paragraph">blah blah blah</p><p class="paragraph">Red Team Market</p><p class="paragraph">Individual researcher</p><p class="paragraph">‡</p><p class="paragraph">blah blah blah</p><p class="paragraph">The "Types of outputs" column might even lend themselves to mini-colour-pictograms (?) which could be more concise&nbsp;<em>and</em>&nbsp;more visually appealing? A table just of text, might be scientifically 'correct' but it is incredibly dull for readers, in my opinion.</p><p class="paragraph"><strong>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are additional sub-analyses or statistical measures needed (e.g., reporting of CIs, effect sizes, sensitivity analyses)?</strong></p><p class="paragraph">No / Not applicable.</p><p class="paragraph"><strong>&nbsp;</strong></p><p class="paragraph"><strong>Discussion</strong></p><p class="paragraph"><strong>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the interpretation of results and study conclusions supported by the data and the study design?</strong></p><p class="paragraph">Yes.</p><p class="paragraph"><strong>8. Have the authors clearly emphasized the limitations of their study/theory/methods/argument?</strong></p><p class="paragraph">No. Perhaps a discussion of the linguistic/comprehension bias of the authors might be appropriate for this manuscript. What if there are ‘local’ or regional Chinese, Japanese, Indonesian or Arabic language preprint review services out there? Would this authorship team really be able to find them?</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Additional points:</strong></p><p class="paragraph">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perhaps the points made in this manuscript about financial sustainability (p24) are a little too pessimistic. I get it, there is merit to this argument, but there is also some significant investment going on there if you know where to look. Perhaps it might be worth citing some recent investments e.g. Gates -&gt; PREreview (2024) <a href="https://content.prereview.org/prereview-welcomes-funding/" rel="" target="blank">https://content.prereview.org/prereview-welcomes-funding/</a>&nbsp; and Arcadia’s $4 million USD to COAR for the Notify Project which supports a range of preprint review communities including Peer Community In, Episciences, PREreview and <a href="https://library.harvard.edu/about/news/2024-04-23/harvard-library-launching-harvard-open-journals-program" rel="" target="blank">Harvard Library</a>.&nbsp; (source: <a href="https://coar-repositories.org/news-updates/coar-welcomes-significant-funding-for-the-notify-project/" rel="" target="blank">https://coar-repositories.org/news-updates/coar-welcomes-significant-funding-for-the-notify-project/</a> )</p><p class="paragraph">&nbsp;</p><p class="paragraph">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Although I note they are mentioned, I think more needs to be written about the similarity and overlap between ‘overlay journals’ and preprint review services. Are these arguably not just two different terms for kinda the same thing? If you have Peer Community In which has it’s overlay component in the form of the Peer Community Journal, why not mention other overlay journals like Discrete Analysis and The Open Journal of Astrophysics.&nbsp;&nbsp; I think Peer Community In (&amp; it’s PCJ) is the go-to example of the thin-ness of the line the separates (or doesn’t!) overlay journals and preprint review services. Some more exposition on this would be useful.</p>`
-        }
+      {
+        name: "Ross Mounce",
+        orcid: "0000-0002-3520-2046",
+        review: `<p class="paragraph">This manuscript examines preprint review services and their role in the scholarly communications ecosystem. &nbsp;It seems quite thorough to me. In Table 1 they list many peer-review services that I was unaware of e.g. SciRate and Sinai Immunology Review Project.</p><p class="paragraph">To help elicit critical &amp; confirmatory responses for this peer review report I am trialling Elsevier’s suggested “structured peer review” core questions, and treating this manuscript as a research article.</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Introduction</strong></p><p class="paragraph"><strong>1.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the background and literature section up to date and appropriate for the topic?</strong></p><p class="paragraph">Yes.</p><p class="paragraph"><strong>2.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are the primary (and secondary) objectives clearly stated at the end of the introduction?</strong></p><p class="paragraph">No. Instead the authors have chosen to put the two research questions on page 6 in the methods section. I wonder if they ought to be moved into the introduction – the research questions are not methods in themselves. Might it be better to state the research questions first and then detail the methods one uses to address those questions afterwards? [as Elsevier’s structured template seems implicitly to prefer]</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Methods</strong></p><p class="paragraph"><strong>3.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are the study methods (including theory/applicability/modelling) reported in sufficient detail to allow for their replicability or reproducibility?</strong></p><p class="paragraph">I note with approval that the version number of the software they used (ATLAS.ti) was given.</p><p class="paragraph">I note with approval that the underlying data is publicly archived under CC BY at figshare.</p><p class="paragraph">The Atlas.ti report data spreadsheet could do with some small improvement – the column headers are little cryptic e.g. “Nº&nbsp; ST “ and “ST” which I eventually deduced was Number of Schools of Thought and Schools of Thought (?) &nbsp;&nbsp;</p><p class="paragraph">Is there a rawer form of the data that could be deposited with which to evidence the work done? The Atlas.ti report spreadsheet seemed like it was downstream output data from Atlas.ti. What was the rawer input data entered into Atlas.ti? Can this be archived somewhere in case researchers want to reanalyse it using other tools and methods.</p><p class="paragraph">I note with disapproval that Atlas.ti is proprietary software which may hinder the reproducibility of this work. Nonetheless I acknowledge that Atlas.ti usage is somewhat ‘accepted’ in social sciences despite this issue.</p><p class="paragraph">I think the qualitative text analysis is a little vague and/or under-described: “Using ATLAS.ti Windows (version 23.0.8.0), we carried out a qualitative analysis of text from the relevant sites, assigning codes covering what they do and why they have chosen to do it that way.” That’s not enough detail. Perhaps an example or two could be given? Was inter-rater reliability performed when ‘assigning codes’ ? How do we know the ‘codes’ were assigned accurately?</p><p class="paragraph"><strong>4.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are statistical analyses, controls, sampling mechanism, and statistical reporting (e.g., P-values, CIs, effect sizes) appropriate and well described?</strong></p><p class="paragraph">This is a descriptive study (and that’s fine) so there aren’t really any statistics on show here other than simple ‘counts’ (of Schools of Thought) in this manuscript. There are probably some statistical processes going on within the proprietary qualitative analysis of text done in ATLAS.ti but it is under described and so hard for me to evaluate.</p><p class="paragraph"><strong>&nbsp;</strong></p><p class="paragraph"><strong>Results</strong></p><p class="paragraph"><strong>5.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the results presentation, including the number of tables and figures, appropriate to best present the study findings?</strong></p><p class="paragraph">Yes. However, I think a canonical URL to each service should be given.&nbsp; A URL is very useful for disambiguation, to confirm e.g. that the authors mean this Hypothesis (www.hypothes.is) and NOT this Hypothesis (<a href="http://www.hyp.io/" rel="" target="blank">www.hyp.io</a>). I know exactly which Hypothesis is the one the authors are referring to but we cannot assume all readers are experts 😊</p><p class="paragraph">Optional suggestion: I wonder if the authors couldn’t present the table data in a slightly more visual and/or compact way? It’s not very visually appealing in its current state. Purely as an optional suggestion, to make the table more compact one could recode the answers given in one or more of the columns 2, 3 and 4 in the table e.g. "all disciplines =&nbsp;⬤ , biomedical and life sciences =&nbsp;▲, social sciences =&nbsp;&nbsp;‡&nbsp; , engineering and technology&nbsp;=&nbsp;† ". I note this would give more space in the table to print the URLs for each service that both reviewers have requested.</p><p class="paragraph"><strong>Service name</strong></p><p class="paragraph"><strong>Developed by</strong></p><p class="paragraph"><strong>Scientific disciplines</strong></p><p class="paragraph"><strong>Types of outputs</strong></p><p class="paragraph">Episciences</p><p class="paragraph">Other</p><p class="paragraph">⬤</p><p class="paragraph">blah blah blah</p><p class="paragraph">Faculty Opinions</p><p class="paragraph">Individual researcher</p><p class="paragraph">▲</p><p class="paragraph">blah blah blah</p><p class="paragraph">Red Team Market</p><p class="paragraph">Individual researcher</p><p class="paragraph">‡</p><p class="paragraph">blah blah blah</p><p class="paragraph">The "Types of outputs" column might even lend themselves to mini-colour-pictograms (?) which could be more concise&nbsp;<em>and</em>&nbsp;more visually appealing? A table just of text, might be scientifically 'correct' but it is incredibly dull for readers, in my opinion.</p><p class="paragraph"><strong>6.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Are additional sub-analyses or statistical measures needed (e.g., reporting of CIs, effect sizes, sensitivity analyses)?</strong></p><p class="paragraph">No / Not applicable.</p><p class="paragraph"><strong>&nbsp;</strong></p><p class="paragraph"><strong>Discussion</strong></p><p class="paragraph"><strong>7.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Is the interpretation of results and study conclusions supported by the data and the study design?</strong></p><p class="paragraph">Yes.</p><p class="paragraph"><strong>8. Have the authors clearly emphasized the limitations of their study/theory/methods/argument?</strong></p><p class="paragraph">No. Perhaps a discussion of the linguistic/comprehension bias of the authors might be appropriate for this manuscript. What if there are ‘local’ or regional Chinese, Japanese, Indonesian or Arabic language preprint review services out there? Would this authorship team really be able to find them?</p><p class="paragraph">&nbsp;</p><p class="paragraph"><strong>Additional points:</strong></p><p class="paragraph">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perhaps the points made in this manuscript about financial sustainability (p24) are a little too pessimistic. I get it, there is merit to this argument, but there is also some significant investment going on there if you know where to look. Perhaps it might be worth citing some recent investments e.g. Gates -&gt; PREreview (2024) <a href="https://content.prereview.org/prereview-welcomes-funding/" rel="" target="blank">https://content.prereview.org/prereview-welcomes-funding/</a>&nbsp; and Arcadia’s $4 million USD to COAR for the Notify Project which supports a range of preprint review communities including Peer Community In, Episciences, PREreview and <a href="https://library.harvard.edu/about/news/2024-04-23/harvard-library-launching-harvard-open-journals-program" rel="" target="blank">Harvard Library</a>.&nbsp; (source: <a href="https://coar-repositories.org/news-updates/coar-welcomes-significant-funding-for-the-notify-project/" rel="" target="blank">https://coar-repositories.org/news-updates/coar-welcomes-significant-funding-for-the-notify-project/</a> )</p><p class="paragraph">&nbsp;</p><p class="paragraph">·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Although I note they are mentioned, I think more needs to be written about the similarity and overlap between ‘overlay journals’ and preprint review services. Are these arguably not just two different terms for kinda the same thing? If you have Peer Community In which has it’s overlay component in the form of the Peer Community Journal, why not mention other overlay journals like Discrete Analysis and The Open Journal of Astrophysics.&nbsp;&nbsp; I think Peer Community In (&amp; it’s PCJ) is the go-to example of the thin-ness of the line the separates (or doesn’t!) overlay journals and preprint review services. Some more exposition on this would be useful.</p>`,
+      },
     ],
-    published: 'Published on Aug 02, 2024',
-    doi: '10.31235/osf.io/8c6xm',
-    title: 'Preprint review services: Disrupting the scholarly communication landscape ',
+    published: "Published on Aug 02, 2024",
+    doi: "10.31235/osf.io/8c6xm",
+    title:
+      "Preprint review services: Disrupting the scholarly communication landscape ",
     sections: {
-        Abstract: splitTextIntoParagraphs(`
+      Abstract: splitTextIntoParagraphs(`
         Preprinting has gained considerable momentum, and in some fields it has turned into a well-established way to share new scientific findings. The possibility to organise quality control and peer review for preprints is also increasingly highlighted, leading to the development of preprint review services. We report a descriptive study of preprint review services with the aim of developing a systematic understanding of the main characteristics of these services, evaluating how they manage preprint review, and positioning them in the broader scholarly communication landscape. Our study shows that preprint review services have the potential to turn peer review into a more transparent and rewarding experience and to improve publishing and peer review workflows. We are witnessing the growth of a mixed system in which preprint servers, preprint review services and journals operate mostly in complementary ways. In the longer term, however, preprint review services may disrupt the scholarly communication landscape in a more radical way.
         `),
-        rest: `
+      rest: `
        <h2>Introduction</h2><p class="paragraph">Preprints are well-established in some fields but not in all. Preprint servers make scientific work available rapidly (albeit usually in a form prior to peer review) and also openly, enabling scientific work to be accessed in a timely way not only by scientists but also by policymakers, journalists and others. The COVID-19 pandemic led to an unprecedented rise in the use of preprints by the biomedical research community. Preprints were an essential part of the communication of research about COVID-19, useful in particular as a way of accelerating communication of research results. Another potential benefit of preprints is that they allow authors to receive and incorporate feedback from the wider community prior to journal publication (Fraser et al., 2021). Nevertheless, due to the non-peer-reviewed nature of preprints, concerns about the lack of quality assurance remain (Blatch-Jones et al., 2023; Ni &amp; Waltman, 2023). Partly in response to these concerns, there are a growing number of services that facilitate evaluative peer feedback (e.g., comments, recommendations, reviews) on preprints. Some of these services may even be seen as alternatives to journal-based peer review, pointing towards possible future approaches to overcoming weaknesses of the journal-based peer review system.</p>
         <p class="paragraph">In Figure 1, we summarise some of the potential benefits of services facilitating the review of preprints, as they are commonly presented in sources such as the websites of preprint review services, blog posts and scientific articles. In this paper, we will explore how preprint review services are trying to achieve these benefits and how they may add value to the scholarly communication system, pointing out to a cultural shift in peer review (Avissar-Whiting et al., 2023).&nbsp;</p>
         <figure><img src="https://cms.metaror.org/wp-content/uploads/2024/10/14_1-1024x553.png" alt="" data-id="41dba906-f1a8-4abd-b1ff-d72ef9f0fcb2" contenteditable="false"><figcaption class="wp-element-caption">Figure 1. Potential benefits of services facilitating the review of preprints. *By users, we mean scientists, policymakers, journalists, and citizens in general.</figcaption></figure><p class="paragraph">Our aim is to develop a systematic understanding of the main characteristics of preprint review services in order to evaluate how these services manage preprint review and to position these services in the wider scholarly communication and peer review environment, including journal publishing. By a preprint review service, we mean a journal-independent peer review service for articles posted on a preprint server, where the peer review process is publicly visible.&nbsp;We report here a descriptive study based on a qualitative analysis of data available in the ReimagineReview registry and other online sources, such as the websites of preprint review services, blog posts and scientific articles. This paper is complementary to a study recently reported by Lutz et al., (2023) of an ongoing survey of Alternative Publishing Platforms. By providing additional information on preprint review services, we are contributing to the work of gaining a better understanding of the landscape formed by these platforms and how they can be placed in the open scholarly communication ecosystem.&nbsp;</p>
@@ -846,29 +845,29 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
         `,
     },
     dates: {
-        'Curated version': 'Sep 12, 2024',
-        'Peer reviewed': 'Sep 12, 2024',
-        'Preprint posted': 'Sep 12, 2024',
+      "Curated version": "Sep 12, 2024",
+      "Peer reviewed": "Sep 12, 2024",
+      "Preprint posted": "Sep 12, 2024",
     },
   },
   15: {
-    doi: '10.48550/arXiv.2404.06500',
-    title: 'The Rise and Fall of the Initial Era',
+    doi: "10.48550/arXiv.2404.06500",
+    title: "The Rise and Fall of the Initial Era",
     authors: [
-        {
-            name: 'Simon Porter',
-            email: 's.porter@digital-science.com'
-        },
-        {
-            name: 'Daniel Hook',
-            email: 'd.hook@digital-science.com',
-        },
+      {
+        name: "Simon Porter",
+        email: "s.porter@digital-science.com",
+      },
+      {
+        name: "Daniel Hook",
+        email: "d.hook@digital-science.com",
+      },
     ],
     reviews: [
-        {
-            name: 'Dmitry Kochetkov',
-            orcid: '0000-0001-7890-7532',
-            review: `
+      {
+        name: "Dmitry Kochetkov",
+        orcid: "0000-0001-7890-7532",
+        review: `
             <p class="paragraph">The presented preprint is a well-researched study on a relevant topic that could be of interest to a broad audience. The study's strengths include a well-structured and clearly presented methodology. The code and data used in the research are openly available on Figshare, in line with best practices for transparency. Furthermore, the findings are presented in a clear and organized manner, with visualization that aid understanding.</p>
             <p class="paragraph">&nbsp;</p>
             <p class="paragraph">At the same time, I would like to draw your attention to a few points that could potentially improve the work.</p>
@@ -911,11 +910,11 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
             <p class="paragraph">&nbsp;</p>
             <p class="paragraph">Dmitry Kochetkov</p>
             `,
-        },
-        {
-            name: 'Erjia Yan',
-            orcid: '0000-0002-0365-9340',
-            review: `
+      },
+      {
+        name: "Erjia Yan",
+        orcid: "0000-0002-0365-9340",
+        review: `
             <p class="paragraph"><strong>Overview</strong></p>
             <p class="paragraph">This manuscript provides an in-depth examination of the use of initials versus full names in academic publications over time, identifying what the authors term the "Initial Era" (1945-1980) as a period during which initials were predominantly used. The authors contextualize this within broader technological, cultural, and societal changes, leveraging a large dataset from the Dimensions database. This study contributes to the understanding of how bibliographic metadata reflects shifts in research culture.</p>
             <p class="paragraph">&nbsp;</p>
@@ -949,11 +948,11 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
             <p class="paragraph">This manuscript offers a novel and insightful analysis of the evolution of name usage in academic publications, providing valuable contributions to the fields of bibliometrics, science studies, and research culture. With improvements in clarity, comparative analysis, and the incorporation of case studies, this paper has the potential to make a significant impact on our understanding of how metadata reflects broader societal and technological changes in academia. The authors are encouraged to refine their discussion and expand on the implications of their findings to make the manuscript more accessible and applicable to a wider audience.</p>
             </div>
             `,
-        },
-        {
-            name: 'Laurel L Haak',
-            orcid: '0000-0001-5109-3700',
-            review: `
+      },
+      {
+        name: "Laurel L Haak",
+        orcid: "0000-0001-5109-3700",
+        review: `
             <p class="paragraph">I started reading this paper with great interest, which flagged over time. As someone with extensive experience both publishing peer-reviewed research articles and working with publication data (Web of Science, Scopus, PubMed, PubMedCentral) I understand there are vagaries in the data because of how and when it was collected, and when certain policies and processes were implemented. For example, as an author starting in the late 1980s, we were instructed by the journal “guide to authors” to use only initials. My early papers were all only using initials. This changed in the mid-late 1990s. Another example, when working with NIH publications data, one knows dates like 1946 (how far back MedLine data go), 1996 (when PubMed was launched), and 2000 (when PubMedCentral was launched) and 2008 (when NIH Open Access policy enacted). There are also intermediate dates for changes in curation policy…. that underlie a transition from initials to full name in the biomedical literature.</p>
             <p class="paragraph">I realize that the study covers all research disciplines, but still I am surprised that the authors of this paper don’t start with an examination of the policies underlying publications data, and only get to this at the end of a fairly torturous study.</p>
             <p class="paragraph">As a reader, this reviewer felt pulled all over the place in this article and increasingly frustrated that this is a paper that explores the Dimensions database vagaries only and not really the core overall challenges of bibliometric data, irrespective of data source. Dimensions ingests data from multiple sources — so any analysis of its contents needs to examine those sources first.</p>
@@ -977,19 +976,19 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
             </li><li data-listnumber=""><p class="paragraph">And then the authors come full circle on research articles being a technology, akin to a contract. Which is neat and useful. But all the intermediate data analysis is focused on the Dimensions data base and this reviewer would argue should be a part of the database documentation rather than a scholarly article.</p>
             </li><li data-listnumber=""><p class="paragraph">This reviewer would prefer this paper be focused much more tightly on how publishing technology can and has driven the sociology of science. Dig more into the E. Journal Analysis and F. Technological analysis. Stick with what you have deep data for, and provide us readers with a practical and useful paper that maybe, just maybe, publishers will read and be incentivized to up their game with respect to adoption of “new” technologies like ORCID, DOIs for data, etc. Because these papers are not just expositions on a disciplinary discourse, they are also a window into how science (research) works and is done.</p></li></ul></div>
             `,
-        },
+      },
     ],
-    published: 'Sep 12, 2024',
+    published: "Sep 12, 2024",
     dates: {
-        'Curated version': 'Sep 30, 2024',
-        'Peer reviewed': 'Sep 30, 2024',
-        'Preprint posted': 'Sep 30, 2024',
+      "Curated version": "Sep 30, 2024",
+      "Peer reviewed": "Sep 30, 2024",
+      "Preprint posted": "Sep 30, 2024",
     },
     sections: {
-        Abstract: `
+      Abstract: `
         Bibliographic data is a rich source of information that goes beyond the use cases of location and citation -- it also encodes both cultural and technological context. For most of its existence, the scholarly record has changed slowly and hence provides an opportunity to gain insight through its reflection of the cultural norms of the research community over the last four centuries. While it is often difficult to distinguish the originating driver of change, it is still valuable to consider the motivating influences that have led to changes in the structure of the scholarly record. An "initial era" is identified during which initials were used in preference to full names by authors on scholarly communications. Causes of the emergence and demise of this era are considered as well as the implications of this era on research culture and practice.
         `,
-        rest: `
+      rest: `
         <h2>Introduction</h2><p class="paragraph">In the contemporary discourse on technology, dominated by references to digital and electronic innovations, the notion of the research article as a form of technology may appear incongruous. However, an exploration of the research article through the lens of technology is critical for a comprehensive understanding of its role, interactions with other technological forms, and its consequent impact on society. The research article, viewed technologically, is a significant construct, with a long-standing history of shaping social norms and establishing institutions that extend their influence across the research community, irrespective of disciplinary boundaries, geographical locations, or historical periods&nbsp;[<a href="https://arxiv.org/html/2404.06500v2#bib.bib1" rel="" target="blank">1</a>]. This technology has achieved ubiquity on three distinct levels: spatial, with researchers globally engaging with and understanding research articles under shared assumptions; temporal, allowing for the contextual comprehension of older articles through a slow evolution of the format; and disciplinary, with a cross-disciplinary recognition of the rigorous scrutiny and scientific methodology underpinning the work. These characteristics are critical for research to function, as an incremental activity that builds on prior results and knowledge.</p>
         <p class="paragraph">The intrinsic characteristics of research papers have rendered them the foundational elements of research communication and, crucially, the conduits of trust among researchers, transcending spatial, temporal, and disciplinary divides. This established trust facilitates incremental research and underpins the development and cohesion of the global research community. Analogous to economic institutions, the norms surrounding research papers enable researchers to make assumptions similar to the reliability of contracts in legally robust countries, thus enabling international academic transactions. Beyond facilitating trust, the structured format of a research paper—detailing the research’s specifics, the researchers, the location and timing of the research, funding sources, and relevant previous work—supports the provenance and contextualisation essential for the credibility of its communicated results.</p>
         <p class="paragraph">The interaction between technology and its consequent influence over its users and communities is a well-documented phenomenon; however, possibly due to the long-lived and slow-changing nature of its underlying format, the research paper stands out for its persistence over the centuries. Over approximately the first 300 years of formalised research communication, dating back to the 1660s, the pace of change in research publication formats has been gradual. Only in the last half-century has the rapid transformation of research practices necessitated a quicker evolution of this technology.</p>
@@ -1203,106 +1202,123 @@ Click to follow link.">https://doi.org/10.1007/s11024-015-9274-5</a>), Björn Ha
         <li data-listnumber=""><p class="paragraph">L. Allen, J. Scott, A. Brand, M. Hlava, and M. Altman, Nature 508, 312 (2014).</p></li>
         <li data-listnumber=""><p class="paragraph">F. Emich, A. Benedetti-Pichler, F. Henrich, L. Moser, R. Strebinger, F. Pregl, F. Zaribnicky, L. Rosenthaler, E. M. Chamot, H. Herbst, H. Fitting, H. Ambronn, A. Frey, L. Wright, K. John, F. K. Reinsch, A. Zimmern, M. Coutin, E. Lehmann, J. L. Pech, R. Harder, H. Siedentopf, C. Spierer, Lieberkühn, W. Kaiser, Rheinberger, W. Kraemer, C. Kern, H. Pohle, S. v. Wachenfeldt, F. Lossen, A. Köhler, Proell, O. Linde, E. Saxl, W. Schäffer, J. Kisser, F. K. Studnióka, F. Roll, T. Huzella, R. Chambers, T. Péterfi, C. V. Taylor, G. de Mottoni, D. L. Parkhurst, H. Utermöhl, Goring, E. Naumann, Volk, G. Lunde, E. A. Hill, E. Q. Adams, G. Linzenmeier, E. Kaufmann, P. Kirkpatrick, M. C. Magarian, R. Wolff, K. Schuhecker, H. C. Hagedorn, B. N. Jensen, W. Geilmann, R. Höltie, L. Dienes, L. Pincussen, P. B. Rehberg, S. Wermuth, M. Shepherd, H. B. Rasmussen, C. E. Christensen, R. Mellet, M. A. Bischoff, H. Hiller, J. J. Hopfield, F. Paneth, K. Peters, P. Günther, H. M. Elsey, M. Crespi, E. Moles, W. Kliefoth, O. E. Frivold, R. E. Burk, B. Noyes, W. Ewald, R. Whytlaw-Gray, H. Whitaker, H. Figour, F. Sautier, F. Verzár, J. Barcroft, L. Condorelli, E. P. Poulton, W. R. Spurrell, E. C. Warner, R. Suhrmann, K. Clusius, J. J. Manley, W. A. Roth, G. Naeser, O. Döpke, H. Leontjew, H. S. Patterson, R. W. Gray, R. A. Millikan, H. G. Barbour, W. F. Hamilton, Dickinson, E. A. Vuilleumier, W. Klemm, W. Biltz, A. Stock, and G. Ritter, Zeitschrift für analytische Chemie 74, 191 (1928).</p></li>
         </ol>
-        `
+        `,
     },
   },
-}
+};
 
-document.addEventListener('DOMContentLoaded', () => {
-  const $contentSection = document.querySelector('#content-section')
-  const $content = document.querySelector('#content')
-  const $authorsList = document.querySelector('#author-links')
-  const tabs = document.querySelectorAll('.tab')
-  const $doi = document.querySelector('#doi')
-  const $title = document.querySelector('#title')
-  const $articleNav = document.querySelector('#article-nav > ul')
-  const $publishedOn = document.querySelector('.published-on')
-  const $reviewSection = document.querySelector('#reviews-section')
-  const $dates = document.querySelectorAll('.dateblock')
+document.addEventListener("DOMContentLoaded", () => {
+  const $contentSection = document.querySelector("#content-section");
+  const $content = document.querySelector("#content");
+  const $authorsList = document.querySelector("#author-data");
+  const $affiliationsList = document.querySelector("#affiliations");
+  const tabs = document.querySelectorAll(".tab");
+  const $doi = document.querySelector("#doi");
+  const $title = document.querySelector("#title");
+  const $articleNav = document.querySelector("#article-nav > ul");
+  const $publishedOn = document.querySelector(".published-on");
+  const $reviewSection = document.querySelector("#reviews-section");
+  const $dates = document.querySelectorAll(".dateblock");
 
-  const handleTabChange = e => {
-    const tab = e.target
-    tabs.forEach(tab => tab.classList.remove('active'))
-    tab.classList.add('active')
-    tab.textContent !== 'Preprint' && ($contentSection.style.display = 'none')
-    tab.textContent !== 'Reviews' && ($reviewSection.style.display = 'none')
-    tab.textContent === 'Preprint' && ($contentSection.style.display = 'flex')
-    tab.textContent === 'Reviews' && ($reviewSection.style.display = 'flex')
-    const url = new URL(window.location)
-    url.searchParams.set('tab', tab.textContent.toLowerCase())
-    window.history.pushState({}, '', url)
-  }
+  const handleTabChange = (e) => {
+    const tab = e.target;
+    tabs.forEach((tab) => tab.classList.remove("active"));
+    tab.classList.add("active");
+    tab.textContent !== "Preprint" && ($contentSection.style.display = "none");
+    tab.textContent !== "Reviews" && ($reviewSection.style.display = "none");
+    tab.textContent === "Preprint" && ($contentSection.style.display = "flex");
+    tab.textContent === "Reviews" && ($reviewSection.style.display = "flex");
+    const url = new URL(window.location);
+    url.searchParams.set("tab", tab.textContent.toLowerCase());
+    window.history.pushState({}, "", url);
+  };
 
-  tabs.forEach(tab => {
-    tab.addEventListener('click', handleTabChange)
-  })
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", handleTabChange);
+  });
 
-  const urlParams = new URLSearchParams(window.location.search)
-  const tabParam = urlParams.get('tab')
+  const urlParams = new URLSearchParams(window.location.search);
+  const tabParam = urlParams.get("tab");
 
-  if (!tabParam || !['preprint', 'reviews'].includes(tabParam)) {
-    handleTabChange({ target: tabs[0] })
+  if (!tabParam || !["preprint", "reviews"].includes(tabParam)) {
+    handleTabChange({ target: tabs[0] });
   } else {
     const activeTab = Array.from(tabs).find(
-      tab => tab.textContent.toLowerCase() === tabParam,
-    )
+      (tab) => tab.textContent.toLowerCase() === tabParam
+    );
 
     if (activeTab) {
-      handleTabChange({ target: activeTab })
+      handleTabChange({ target: activeTab });
     }
   }
 
-  const articleNumber = getArticleNumberFromURL()
-  const manuscript = manuscriptData[articleNumber]
-  const { doi, sections, title, authors, published, reviews, dates } = manuscript
+  const articleNumber = getArticleNumberFromURL();
+  const manuscript = manuscriptData[articleNumber];
+  const { doi, sections, title, authors, published, reviews, dates } =
+    manuscript;
+
+  const name = (name) => `<span class="author-name">${name}</span>`;
+  const email = (email) =>
+    email ? `<a class="email" href="mailto:${email}"></a>` : "";
+  const orcid = (orcid) =>
+    orcid
+      ? `<a class="orcid" target="_blank" href="https://orcid.org/${orcid}"></a>`
+      : "";
 
   $authorsList.innerHTML = authors
-    .map(author => `<a href="mailto:${author.email}">${author.name},</a>`)
-    .join('')
+    .map(
+      (author) =>
+        `<li>${name(author.name)}${email(author.email)}${orcid(
+          author.orcid
+        )}</li>`
+    )
+    .join("");
 
-  published && ($publishedOn.textContent = published)
-  title && ($title.textContent = title)
-  doi && ($doi.textContent = `https://doi.org/${doi}`)
-  doi && ($doi.href = `https://doi.org/${doi}`)
-  articleNumber && ($content.innerHTML = '')
-  $dates.forEach(date => {
-  const dateContent = Object.entries(dates).map(([k, v]) => {
-   return`<div class="date-block"><p>${k}:</p><span>${v}</span></div>`
-})
-    console.log(dateContent)
-    console.log($dates)
-    date.innerHTML = dateContent.join('')
-})
-    
+  $affiliationsList.innerHTML = authors
+    .map((author) => author.affiliations.join(","))
+    .join(",");
+
+  published && ($publishedOn.textContent = published);
+  title && ($title.textContent = title);
+  doi && ($doi.textContent = `https://doi.org/${doi}`);
+  doi && ($doi.href = `https://doi.org/${doi}`);
+  articleNumber && ($content.innerHTML = "");
+  $dates.forEach((date) => {
+    const dateContent = Object.entries(dates).map(([k, v]) => {
+      return `<div class="date-block"><p>${k}:</p><span>${v}</span></div>`;
+    });
+    console.log(dateContent);
+    console.log($dates);
+    date.innerHTML = dateContent.join("");
+  });
 
   reviews.forEach(({ name, orcid, review }) => {
-    const reviewEl = document.createElement('div')
-    reviewEl.innerHTML = `<h4>${name}</h4><p>${orcid}</p>${review}`
-    $reviewSection.appendChild(reviewEl)
-  })
+    const reviewEl = document.createElement("div");
+    reviewEl.innerHTML = `<h4>${name}</h4><p>${orcid}</p>${review}`;
+    $reviewSection.appendChild(reviewEl);
+  });
 
   Object.entries(sections).forEach(([k, v]) => {
-    const sectionContent = document.createElement('p')
-    sectionContent.innerHTML = v
-    if(k !== 'rest') {
-        const title = document.createElement('h2')
-        title.textContent = k
-        title.id = k
-        $content.appendChild(title)
-        !Object.keys(sections).includes('rest') && ($articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`)
-    } 
-    console.log(sectionContent)
-    $content.appendChild(sectionContent)
-    
-    if(k === 'rest') {
-        const headings = $content.querySelectorAll('h2')
-        headings.forEach(h2 => {
-            const id = h2.textContent
-            h2.id = id
-            $articleNav.innerHTML += `<li><a href="#${id}">${id}</a></li>`
-        })
-    } 
-  })
+    const sectionContent = document.createElement("p");
+    sectionContent.innerHTML = v;
+    if (k !== "rest") {
+      const title = document.createElement("h2");
+      title.textContent = k;
+      title.id = k;
+      $content.appendChild(title);
+      !Object.keys(sections).includes("rest") &&
+        ($articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`);
+    }
+    console.log(sectionContent);
+    $content.appendChild(sectionContent);
 
-  
-})
+    if (k === "rest") {
+      const headings = $content.querySelectorAll("h2");
+      headings.forEach((h2) => {
+        const id = h2.textContent;
+        h2.id = id;
+        $articleNav.innerHTML += `<li><a href="#${id}">${id}</a></li>`;
+      });
+    }
+  });
+});
