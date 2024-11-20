@@ -926,17 +926,17 @@ document.addEventListener('DOMContentLoaded', () => {
   Object.entries(sections).forEach(([k, v]) => {
     const sectionContent = document.createElement('p')
     sectionContent.innerHTML = v
-    if(k !== 'rest'){
+    if(k !== 'rest') {
         const title = document.createElement('h2')
         title.textContent = k
         title.id = k
         $content.appendChild(title)
         !Object.keys(sections).includes('rest') && ($articleNav.innerHTML += `<li><a href="#${k}">${k}</a></li>`)
-    }
+    } 
     console.log(sectionContent)
     $content.appendChild(sectionContent)
     
-    if(k === 'rest'){
+    if(k === 'rest') {
         const headings = $content.querySelectorAll('h2')
         headings.forEach(h2 => {
             const id = h2.textContent
