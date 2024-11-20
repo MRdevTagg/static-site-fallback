@@ -8,13 +8,15 @@ input#menu {
     height: 24px;
     padding: 16px;
     width: 24px;
-    transform: scale(1.5);
+    transform: scale(1.2);
 }
 
 label.menu-icon {
     position: relative;
     z-index: 200;
     display: none;
+    margin-right: 15px;
+    margin-bottom: 5px;
     @media screen and (max-width: 768px) {
         display: flex;
     }
@@ -71,18 +73,23 @@ label.menu-icon {
 
 #menu:checked ~ nav {
     max-width: 100%;
+    padding-inline: 25px;
+
+    * {
+        opacity: 1;
+    }
 }
 
 .mobile-only {
     display: none;
     @media screen and (max-width: 768px) {
-        display: flex;
+        display: flex !important;
     }
 }
 
 .desktop-only {
     display: flex;
     @media screen and (max-width: 768px) {
-        display: none;
+        display: none !important;
     }
 }
